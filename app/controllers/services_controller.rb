@@ -25,7 +25,7 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @booking = @service.booking
+    @booking = @service.bookings
   end
 
   def edit
