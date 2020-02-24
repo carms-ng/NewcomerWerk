@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   def new
     @service = Service.find(params[:service_id])
     @booking = Booking.new
+    @form_var = [@service, @booking]
   end
 
   def create
@@ -19,6 +20,7 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(prams[:id])
+    @form_var = @booking
   end
 
   def update
