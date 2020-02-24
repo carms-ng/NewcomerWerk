@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :location, presence: true
   validates :first_name, :last_name, length: { minimum: 2 }
   validates :location, inclusion: { in: ['Montreal', 'Toronto', 'Vancouver'] }, allow_nil: false
-  validates :first_name, :last_name, :location, , format: { with: /\A[a-zA-Z]+\z/,
+  validates :first_name, :last_name, :location, format: { with: /\A[a-zA-Z]+\z/,
     message: "only allows letters" }
 
   # Include default devise modules. Others available are:
