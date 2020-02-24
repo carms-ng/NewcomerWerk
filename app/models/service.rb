@@ -3,8 +3,8 @@ class Service < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   validates :title, presence: true
-  validates :description, length: { in: 20..40 }
-  validates :rate, presence: true, numericality: true
-  validates :years_experience, numericality: true
+  validates :description, length: { minimum: 20 }
+  validates :rate, presence: true, numericality: { only_integer: true }
+  validates :years_experience, numericality: { only_integer: true }
 
 end
