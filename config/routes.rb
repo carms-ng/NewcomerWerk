@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'services/index'
+  get 'services/show'
+  get 'users/show'
   devise_for :users
   root to: 'pages#home'
   get '/dashboard', to: 'bookings#index'
