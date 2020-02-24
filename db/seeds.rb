@@ -22,10 +22,5 @@ Review.destroy_all
   end
 end
 
-services = Service.all
-
-services.each do
-  (1..5)
-
 puts "Seeding done!"
 
