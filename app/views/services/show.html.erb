@@ -1,25 +1,32 @@
 <h1>Services#show</h1>
 <p>Find me in app/views/services/show.html.erb</p>
+<div class="container">
+  <h3><%= @service.title %></h3>
+  <p><%= @service.description %></p>
+  <p><%= @service.rate %> $ / hour</p>
+  <p><%= @service.years_experience %> Years of Experience</p>
 
-<h3><%= @service.title %></h3>
-<p><%= @service.description %></p>
-<p><%= @service.rate %></p>
-<p><%= @service.years_experience %></p>
+  <br>
 
-<br>
-<!-- booking of a service --nour -->
-<% @bookings.each do |b| %>
-  <p><%= b.message  %></p>
-<% end %>
-<!-- this should be displayed in the dashbord --nour  -->
-<!-- I think here we shoud display the reviews --nour -->
+  <%= link_to 'Book Now', new_service_booking_path(@service) %>
 
-<%= link_to 'Book Now', new_service_booking_path(@service) %>
+  <%= link_to 'edit', edit_service_path(@service) %>
+  <%= link_to 'delete', service_path(@service), method: :delete, data: {confirm: 'Are you sure?'} %>
 
-<%= link_to 'edit', edit_service_path(@service) %>
-<%= link_to 'delete', service_path(@service), method: :delete, data: {confirm: 'Are you sure?'} %>
 
-<!-- TODO: @service.reviews.each do -->
-<% if @mybooking != nil %>
-  <%= link_to '+ add a review', new_booking_review_path(@mybooking) %>
-<% end %>
+  <% if @mybooking != nil %>
+    <%= link_to '+ add a review', new_booking_review_path(@mybooking), class: 'btn btn-primary' %>
+  <% end %>
+
+  <h3>Provider's info</h3>
+  <%= link_to user_path(@service.user) do %>
+    <h6><%= @service.user.first_name %> <%= @service.user.last_name %></h6>
+  <% end %>
+  <p><i class="fas fa-map-marker-alt"></i> <%= @service.user.location %></p>
+  <h3>Reviews (<%= @reviews.length %>)</h3>
+  <% @reviews.each do |r| %>
+    <h6><%= r.rating %> <i class="fas fa-star"></i></h6>
+    <p><%= r.content %></p>
+    <p>Written by <%= link_to r.user.first_name, user_path(r.user) %></p>
+  <% end %>
+</div>
