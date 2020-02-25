@@ -1,24 +1,26 @@
-<% if @user.photo.attached? %>
-  <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-<h2><%= @user.first_name %> <%= @user.last_name %></h2>
-<h4><%= @user.location %></h4>
-<p><%= @user.description %></p>
+<div class="container">
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+  <h4><%= @user.location %></h4>
+  <p><%= @user.description %></p>
 
 
-<h4><%= link_to "Edit Profile", edit_user_registration_path %></h4>
+  <h4><%= link_to "Edit Profile", edit_user_registration_path %></h4>
 
 
-<h3>Review Written</h3>
+  <h3>Review Written (<%= @reviews_written.length %>)</h3>
 
-<% @reviews_written.each do |r| %>
-  <p><%= r.rating %></p>
-  <p>written by <%= r.user.first_name %></p>
-<% end %>
+  <% @reviews_written.each do |r| %>
+    <p><%= r.rating %></p>
+    <p>written by <%= r.user.first_name %></p>
+  <% end %>
 
-<h3>Review Received</h3>
+  <h3>Review Received (<%= @reviews_received.length %>)</h3>
 
-<% @reviews_received.each do |r| %>
-  <p><%= r.rating %></p>
-  <p>written by <%= r.user.first_name %></p>
-<% end %>
+  <% @reviews_received.each do |r| %>
+    <p><%= r.rating %></p>
+    <p>written by <%= r.user.first_name %></p>
+  <% end %>
+</div>
