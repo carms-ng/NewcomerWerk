@@ -1,10 +1,9 @@
-<% if @user.photo.attached? %>
-  <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+<% if current_user.photo.attached? %>
+  <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
-<h2><%= @user.first_name %> <%= @user.last_name %></h2>
-<h4><%= @user.location %></h4>
-<p><%= @user.description %></p>
+<h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+<h4><%= current_user.location %></h4>
+<p><%= current_user.description %></p>
 
 
-<%= render "form", user: @user %>
-<h4><%= link_to "Edit Profile", profile_path %></h4>
+<h4><%= link_to "Edit Profile", edit_user_registration_path %></h4>
