@@ -1,7 +1,15 @@
-<%= simple_form_for(@service) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :rate, label: 'Hourly Rate' %>
-  <%= f.input :years_experience %>
-  <%= f.submit %>
-<% end %>
+
+<div class="formboxcenter">
+  <div class="formbox">
+    <%= simple_form_for(@service) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :rate %>
+      <%= f.input :years_experience %>
+      <div class="button-center">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
