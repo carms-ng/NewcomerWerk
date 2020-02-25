@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#show'
 
   resources :services do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:new, :create]
   end
 
   resources :bookings, only: [:edit, :update] do

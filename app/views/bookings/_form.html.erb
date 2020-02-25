@@ -1,0 +1,10 @@
+
+
+<%= simple_form_for([@service, @booking]) do |f| %>
+  <%= f.input :start %>
+  <%= f.input :end %>
+  <%= f.input :message %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
+
