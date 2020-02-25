@@ -23,3 +23,6 @@
 <% if @mybooking != nil %>
   <%= link_to '+ add a review', new_booking_review_path(@mybooking) %>
 <% end %>
+
+<h3>Provider's info</h3>
+<%= link_to @service.user.first_name, user_path(@service.user) %>

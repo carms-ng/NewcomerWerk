@@ -4,6 +4,7 @@
 <% @services.each do |service| %>
   <%= link_to service_path(service) do %>
   <h3><%= service.title %></h3>
+  <span><%= service.user.first_name %></span>
   <% end %>
   <p><%= service.description %></p>
   <p><%= service.rate %></p>

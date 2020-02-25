@@ -4,11 +4,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-  end
-
-  def edit
-
+    @user = User.find(params[:id])
+    @reviews_written = @user.reviews
+    @reviews_received = Review.joins(booking: :service).where(services: { user_id: @user.id })
   end
 
 end

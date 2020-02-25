@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: 'services#index'
   # root to: 'pages#home'
   get '/dashboard', to: 'bookings#index'
-  get '/profile', to: 'users#show'
+  # get '/profile', to: 'users#show'
 
-  resources :users, only: [:update]
+  resources :users, only: [:show]
 
   resources :services do
     resources :bookings, only: [:new, :create]
