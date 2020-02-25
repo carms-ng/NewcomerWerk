@@ -13,9 +13,12 @@ class BookingsController < ApplicationController
   def create
     @service = Service.find(params[:service_id])
     @booking = Booking.new(secure_params)
+    # assign service to booking's service
     @booking.service = @service
+    # assign current_user to booking's user
     @booking.user = current_user
     if @booking.save
+      # Changes
       # maybe change it to redirect to the dashbord
       redirect_to service_path(@service)
     else
@@ -25,6 +28,7 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    # To test
     # @form_var = @booking
   end
 
@@ -32,6 +36,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
 
     if @booking.update(secure_params)
+      # Changes
       # maybe change it to redirect to the dashbord
       redirect_to service_path(@service)
     else
