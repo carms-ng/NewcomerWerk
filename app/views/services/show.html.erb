@@ -8,13 +8,13 @@
 
 <br>
 <!-- booking of a service --nour -->
-  <% @booking.each do |b| %>
-<p>
-  <%= b.message  %>
-</p>
-<% end  %>
+<% @booking.each do |b| %>
+  <p><%= b.message  %></p>
+<% end %>
 <!-- this should be displayed in the dashbord --nour  -->
 <!-- I think here we shoud display the reviews --nour -->
+
+<%= link_to 'Book Now', new_service_booking_path(@service) %>
 
 <%= link_to 'edit', edit_service_path(@service) %>
 <%= link_to 'delete', service_path(@service), method: :delete, data: [confirm: 'Are you sure?'] %>

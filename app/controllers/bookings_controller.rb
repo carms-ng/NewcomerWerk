@@ -1,8 +1,12 @@
+require 'date'
+
 class BookingsController < ApplicationController
-  require 'Date'
 
   def index
-    @booking = Booking.find(:id)
+    @bookings = Booking.all
+    binding.pry
+    @bookings_req_you = Booking.where(user: current_user)
+    @bookings_for_you = Booking.where(user: self.service.user)
   end
 
   def new
@@ -38,7 +42,7 @@ class BookingsController < ApplicationController
     if @booking.update(secure_params)
       # Changes
       # maybe change it to redirect to the dashbord
-      redirect_to service_path(@service)
+      redirect_to service_path(@booking.service)
     else
       render :edit
     end
