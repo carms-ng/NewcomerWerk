@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'bookings#index'
   get '/profile', to: 'users#show'
 
+  resources :users, only: [:update]
+
   resources :services do
     resources :bookings, only: [:new, :create]
   end

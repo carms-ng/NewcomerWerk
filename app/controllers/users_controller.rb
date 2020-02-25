@@ -1,4 +1,14 @@
 class UsersController < ApplicationController
-  def show
+
+  def index
   end
+
+  def show
+    @user = current_user
+  end
+
+  def edit
+
+  end
+
 end
