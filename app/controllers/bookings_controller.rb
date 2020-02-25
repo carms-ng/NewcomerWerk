@@ -3,9 +3,10 @@ require 'date'
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
-    @bookings_req_you = Booking.where(user: current_user)
-    @bookings_for_you = Booking.where(user: self.service.user)
+    # we have to seperate both though
+    @bookings_by_you = Booking.where(user: current_user)
+
+    @bookings_for_you = Booking.joins(:service).where(services: { user: current_user })
   end
 
   def new

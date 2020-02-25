@@ -1,14 +1,11 @@
 
-<h2>all booking</h2>
-  <% @bookings.each do |b| %>
-    <p><%= b.message %></p>
-  <% end %>
-<h2>all booking</h2>
-  <% @bookings_req_you.each do |b| %>
+
+<h2>By You</h2>
+  <% @bookings_by_you.each do |b| %>
     <p><%= b.message %></p>
 
   <% end %>
-<h2>all booking</h2>
+<h2>For you</h2>
   <% @bookings_for_you.each do |b| %>
     <p><%= b.message %></p>
 

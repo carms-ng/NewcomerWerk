@@ -22,5 +22,6 @@ Review.destroy_all
   end
 end
 
+
 puts "Seeding done!"
 
