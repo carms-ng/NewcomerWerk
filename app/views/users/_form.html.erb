@@ -1,7 +1,8 @@
-<% simple_form_for(article) do |f| %>
+<%= simple_form_for(user) do |f| %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :location %>
   <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
 <% end %>
