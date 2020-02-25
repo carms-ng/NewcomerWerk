@@ -1,4 +1,4 @@
-  class ServicesController < ApplicationController
+class ServicesController < ApplicationController
   before_action :find_service, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :index
 
