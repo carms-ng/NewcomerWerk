@@ -1,15 +1,20 @@
 class BookingsController < ApplicationController
+  require 'Date'
+
+  def index
+    @booking = Booking.find(:id)
+  end
 
   def new
     @service = Service.find(params[:service_id])
     @booking = Booking.new
-    @form_var = [@service, @booking]
   end
 
   def create
     @service = Service.find(params[:service_id])
     @booking = Booking.new(secure_params)
     @booking.service = @service
+    @booking.user = current_user
     if @booking.save
       # maybe change it to redirect to the dashbord
       redirect_to service_path(@service)
@@ -20,7 +25,7 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
-    @form_var = @booking
+    # @form_var = @booking
   end
 
   def update
@@ -37,7 +42,8 @@ class BookingsController < ApplicationController
   private
 
   def secure_params
-    # check the user_id
-    params_require(:booking).permit(:start, :end, :message)
+    params[:booking][:start] = DateTime.new(params[:booking]['start(1i)'].to_i, params[:booking]['start(2i)'].to_i, params[:booking]['start(3i)'].to_i, params[:booking]['start(4i)'].to_i, params[:booking]['start(5i)'].to_i)
+    params[:booking][:end] = DateTime.new(params[:booking]['end(1i)'].to_i, params[:booking]['end(2i)'].to_i, params[:booking]['end(3i)'].to_i, params[:booking]['end(4i)'].to_i, params[:booking]['end(5i)'].to_i)
+    params.require(:booking).permit(:start, :end, :message)
   end
 end

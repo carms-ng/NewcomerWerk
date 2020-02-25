@@ -5,6 +5,6 @@ class Booking < ApplicationRecord
 
   validates :start, presence: true
   validates :end, presence: true
-  validates :completed, inclusion: { in: [true, false] }
+  # validates :completed, inclusion: { in: [true, false] }
   validates :message, presence: true
 end
