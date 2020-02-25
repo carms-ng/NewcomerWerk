@@ -1,16 +1,20 @@
-h2{
-  text-align: center;
+.formboxcenter{
+  display: flex;
+  justify-content: center;
 }
 
+.button-center{
+  display: flex;
+  justify-content: center;
+}
 
-.container {
+.formbox {
   padding:15px;
   margin-top: 20px;
   background-color: #fff;
   border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.10),
       0 10px 10px rgba(0,0,0,0.10);
-  position: relative;
   overflow: hidden;
   width: 768px;
   max-width: 100%;
