@@ -17,7 +17,7 @@
 <%= link_to 'Book Now', new_service_booking_path(@service) %>
 
 <%= link_to 'edit', edit_service_path(@service) %>
-<%= link_to 'delete', service_path(@service), method: :delete, data: [confirm: 'Are you sure?'] %>
+<%= link_to 'delete', service_path(@service), method: :delete, data: {confirm: 'Are you sure?'} %>
 
 <!-- TODO: @service.reviews.each do -->
 <% if @mybooking != nil %>
