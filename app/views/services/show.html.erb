@@ -9,3 +9,4 @@
 <%= link_to 'delete', service_path(@service), method: :delete, data: [confirm: 'Are you sure?'] %>
 
 <!-- TODO: @service.reviews.each do -->
+<%= link_to '+ add a review', new_booking_review_path(@booking.service) %>
