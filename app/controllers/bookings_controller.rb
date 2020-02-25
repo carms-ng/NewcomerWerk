@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
-    binding.pry
     @bookings_req_you = Booking.where(user: current_user)
     @bookings_for_you = Booking.where(user: self.service.user)
   end

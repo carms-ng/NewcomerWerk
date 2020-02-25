@@ -25,7 +25,8 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @booking = @service.bookings
+    @bookings = @service.bookings
+    @mybooking = @service.bookings.find_by({user:current_user})
   end
 
   def edit
