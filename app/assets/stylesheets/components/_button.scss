@@ -1,0 +1,33 @@
+.button {
+  width: 250px;
+  height: 65px;
+  background: $white;
+  border: 1px solid $d-purple;
+  border-radius: 5px;
+  padding: 10px 32px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: center;
+  color: $d-purple;
+}
+
+.small-btn {
+  width: 155px;
+  height: 42px;
+  background: $white;
+  border: 1px solid $d-purple;
+  border-radius: 5px;
+  padding: 10px 32px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 29px;
+  text-align: center;
+  color: $d-purple;
+}
