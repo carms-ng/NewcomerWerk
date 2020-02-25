@@ -26,8 +26,10 @@ class ServicesController < ApplicationController
   end
 
   def show
+    # bookings should go to dashboard
     @bookings = @service.bookings
-    @mybooking = @service.bookings.find_by({user:current_user})
+    @mybooking = @service.bookings.find_by(user: current_user)
+    @reviews = Review.joins(:booking).where(bookings: { service: @service })
   end
 
   def edit
