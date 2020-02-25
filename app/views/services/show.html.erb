@@ -1,2 +1,11 @@
 <h1>Services#show</h1>
 <p>Find me in app/views/services/show.html.erb</p>
+
+<h3><%= @service.title %></h3>
+<p><%= @service.description %></p>
+<p><%= @service.rate %></p>
+<p><%= @service.years_experience %></p>
+<%= link_to 'edit', edit_service_path(@service) %>
+<%= link_to 'delete', service_path(@service), method: :delete, data: [confirm: 'Are you sure?'] %>
+
+<!-- TODO: @service.reviews.each do -->
