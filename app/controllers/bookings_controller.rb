@@ -32,8 +32,6 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    # To test
-    # @form_var = @booking
   end
 
   def update

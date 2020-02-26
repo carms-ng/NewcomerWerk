@@ -1,5 +1,5 @@
-<h1>Services#show</h1>
-<p>Find me in app/views/services/show.html.erb</p>
+
+
 <div class="container">
   <h3><%= @service.title %></h3>
   <p><%= @service.description %></p>
@@ -23,10 +23,41 @@
     <h6><%= @service.user.first_name %> <%= @service.user.last_name %></h6>
   <% end %>
   <p><i class="fas fa-map-marker-alt"></i> <%= @service.user.location %></p>
-  <h3>Reviews (<%= @reviews.length %>)</h3>
-  <% @reviews.each do |r| %>
-    <h6><%= r.rating %> <i class="fas fa-star"></i></h6>
-    <p><%= r.content %></p>
-    <p>Written by <%= link_to r.user.first_name, user_path(r.user) %></p>
-  <% end %>
+
+
+  <div class="reviews-box">
+
+    <div class="reviews-card">
+    <h3>Reviews (<%= @reviews.length %>)</h3>
+
+      <% @reviews.each do |r| %>
+
+        <div class="review">
+
+          <div class="description">
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "smallsize-avatar"%>
+            <% else %>
+              <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle"%>
+            <% end %>
+
+            <h4><%= r.user.first_name %></h4>
+            <h6><%= r.rating %> <i class="fas fa-star"></i></h6>
+          </div>
+
+          <div class="comment">
+            <p><%= r.content %></p>
+            <p>Written by <%= link_to r.user.first_name, user_path(r.user) %></p>
+          </div>
+
+        </div>
+
+      <% end %>
+
+
+    </div>
+
+  </div>
+
+
 </div>
