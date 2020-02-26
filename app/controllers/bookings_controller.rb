@@ -32,8 +32,6 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
-    # To test
-    # @form_var = @booking
   end
 
   def update
