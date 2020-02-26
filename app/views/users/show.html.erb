@@ -1,18 +1,23 @@
-<div class="profile-card">
-  <% if @user.photo.attached? %>
-    <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill, class: "profile-avatar" %>
-  <% end %>
-  <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-  <h4><%= @user.location %></h4>
-  <p><%= @user.description %></p>
+<div class="container">
+  <div class="profile-card">
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill, class: "profile-avatar" %>
+    <% end %>
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+    <div class="profile-card-location">
+      <h4>Location: <span><%= @user.location %></span></h4>
+    </div>
+    <div class="profile-card-description">
+      <h4>About:</h4>
+      <p><%= @user.description %></p>
+    </div>
 
-
-  <h4><%= link_to "Edit Profile", edit_user_registration_path, class: "button" %></h4>
+    <h4><%= link_to "Edit Profile", edit_user_registration_path, class: "button" %></h4>
+  </div>
 </div>
+<div>
 
-
-
-
+</div>
   <h3>Review Written (<%= @reviews_written.length %>)</h3>
 
   <% @reviews_written.each do |r| %>
