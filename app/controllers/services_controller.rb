@@ -1,6 +1,17 @@
 class ServicesController < ApplicationController
-  before_action :find_service, only: [:show, :edit, :update, :destroy]
+  before_action :find_service, only: [:show, :edit, :update, :destroy, :average_ratings]
   skip_before_action :authenticate_user!, only: :index
+
+  def geocode
+    @services = Service.geocoded
+
+    @markers = @services.map do |s|
+      {
+        lat: s.latitude,
+        lng: s.longitude
+      }
+    end
+  end
 
   def index
     if params[:search].nil?
@@ -30,6 +41,7 @@ class ServicesController < ApplicationController
     @bookings = @service.bookings
     @mybooking = @service.bookings.find_by(user: current_user)
     @reviews = Review.joins(:booking).where(bookings: { service: @service })
+    average_ratings
   end
 
   def edit
@@ -50,6 +62,11 @@ class ServicesController < ApplicationController
   end
 
   private
+
+  def average_ratings
+   @average_ratings = @service.reviews.average(:rating)
+
+  end
 
   def search
     @services = Service.where("title LIKE ?", "%#{params[:search]}%")
