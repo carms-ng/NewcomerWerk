@@ -7,4 +7,16 @@ class Booking < ApplicationRecord
   validates :end, presence: true
   # validates :completed, inclusion: { in: [true, false] }
   validates :message, presence: true
+
+  def accepted!
+    self.status = 'Accepted'
+  end
+
+  def declined!
+    self.status = 'Declined'
+  end
+
+  def completed!
+    self.completed = true
+  end
 end
