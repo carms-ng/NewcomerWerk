@@ -1,0 +1,46 @@
+.profile-card {
+  margin: auto 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  width: 660px;
+  height: 600px;
+  background: $white;
+  border: 1px solid $d-purple;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 40px;
+
+  h2 {
+    font-size: 24px;
+  }
+  .profile-card-location h4 {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: normal;
+  }
+  .profile-card-location span {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .profile-card-description h4 {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: normal;
+  }
+  .profile-card-description p {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  p {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
