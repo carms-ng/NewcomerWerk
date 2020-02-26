@@ -15,6 +15,12 @@
   color: $d-purple;
 }
 
+.button:hover {
+  text-decoration: none;
+  background-color: $d-purple;
+  color: $white;
+}
+
 .small-btn {
   width: 155px;
   height: 42px;
@@ -30,4 +36,14 @@
   line-height: 29px;
   text-align: center;
   color: $d-purple;
+  text-decoration: none;
 }
+
+.small-btn:hover {
+  text-decoration: none;
+  background-color: $d-purple;
+  color: $white;
+}
+
+
+
