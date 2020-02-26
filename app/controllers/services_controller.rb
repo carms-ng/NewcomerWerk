@@ -64,7 +64,7 @@ class ServicesController < ApplicationController
   private
 
   def average_ratings
-   @average_ratings = @service.reviews.average(:rating).to_i
+   @average_ratings = @service.reviews.average(:rating)
 
   end
 
