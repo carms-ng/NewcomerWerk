@@ -46,4 +46,30 @@
 }
 
 
+#nav-btn {
+  width: 130px;
+  height: 35px;
+  margin-left: 8px;
+  margin-right: 16px;
+  background: $white;
+  border: 1px solid $d-purple;
+  border-radius: 5px;
+  padding: 3px 20px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 29px;
+  text-align: center;
+  color: $d-purple;
+  text-decoration: none;
+}
+
+#nav-btn:hover {
+  text-decoration: none;
+  background-color: $d-purple;
+  color: $white;
+}
+
 
