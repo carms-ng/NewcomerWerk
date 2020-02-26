@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :find_service, only: [:show, :edit, :update, :destroy]
+  before_action :find_service, only: [:show, :edit, :update, :destroy, :average_ratings]
   skip_before_action :authenticate_user!, only: :index
 
   def geocode
@@ -41,6 +41,7 @@ class ServicesController < ApplicationController
     @bookings = @service.bookings
     @mybooking = @service.bookings.find_by(user: current_user)
     @reviews = Review.joins(:booking).where(bookings: { service: @service })
+    average_ratings
   end
 
   def edit
@@ -63,6 +64,7 @@ class ServicesController < ApplicationController
   private
 
   def average_ratings
+   @average_ratings = @service.reviews.average(:rating).to_i
 
   end
 
