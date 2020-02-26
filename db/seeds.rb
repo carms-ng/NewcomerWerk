@@ -63,22 +63,22 @@ Midwife3 = Service.new(title: 'Best Midwife', description: 'As a practicing midw
   the high-quality care they deserve.', rate: 140, years_experience: 20)
 
 Lifecoach3.user = Oliver
-Lifecoach3.save
+Lifecoach3.save!
 
 Lifecoach2.user = Jamie
-Lifecoach2.save
+Lifecoach2.save!
 
 Midwife3.user = Penelope
-Midwife3.save
+Midwife3.save!
 
 Midwife2.user = Joanna
-Midwife2.save
+Midwife2.save!
 
 Midwife.user = Priyanka
-Midwife.save
+Midwife.save!
 
 Lifecoach.user = Morgan
-Lifecoach.save
+Lifecoach.save!
 
 
 20.times do
@@ -92,7 +92,7 @@ Lifecoach.save
     service = Service.new(title: Faker::Job.field ,description: Faker::Hacker.say_something_smart,
       rate: rand(10..300), years_experience: rand(1..7))
     service.user = user
-    service.save
+    service.save!
   end
 end
 

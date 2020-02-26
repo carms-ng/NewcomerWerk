@@ -44,8 +44,8 @@
             <% end %>
             </div>
 
-
           </div>
+
 
 
         </div>
@@ -54,8 +54,16 @@
   </div>
 
 <!-- map stick to the right -->
-
-  <img id="map-placeholder" src="https://cdn.shopify.com/s/files/1/0527/6177/products/Wine-Map-of-California_ca398245-471d-47cf-8f4a-c992073e653a.jpg?v=1564322369" alt="map placeholder">
-
+  <div
+  class="map-placeholder"
+  id="map"
+  style="width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<!--   <img id="map-placeholder" src="https://cdn.shopify.com/s/files/1/0527/6177/products/Wine-Map-of-California_ca398245-471d-47cf-8f4a-c992073e653a.jpg?v=1564322369" alt="map placeholder">
+ -->
 
 </div>

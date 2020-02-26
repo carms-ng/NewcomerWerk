@@ -14,6 +14,7 @@ class ServicesController < ApplicationController
   end
 
   def index
+    geocode
     if params[:search].nil?
       @services = Service.all
     else
@@ -78,6 +79,6 @@ class ServicesController < ApplicationController
   end
 
   def service_params
-    params.require(:service).permit(:title, :description, :rate, :years_experience, photos: [])
+    params.require(:service).permit(:title, :description, :rate, :years_experience, :address, photos: [])
   end
 end

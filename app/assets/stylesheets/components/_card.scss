@@ -7,11 +7,12 @@ a {
   display: flex;
 }
 
-#map-placeholder {
+.map-placeholder {
   height: 100vh;
   position: sticky;
   top: 0;
 }
+
 .cards-left {
   flex-grow: 1;
 }
