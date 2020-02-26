@@ -16,22 +16,63 @@ Morgan = User.create(first_name: 'Morgan', last_name: 'Freeman',
 Jamie = User.create(first_name: 'Jamie', last_name: 'Chung',
   email: 'jamie.chung@gmail.com', password:'123456', location: 'San Francisco')
 
+Joanna = User.create(first_name: 'Joanna', last_name: 'Moubta',
+  email: 'joanna.moubta@gmail.com', password:'123456', location: 'Toronto')
+
 Penelope = User.create(first_name: 'Penelope', last_name: 'Cruz',
   email: 'penelope.cruz@gmail.com', password:'123456', location: 'Madrid')
 
 Priyanka = User.create(first_name: 'Priyanka', last_name: 'Chopra',
   email: 'priyanka.chopra@gmail.com', password: '123456', location: 'Jamshedpur')
 
+Oliver = User.create(first_name: 'Oliver', last_name: 'Nguyen',
+  email: 'oliver.nguyen@gmail.com', password: '123456', location: 'Montreal')
+
+
 Midwife = Service.new(title: 'Experimented Midwife', description: 'As a practicing midwife and technical
   advisor on global health programs, I have met midwives throughout Africa, Southeast Asia, and beyond in very
   low-resource settings and challenging circumstances, working hard every day to ensure women and newborns receive
   the high-quality care they deserve.', rate: 100, years_experience: 20)
 
-Lifecoach = Service.new(title: 'Life Coach with a lot of experience', description: 'I AM Life Coaching
+Lifecoach = Service.new(title: 'Life Coach 4 you', description: 'I AM Life Coaching
 Corporate and Personal Life Coaching
 Empowering holistic healing and corporate wellness.
 They say that Leaders are born, not made. But with the right Life Coach true leaders are awakened to walk their journey!',
 rate: 150, years_experience: 5 )
+
+Lifecoach2 = Service.new(title: 'Life Coach expert', description: 'I AM Life Coaching
+Corporate and Personal Life Coaching
+Empowering holistic healing and corporate wellness.
+They say that Leaders are born, not made. But with the right Life Coach true leaders are awakened to walk their journey!',
+rate: 90, years_experience: 2 )
+
+Lifecoach3 = Service.new(title: 'Life Coach love', description: 'I AM Life Coaching
+Corporate and Personal Life Coaching
+Empowering holistic healing and corporate wellness.
+They say that Leaders are born, not made. But with the right Life Coach true leaders are awakened to walk their journey!',
+rate: 90, years_experience: 2 )
+
+Midwife2 = Service.new(title: 'Dreamy Midwife', description: 'As a practicing midwife and technical
+  advisor on global health programs, I have met midwives throughout Africa, Southeast Asia, and beyond in very
+  low-resource settings and challenging circumstances, working hard every day to ensure women and newborns receive
+  the high-quality care they deserve.', rate: 200, years_experience: 20)
+
+Midwife3 = Service.new(title: 'Best Midwife', description: 'As a practicing midwife and technical
+  advisor on global health programs, I have met midwives throughout Africa, Southeast Asia, and beyond in very
+  low-resource settings and challenging circumstances, working hard every day to ensure women and newborns receive
+  the high-quality care they deserve.', rate: 140, years_experience: 20)
+
+Lifecoach3.user = Oliver
+Lifecoach3.save
+
+Lifecoach2.user = Jamie
+Lifecoach2.save
+
+Midwife3.user = Penelope
+Midwife3.save
+
+Midwife2.user = Joanna
+Midwife2.save
 
 Midwife.user = Priyanka
 Midwife.save
