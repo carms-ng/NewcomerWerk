@@ -26,15 +26,15 @@
 
 
   <div class="reviews-box">
-    <h3>Reviews (<%= @reviews.length %>)</h3>
 
     <div class="reviews-card">
+    <h3>Reviews (<%= @reviews.length %>)</h3>
 
       <% @reviews.each do |r| %>
 
         <div class="review">
 
-          <div>
+          <div class="description">
             <% if current_user.photo.attached? %>
               <%= cl_image_tag current_user.photo.key, class: "smallsize-avatar"%>
             <% else %>
