@@ -3,10 +3,10 @@
   <h1>See All Our Unlicensed Talents</h1>
 <% else %>
   <h1>Search Result: <%= @keyword.capitalize %></h1>
+  <h3><%= @services.length %> Unlicensed Talents found</h3>
 <% end %>
 
 <div class="box-result">
-
 <!-- cards -->
   <div class="cards-left">
     <% @services.each do |service| %>
