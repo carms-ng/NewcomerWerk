@@ -1,11 +1,9 @@
+<%= simple_form_for([@service, @booking]) do |f| %>
+  <%= f.input :start %>
+  <%= f.input :end %>
+  <%= f.input :message %>
+  <%= f.submit 'Book Now', class: 'button' %>
+<% end %>
 
-<div class="formboxcenter">
-  <%= simple_form_for([@service, @booking]) do |f| %>
-    <%= f.input :start %>
-    <%= f.input :end %>
-    <%= f.input :message %>
-    <%= f.submit %>
-  <% end %>
-</div>
 
 
