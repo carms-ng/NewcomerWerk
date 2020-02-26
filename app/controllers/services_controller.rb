@@ -2,6 +2,17 @@ class ServicesController < ApplicationController
   before_action :find_service, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :index
 
+  def geocode
+    @services = Service.geocoded
+
+    @markers = @services.map do |s|
+      {
+        lat: s.latitude,
+        lng: s.longitude
+      }
+    end
+  end
+
   def index
     if params[:search].nil?
       @services = Service.all
@@ -50,6 +61,10 @@ class ServicesController < ApplicationController
   end
 
   private
+
+  def average_ratings
+
+  end
 
   def search
     @services = Service.where("title LIKE ?", "%#{params[:search]}%")
