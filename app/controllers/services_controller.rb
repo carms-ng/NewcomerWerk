@@ -70,7 +70,7 @@ class ServicesController < ApplicationController
 
   def search
     @keyword = params[:search]
-    @services = Service.where("title LIKE ?", "%#{@keyword}%")
+    @services = Service.where("lower(#{:title}) LIKE ?", "%#{@keyword.downcase}%")
   end
 
   def find_service
