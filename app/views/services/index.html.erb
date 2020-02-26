@@ -1,18 +1,61 @@
-<div class="container">
-  <h1>Services#index</h1>
-  <p>Find me in app/views/services/index.html.erb</p>
+<!-- Small Banner -->
+<% if @keyword.nil? %>
+  <h1>See All Our Unlicensed Talents</h1>
+<% else %>
+  <h1>Search Result: <%= @search.capitalize %></h1>
+<% end %>
 
-  <% @services.each do |service| %>
-    <%= link_to service_path(service) do %>
-      <h3><%= service.title %></h3>
+<div class="box-result">
+
+<!-- cards -->
+  <div class="cards-left">
+    <% @services.each do |service| %>
+      <%= link_to service_path(service) do %>
+        <div class="card-long">
+          <% if service.photos.empty? %>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j" alt="unlicensed">
+          <% else %>
+            <%= cl_image_tag service.photos.first.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+
+          <div class="card-long-info">
+            <%= link_to service_path(service) do %>
+              <h3><%= service.title %></h3>
+            <% end %>
+            <p><%= service.description %></p>
+            <p><%= service.years_experience %> Years of Experience</p>
+            <div id="price">
+              <p>$<%= service.rate %>/hour</p>
+            </div>
+            <div id="rating">
+              <p>##<i class="fas fa-star"></i></p>
+            </div>
+
+            <div id="provider">
+            <%= link_to user_path(service.user) do %>
+              <div id="provider-info">
+                <h6><%= service.user.first_name %> <%= service.user.last_name %></h6>
+                <% if service.user.photo.attached? %>
+                  <%= cl_image_tag service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar' %>
+                <% else %>
+                  <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% end %>
+              </div>
+            <% end %>
+            </div>
+
+
+          </div>
+
+
+        </div>
+      <% end %>
     <% end %>
-    <%= link_to user_path(service.user) do %>
-      <h6><%= service.user.first_name %> <%= service.user.last_name %></h6>
-    <% end %>
-    <p><%= service.description %></p>
-    <p><%= service.rate %> $/hour</p>
-    <p><%= service.years_experience %> years of experience</p>
-    <%= link_to 'edit', edit_service_path(service) %>
-    <%= link_to 'delete', service_path(service), method: :delete, data: {confirm: 'Are you sure?'} %>
-  <% end %>
+  </div>
+
+<!-- map stick to the right -->
+
+  <img id="map-placeholder" src="https://cdn.shopify.com/s/files/1/0527/6177/products/Wine-Map-of-California_ca398245-471d-47cf-8f4a-c992073e653a.jpg?v=1564322369" alt="map placeholder">
+
+
 </div>

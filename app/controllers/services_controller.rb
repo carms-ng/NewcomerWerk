@@ -69,7 +69,8 @@ class ServicesController < ApplicationController
   end
 
   def search
-    @services = Service.where("title LIKE ?", "%#{params[:search]}%")
+    @keyword = params[:search]
+    @services = Service.where("title LIKE ?", "%#{@keyword}%")
   end
 
   def find_service
@@ -77,6 +78,6 @@ class ServicesController < ApplicationController
   end
 
   def service_params
-    params.require(:service).permit(:title, :description, :rate, :years_experience)
+    params.require(:service).permit(:title, :description, :rate, :years_experience, photos: [])
   end
 end
