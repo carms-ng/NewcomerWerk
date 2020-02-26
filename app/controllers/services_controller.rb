@@ -52,7 +52,7 @@ class ServicesController < ApplicationController
   private
 
   def search
-    @search = Service.where("title LIKE ?", "%#{params[:search]}%")
+    @services = Service.where("title LIKE ?", "%#{params[:search]}%")
   end
 
   def find_service
