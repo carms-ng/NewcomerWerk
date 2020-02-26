@@ -1,0 +1,66 @@
+a {
+  text-decoration: none !important;
+}
+
+
+.box-result {
+  display: flex;
+}
+
+#map-placeholder {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.cards-left {
+  flex-grow: 1;
+}
+.card-long {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px $l-purple;
+  padding: 25px;
+  margin: 15px;
+  display: flex;
+  cursor: pointer;
+
+  img {
+    width: 400;
+    height: 300;
+    object-fit: cover;
+  }
+}
+
+.card-long-info {
+  padding-left: 15px;
+  position: relative;
+  flex-grow: 1;
+
+  h3 {
+    color: $d-purple;
+    font-weight: bold;
+  }
+  #price {
+    position: absolute;
+    bottom: -5;
+    right: 0;
+    font-size: 24px;
+  }
+  #provider {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    #provider-info {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      margin-left: 10px;
+    }
+    h6 {
+      font-size: 18px;
+      color: $d-purple;
+    }
+  }
+}
