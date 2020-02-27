@@ -58,12 +58,14 @@ Midwife = Service.new(title: 'Experimented Midwife', description: 'As a practici
   the high-quality care they deserve.', rate: 100, years_experience: 20, address: "5282 Boul St-Laurent" )
 Midwife.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
+
+
 file = URI.open('https://wheelandphotography.com/wp-content/uploads/2016/04/travis_barton_life_coach_0002.jpg')
 Lifecoach = Service.new(title: 'Life Coach 4 you', description: 'I AM Life Coaching
 Corporate and Personal Life Coaching
 Empowering holistic healing and corporate wellness.
 They say that Leaders are born, not made. But with the right Life Coach true leaders are awakened to walk their journey!',
-rate: 150, years_experience: 5, address: "5583 Av du Parc" )
+rate: 150, years_experience: 5, address: "351 Rue de Bellechasse Montréal" )
 Lifecoach.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 file = URI.open('https://blog.logoscdn.com/wp-content/uploads/2017/04/bible-life-coach-620x340.jpg')
@@ -79,7 +81,7 @@ Lifecoach3 = Service.new(title: 'Life Coach love', description: 'I AM Life Coach
 Corporate and Personal Life Coaching
 Empowering holistic healing and corporate wellness.
 They say that Leaders are born, not made. But with the right Life Coach true leaders are awakened to walk their journey!',
-rate: 90, years_experience: 2, address: "16 Rue Maguire" )
+rate: 90, years_experience: 2, address: "16 Rue Maguire Montreal" )
 Lifecoach3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 file = URI.open('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F38%2F2019%2F06%2F12221800%2Fmidwife-with-pregnant-woman.jpg&q=85')
