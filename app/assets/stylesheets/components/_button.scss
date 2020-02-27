@@ -16,9 +16,32 @@
 }
 
 .button:hover {
-  text-decoration: none;
   background-color: $d-purple;
   color: $white;
+}
+
+.button-solid {
+  margin: 10px 0;
+  width: 100%;
+  background-color: $l-purple;
+  border: 1px solid $d-purple;
+  border-radius: 5px;
+  padding: 6px 32px;
+
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: center;
+  color: $d-purple;
+  transition: 0.5s;
+}
+
+.button-solid:hover {
+  // opacity: 0.5;
+  background-color: $d-purple;
+  border: 1px solid $l-purple;
+  color: white;
 }
 
 .small-btn {
