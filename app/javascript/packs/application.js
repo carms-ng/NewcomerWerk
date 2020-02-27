@@ -1,4 +1,5 @@
 import "bootstrap";
+import "../plugins/flatpickr"
 
 // const submit = () => {
 //   alert("ooooo")
@@ -10,8 +11,9 @@ import "bootstrap";
 // onclick="window.submit()
 
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
-
 import { initMapbox } from '../plugins/init_mapbox';
+import { loadModal } from '../components/modal'
 
 initMapbox();
+loadModal();
 

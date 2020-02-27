@@ -1,9 +1,6 @@
-<%= simple_form_for([@service, @booking]) do |f| %>
-  <%= f.input :start %>
-  <%= f.input :end %>
-  <%= f.input :message %>
-  <%= f.submit 'Book Now', class: 'button-solid' %>
+<%= simple_form_for [@service, @booking] do |f| %>
+   <%= f.input :start, as: :string, required: false, input_html: {class: "datepicker"} %>
+   <%= f.input :end, as: :string, required: false, input_html: {class: "datepicker"} %>
+   <%= f.input :message %>
+   <%= f.button :submit, "Book now", class: "button-solid" %>
 <% end %>
-
-
-

@@ -3,12 +3,17 @@
 @import "avatar";
 @import "button";
 @import "card";
+@import "container";
+@import "footer";
 @import "form";
+@import "map";
+@import "modal";
 @import "navbar";
 @import "profile_card";
 @import "search";
 @import "tabs";
-@import "footer";
-@import "container";
-@import "map";
 
+.carousel-inner{
+  width:100%;
+  max-height: 600px !important;
+}
