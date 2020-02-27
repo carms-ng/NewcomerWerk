@@ -18,26 +18,21 @@
     <div class="profile-card-reviews">
       <!-- Tab headers -->
       <div class="tab-header">
-        <h3 id="tab-review-received"><%= link_to "Review Received" %> (<%= @reviews_received.length %>)</h3>
-        <h3 id="tab-review-written"><%= link_to "Review Written" %> (<%= @reviews_written.length %>)</h3>
+        <span id="tab-review-received" onclick="window.receivedReview()">Review Received (<%= @reviews_received.length %>)</span>
+        <span id="tab-review-written" onclick="window.writtenReview()">Review Written (<%= @reviews_written.length %>)</span>
       </div>
 
       <!-- Reviews -->
-      <div class="writtent-review">
+      <div class="written-review">
       <!-- Writtent Reviews -->
-      <div id="reviews-writtent">
-        <% @reviews_written.each do |r| %>
-          <p><%= r.rating %></p>
-          <p>written by <%= r.user.first_name %></p>
-        <% end %>
-      </div>
+        <div id="reviews-written" style="display: block;">
+          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam voluptatibus odio aliquid, amet eius ut architecto, quas magni sunt provident voluptates reprehenderit blanditiis distinctio quam! Nihil, sit voluptatem aliquid minima?</h2>
+        </div>
+
 
       <!-- Received Reviews -->
-      <div id="received-review">
-        <% @reviews_received.each do |r| %>
-          <p><%= r.rating %></p>
-          <p>written by <%= r.user.first_name %></p>
-        <% end %>
+      <div id="received-review" style="display: none;">
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur corrupti molestiae perspiciatis voluptas sequi eum voluptatibus quibusdam ducimus rerum voluptates recusandae, at, repellendus nostrum cum beatae, necessitatibus corporis provident assumenda.</h2>
       </div>
     </div>
 </div>
