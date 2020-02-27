@@ -1,6 +1,7 @@
 .button {
   width: 250px;
-  background: $white;
+  height: 65px;
+  background: $d-purple;
   border: 1px solid $d-purple;
   border-radius: 5px;
   padding: 6px 32px;
@@ -11,12 +12,12 @@
   font-size: 24px;
   line-height: 35px;
   text-align: center;
-  color: $d-purple;
+  color: $white;
 }
 
 .button:hover {
-  background-color: $d-purple;
-  color: $white;
+  background-color: $white;
+  color: $d-purple;
 }
 
 .button-solid {
@@ -32,7 +33,7 @@
   font-size: 24px;
   line-height: 35px;
   text-align: center;
-  color: $d-purple;
+  color: $white;
   transition: 0.5s;
 }
 

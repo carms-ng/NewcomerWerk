@@ -1,64 +1,39 @@
-
-<div class="container">
-  <div class="profile-container">
-    <div class="profile-card">
-      <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill, class: "profile-avatar" %>
-      <% end %>
-      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-      <div class="profile-card-location">
-        <h4>Location: <span><%= @user.location %></span></h4>
-      </div>
-      <div class="profile-card-description">
-        <h4>About:</h4>
-        <p><%= @user.description %></p>
-      </div>
-
-      <h4><%= link_to "Edit Profile", edit_user_registration_path, class: "button" %></h4>
+<div class="profile-container">
+  <div class="profile-card">
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill, class: "profile-avatar" %>
+    <% end %>
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+    <div class="profile-card-location">
+      <h4>Location: <span><%= @user.location %></span></h4>
     </div>
+    <div class="profile-card-description">
+      <h4>About:</h4>
+      <p><%= @user.description %></p>
+    </div>
+
+    <h4><%= link_to "Edit Profile", edit_user_registration_path, class: "button" %></h4>
   </div>
-
-<div class="review-container">
-  <div class="profile-card-reviews">
-    <!-- Tab headers -->
-    <div class="tab-header">
-      <h3 class="bar-item">Review Received (<%= @reviews_received.length %>)</h3>
-      <h3 class="bar-item">Review Written (<%= @reviews_written.length %>)</h3>
-    </div>
-
-    <!-- Reviews -->
-    <div class="review">
-    <!-- Writtent Reviews -->
-      <div id="reviews-writtent">
-        <% @reviews_written.each do |r| %>
-          <p><%= r.rating %></p>
-          <p>written by <%= r.user.first_name %></p>
-        <% end %>
-      </div>
-
-      <!-- Writtent Reviews -->
-      <div id="received-review">
-        <% @reviews_received.each do |r| %>
-          <p><%= r.rating %></p>
-          <p>written by <%= r.user.first_name %></p>
-        <% end %>
-      </div>
-      
-  <div class="review-container">
+  <!-- Review Card -->
     <div class="profile-card-reviews">
-      <h3>Review Written (<%= @reviews_written.length %>)</h3>
+      <!-- Tab headers -->
+      <div class="tab-header">
+        <span id="tab-review-received" onclick="window.receivedReview()">Review Received (<%= @reviews_received.length %>)</span>
+        <span id="tab-review-written" onclick="window.writtenReview()">Review Written (<%= @reviews_written.length %>)</span>
+      </div>
 
-      <% @reviews_written.each do |r| %>
-        <p><%= r.rating %></p>
-        <p>written by <%= r.user.first_name %></p>
-      <% end %>
+      <!-- Reviews -->
+      <div class="written-review">
+      <!-- Writtent Reviews -->
+        <div id="reviews-written" style="display: block;">
+          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam voluptatibus odio aliquid, amet eius ut architecto, quas magni sunt provident voluptates reprehenderit blanditiis distinctio quam! Nihil, sit voluptatem aliquid minima?</h2>
+        </div>
 
-      <h3>Review Received (<%= @reviews_received.length %>)</h3>
 
-      <% @reviews_received.each do |r| %>
-        <p><%= r.rating %></p>
-        <p>written by <%= r.user.first_name %></p>
-      <% end %>
+      <!-- Received Reviews -->
+      <div id="received-review" style="display: none;">
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur corrupti molestiae perspiciatis voluptas sequi eum voluptatibus quibusdam ducimus rerum voluptates recusandae, at, repellendus nostrum cum beatae, necessitatibus corporis provident assumenda.</h2>
+      </div>
     </div>
-  </div>
 </div>
+
