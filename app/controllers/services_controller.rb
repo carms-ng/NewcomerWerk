@@ -8,7 +8,8 @@ class ServicesController < ApplicationController
     @markers = @services.map do |s|
       {
         lat: s.latitude,
-        lng: s.longitude
+        lng: s.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { service: s })
       }
     end
   end
