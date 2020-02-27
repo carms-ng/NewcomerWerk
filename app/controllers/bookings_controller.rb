@@ -22,12 +22,8 @@ class BookingsController < ApplicationController
     @booking.service = @service
     # assign current_user to booking's user
     @booking.user = current_user
-    if @booking.save
-      # Changes
-      # maybe change it to redirect to the dashbord
-      redirect_to service_path(@service)
-    else
-      render :new
+    if !@booking.save
+      render "services/show"
     end
   end
 
@@ -69,8 +65,8 @@ class BookingsController < ApplicationController
   end
 
   def secure_params
-    params[:booking][:start] = DateTime.new(params[:booking]['start(1i)'].to_i, params[:booking]['start(2i)'].to_i, params[:booking]['start(3i)'].to_i, params[:booking]['start(4i)'].to_i, params[:booking]['start(5i)'].to_i)
-    params[:booking][:end] = DateTime.new(params[:booking]['end(1i)'].to_i, params[:booking]['end(2i)'].to_i, params[:booking]['end(3i)'].to_i, params[:booking]['end(4i)'].to_i, params[:booking]['end(5i)'].to_i)
+    params[:booking][:start] = DateTime.parse(params[:booking]['start'])
+    params[:booking][:end] = DateTime.parse(params[:booking]['end'])
     params.require(:booking).permit(:start, :end, :message)
   end
 end
