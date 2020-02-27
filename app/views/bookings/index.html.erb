@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="my-container">
 
   <h2>[Incoming] Bookings I've got from people who booked my service</h2>
     <% @bookings_for_you.each do |b| %>
@@ -28,9 +28,7 @@
       <%= link_to 'Completed', complete_path(b), method: :patch, class: 'small-btn' %>
     <% end %>
 
-</div>
 
-<div class="container">
     <h2>[Outgoing] Bookings that I created</h2>
     <% @bookings_by_you.each do |b| %>
       <h3><%= b.service.title %></h3>
