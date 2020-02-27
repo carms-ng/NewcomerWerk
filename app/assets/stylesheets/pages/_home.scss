@@ -12,20 +12,31 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  // font-size: 32px;
   font-weight: bold;
 }
 
-.banner p {
-  font-size: 20px;
+.banner h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 30px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
+.bg-quote {
+  background-color: $l-purple;
+  padding: 70px;
+
+
+  h2 {
+    margin-bottom: 30px;
+  }
+}
 
 .content-card img {
-height: 100px;
+  height: 100px;
 }
 
 .body-content {
@@ -33,13 +44,11 @@ height: 100px;
     margin: auto;
 }
 
-
 .content-cards {
     display: flex;
     justify-content: space-between;
     margin: 30px;
 }
-
 
 .content-card {
     width: 200px;
