@@ -1,0 +1,60 @@
+.requests {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.requests-card {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  margin: 20px;
+  border-top: 16px;
+  background: #f8f9fa;
+  padding: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: white;
+  border-radius: 5px;
+  padding: 25px;
+  cursor: pointer;
+  img {
+    width: 400;
+    height: 300;
+    object-fit: cover;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.details {
+  margin: 30px;
+  flex-grow: 1;
+}
+
+.aligned-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-links {
+  position: absolute;
+
+  right: 10px;
+  bottom: 20px;
+}
+
+.provider {
+  position: absolute;
+  right: 10px;
+  top: 25px;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+
+  h6{
+    margin-right: 8px;
+  }
+}
