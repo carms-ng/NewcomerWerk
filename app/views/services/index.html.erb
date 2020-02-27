@@ -1,12 +1,14 @@
 <!-- Small Banner -->
 
 <div class="my-container">
-  <% if @keyword.nil? %>
-    <h1>See All Our Unlicensed Talents</h1>
-  <% else %>
-    <h1>Search Result: <%= @keyword.capitalize %></h1>
-    <h3><%= @services.length %> Unlicensed Talents found</h3>
-  <% end %>
+  <div id="search-header">
+    <% if @keyword.nil? %>
+      <h1>See All Our Unlicensed Talents</h1>
+    <% else %>
+      <h1>Search Result: <%= @keyword.capitalize %></h1>
+      <h5><%= @services.length %> Unlicensed Talents found</h5>
+    <% end %>
+  </div>
 
 
   <div class="box-result">
@@ -18,7 +20,7 @@
             <% if service.photos.empty? %>
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j" alt="unlicensed">
             <% else %>
-              <%= cl_image_tag service.photos.first.key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag service.photos.first.key, height: 200, width: 300, crop: :fill %>
             <% end %>
 
             <div class="card-long-info">
@@ -28,14 +30,18 @@
                 </h3>
               <% end %>
               <h6><%= service.address %></h6>
-
-              <p><%= service.description %></p>
+              <p><%= truncate(service.description, length: 150) %></p>
               <p><%= service.years_experience %> Years of Experience</p>
               <div id="price">
                 <p>$<%= service.rate %>/hour</p>
               </div>
               <div id="rating">
-                <p>##<i class="fas fa-star"></i></p>
+                <% if service.average_rating.nil? %>
+                  <p>No reviews yet</p>
+                <% else %>
+                  <% raise %>
+                  <p><%= service.average_rating %><i class="fas fa-star"></i></p>
+                <% end %>
               </div>
 
               <div id="provider">
@@ -52,8 +58,6 @@
               </div>
             </div>
 
-
-
           </div>
         <% end %>
       <% end %>
@@ -61,9 +65,9 @@
 
   <!-- map stick to the right -->
     <div
-    class="map-placeholder"
+    class="map-right"
     id="map"
-    style="width: 800px;
+    style="width: 1000px;
     height: 100vh;
     position: sticky;
     top: 0;"

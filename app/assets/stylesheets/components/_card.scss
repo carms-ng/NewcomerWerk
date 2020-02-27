@@ -2,15 +2,22 @@ a {
   text-decoration: none !important;
 }
 
+h1 {
+  margin: 10px 0;
+}
+
+#search-header {
+  margin-top: 80px;
+  margin-left: 40px;
+}
 
 .box-result {
+  margin-top: 20px;
   display: flex;
 }
 
-.map-placeholder {
-  height: 100vh;
-  position: sticky;
-  top: 0;
+.map-right {
+  margin-right: 40px;
 }
 
 .cards-left {
@@ -21,7 +28,7 @@ a {
   border-radius: 5px;
   box-shadow: 4px 4px 8px $l-purple;
   padding: 25px;
-  margin: 0px 15px 15px 15px;
+  margin: 0px 40px 40px 40px;
   display: flex;
   cursor: pointer;
 

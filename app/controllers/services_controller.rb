@@ -45,7 +45,6 @@ class ServicesController < ApplicationController
     @bookings = @service.bookings
     @mybooking = @service.bookings.find_by(user: current_user)
     @reviews = Review.joins(:booking).where(bookings: { service: @service })
-    average_ratings
   end
 
   def edit
@@ -65,12 +64,8 @@ class ServicesController < ApplicationController
     redirect_to services_path
   end
 
+
   private
-
-  def average_ratings
-   @average_ratings = @service.reviews.average(:rating)
-
-  end
 
   def search
     @keyword = params[:search]
