@@ -8,7 +8,9 @@ class ServicesController < ApplicationController
     @markers = @services.map do |s|
       {
         lat: s.latitude,
-        lng: s.longitude
+        lng: s.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { service: s }),
+        image_url: 'https://image.flaticon.com/icons/svg/447/447031.svg'
       }
     end
   end
@@ -16,7 +18,7 @@ class ServicesController < ApplicationController
   def index
     geocode
     if params[:search].nil?
-      @services = Service.all
+      @services = Service.geocoded
     else
       search
     end
