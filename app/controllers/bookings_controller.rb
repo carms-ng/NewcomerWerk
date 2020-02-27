@@ -69,8 +69,8 @@ class BookingsController < ApplicationController
   end
 
   def secure_params
-    params[:booking][:start] = DateTime.new(params[:booking]['start(1i)'].to_i, params[:booking]['start(2i)'].to_i, params[:booking]['start(3i)'].to_i, params[:booking]['start(4i)'].to_i, params[:booking]['start(5i)'].to_i)
-    params[:booking][:end] = DateTime.new(params[:booking]['end(1i)'].to_i, params[:booking]['end(2i)'].to_i, params[:booking]['end(3i)'].to_i, params[:booking]['end(4i)'].to_i, params[:booking]['end(5i)'].to_i)
+    params[:booking][:start] = DateTime.parse(params[:booking]['start'])
+    params[:booking][:end] = DateTime.parse(params[:booking]['end'])
     params.require(:booking).permit(:start, :end, :message)
   end
 end
