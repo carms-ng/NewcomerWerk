@@ -1,34 +1,30 @@
-
-<div class="container">
-  <div class="profile-container">
-    <div class="profile-card">
-      <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill, class: "profile-avatar" %>
-      <% end %>
-      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-      <div class="profile-card-location">
-        <h4>Location: <span><%= @user.location %></span></h4>
-      </div>
-      <div class="profile-card-description">
-        <h4>About:</h4>
-        <p><%= @user.description %></p>
-      </div>
-
-      <h4><%= link_to "Edit Profile", edit_user_registration_path, class: "button" %></h4>
+<div class="profile-container">
+  <div class="profile-card">
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill, class: "profile-avatar" %>
+    <% end %>
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+    <div class="profile-card-location">
+      <h4>Location: <span><%= @user.location %></span></h4>
     </div>
+    <div class="profile-card-description">
+      <h4>About:</h4>
+      <p><%= @user.description %></p>
+    </div>
+
+    <h4><%= link_to "Edit Profile", edit_user_registration_path, class: "button" %></h4>
   </div>
+  <!-- Review Card -->
+    <div class="profile-card-reviews">
+      <!-- Tab headers -->
+      <div class="tab-header">
+        <h3 id="tab-review-received"><%= link_to "Review Received" %> (<%= @reviews_received.length %>)</h3>
+        <h3 id="tab-review-written"><%= link_to "Review Written" %> (<%= @reviews_written.length %>)</h3>
+      </div>
 
-<div class="review-container">
-  <div class="profile-card-reviews">
-    <!-- Tab headers -->
-    <div class="tab-header">
-      <h3 class="bar-item">Review Received (<%= @reviews_received.length %>)</h3>
-      <h3 class="bar-item">Review Written (<%= @reviews_written.length %>)</h3>
-    </div>
-
-    <!-- Reviews -->
-    <div class="review">
-    <!-- Writtent Reviews -->
+      <!-- Reviews -->
+      <div class="writtent-review">
+      <!-- Writtent Reviews -->
       <div id="reviews-writtent">
         <% @reviews_written.each do |r| %>
           <p><%= r.rating %></p>
@@ -44,5 +40,5 @@
         <% end %>
       </div>
     </div>
-  </div>
 </div>
+
