@@ -14,7 +14,7 @@
     <div class="cards-left">
       <% @services.each do |service| %>
         <%= link_to service_path(service) do %>
-          <div class="card-long">
+          <div class="card-long" data-lat="<%= service.latitude %>" data-lng="<%= service.longitude %>">
             <% if service.photos.empty? %>
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j" alt="unlicensed">
             <% else %>
@@ -63,7 +63,7 @@
     <div
     class="map-placeholder"
     id="map"
-    style="width: 500px;
+    style="width: 800px;
     height: 100vh;
     position: sticky;
     top: 0;"
