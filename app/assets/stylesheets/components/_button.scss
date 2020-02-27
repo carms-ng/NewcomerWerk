@@ -1,7 +1,7 @@
 .button {
   width: 250px;
   height: 65px;
-  background: $white;
+  background: $d-purple;
   border: 1px solid $d-purple;
   border-radius: 5px;
   padding: 6px 32px;
@@ -12,7 +12,7 @@
   font-size: 24px;
   line-height: 35px;
   text-align: center;
-  color: $d-purple;
+  color: $white;
 }
 
 .button:hover {
