@@ -31,6 +31,7 @@
 }
 
 #service-link {
+  display: flex;
   a {
     margin-right: 10px;
   }
@@ -67,4 +68,42 @@
 .formboxcenter {
   margin-top: 70px;
   margin-bottom: 25px;
+}
+
+.carousel-container {
+  padding-left: 200px;
+  padding-right: 200px;
+  margin-top: 40px;
+  padding-top: 50px;
+}
+
+.carousel-item-picture {
+  height: 400px;
+  object-fit: cover;
+}
+
+.button-format {
+  height: 15px;
+  width: 15px;
+}
+
+.button-service {
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 3px;
+  border: 1px solid #150A17;
+  padding-left: 5px;
+  padding-top: 1px;
+  color:black;
+
+  .fa-edit {
+    text-decoration: none;
+    color: black;
+  }
+
+  .fa-trash-alt {
+    text-decoration: none;
+    color: black;
+  }
 }
