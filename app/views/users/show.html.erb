@@ -18,6 +18,32 @@
     </div>
   </div>
 
+<div class="review-container">
+  <div class="profile-card-reviews">
+    <!-- Tab headers -->
+    <div class="tab-header">
+      <h3 class="bar-item">Review Received (<%= @reviews_received.length %>)</h3>
+      <h3 class="bar-item">Review Written (<%= @reviews_written.length %>)</h3>
+    </div>
+
+    <!-- Reviews -->
+    <div class="review">
+    <!-- Writtent Reviews -->
+      <div id="reviews-writtent">
+        <% @reviews_written.each do |r| %>
+          <p><%= r.rating %></p>
+          <p>written by <%= r.user.first_name %></p>
+        <% end %>
+      </div>
+
+      <!-- Writtent Reviews -->
+      <div id="received-review">
+        <% @reviews_received.each do |r| %>
+          <p><%= r.rating %></p>
+          <p>written by <%= r.user.first_name %></p>
+        <% end %>
+      </div>
+      
   <div class="review-container">
     <div class="profile-card-reviews">
       <h3>Review Written (<%= @reviews_written.length %>)</h3>

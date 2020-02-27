@@ -1,4 +1,3 @@
-
 <div class="formboxcenter">
   <div class="formbox">
     <%= simple_form_for(@service) do |f| %>
@@ -8,9 +7,7 @@
       <%= f.input :years_experience %>
       <%= f.input :address %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <div class="button-center">
-        <%= f.submit %>
-      </div>
+      <%= f.submit 'Add service', class: "button-center button"%>
     <% end %>
   </div>
 </div>
