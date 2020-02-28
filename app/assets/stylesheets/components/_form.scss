@@ -1,3 +1,25 @@
+.review-box {
+  margin-top: 80px;
+  background: white;
+  text-align: center;
+  border: 1px solid #230444;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 20px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+}
+
+.review-provider h6 {
+  margin-top: 10px;
+  color: $d-purple;
+  font-size: 24px;
+
+}
+
 .formboxcenter{
   display: flex;
   justify-content: center;
