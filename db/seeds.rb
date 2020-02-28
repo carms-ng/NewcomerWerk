@@ -55,9 +55,8 @@ file = URI.open('https://richmondmom.com/wp-content/uploads/2015/12/midwife.jpg'
 Midwife = Service.new(title: 'Experimented Midwife', description: 'As a practicing midwife and technical
   advisor on global health programs, I have met midwives throughout Africa, Southeast Asia, and beyond in very
   low-resource settings and challenging circumstances, working hard every day to ensure women and newborns receive
-  the high-quality care they deserve.', rate: 100, years_experience: 20, address: "5282 Boul St-Laurent" )
+  the high-quality care they deserve.', rate: 100, years_experience: 20, address: "5282 St-Laurent, Montreal" )
 Midwife.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
 
 
 file = URI.open('https://wheelandphotography.com/wp-content/uploads/2016/04/travis_barton_life_coach_0002.jpg')
@@ -76,8 +75,8 @@ They say that Leaders are born, not made. But with the right Life Coach true lea
 rate: 90, years_experience: 2, address: "88 Rue Bernard O" )
 Lifecoach2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-file = URI.open('https://image.shutterstock.com/image-photo/life-coach-260nw-622780112.jpg')
-Lifecoach3 = Service.new(title: 'Life Coach love', description: 'I AM Life Coaching
+file = URI.open('https://www.rhodescollege.ca/wp-content/uploads/2017/02/Define-Your-Niche-After-Life-Coaching-School.jpg')
+Lifecoach3 = Service.new(title: 'Life Coach', description: 'I AM Life Coaching
 Corporate and Personal Life Coaching
 Empowering holistic healing and corporate wellness.
 They say that Leaders are born, not made. But with the right Life Coach true leaders are awakened to walk their journey!',
@@ -88,18 +87,30 @@ file = URI.open('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2F
 Midwife2 = Service.new(title: 'Dreamy Midwife', description: 'As a practicing midwife and technical
   advisor on global health programs, I have met midwives throughout Africa, Southeast Asia, and beyond in very
   low-resource settings and challenging circumstances, working hard every day to ensure women and newborns receive
-  the high-quality care they deserve.', rate: 200, years_experience: 20, address: "176 Saint Viateur West Street")
+  the high-quality care they deserve.', rate: 200, years_experience: 20, address: "5333 Ave Casgrain, Montreal")
 Midwife2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-file = URI.open('https://image.shutterstock.com/image-photo/blond-young-midwife-examination-belly-260nw-1157403862.jpg')
+file = URI.open('https://asiapacific.unfpa.org/sites/default/files/styles/news_detail_style/public/news/IMG_3511.jpg?itok=pshcgHXC')
 Midwife3 = Service.new(title: 'Best Midwife', description: 'As a practicing midwife and technical
   advisor on global health programs, I have met midwives throughout Africa, Southeast Asia, and beyond in very
   low-resource settings and challenging circumstances, working hard every day to ensure women and newborns receive
   the high-quality care they deserve.', rate: 140, years_experience: 20, address: "9 Fairmount Ave E")
 Midwife3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-Lifecoach3.user = Oliver
-Lifecoach3.save!
+file = URI.open('https://cliniqueremixsante.com/wp-content/uploads/2015/03/massotherapie.jpg')
+MassageTherapist = Service.create!(user: Oliver, title: 'Best Massage Therapist',rate: 100, years_experience: 20, address: "9 Fairmount Ave E",description: 'In traditional therapeutic massage the muscles or muscle groups when too tight are stimulated in conjunction with acupressure points using directional movements; either trenching , cross hatching or pressing and running motions.', rate: 100, years_experience: 20, address: "760 Rue Saint-Zotique E")
+MassageTherapist.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+file = URI.open('https://cliniqueremixsante.com/wp-content/uploads/2015/03/massotherapie.jpg')
+MassageTherapist2 = Service.create!(user: Jamie, title: 'Experienced Massage Therapist',rate: 100, years_experience: 20, address: "50 Fairmount Ave E",description: 'In traditional therapeutic massage the muscles or muscle groups when too tight are stimulated in conjunction with acupressure points using directional movements; either trenching , cross hatching or pressing and running motions.', rate: 100, years_experience: 20, address: "760 Rue Saint-Zotique E")
+MassageTherapist2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+booking1 = Booking.create!(service: MassageTherapist, user: Marion, start: Time.now, end: Time.now, message: "In traditional therapeutic massage the muscles or muscle groups when too tight are stimulated in conjunction with acupressure points using directional movements; either trenching , cross hatching or pressing and running motions.")
+booking2 = Booking.create!(service: MassageTherapist2, user: Priyanka, start: Time.now, end: Time.now, message: "In traditional therapeutic massage the muscles or muscle groups when too tight are stimulated in conjunction with acupressure points using directional movements; either trenching , cross hatching or pressing and running motions.")
+
+review2 = Review.create!(rating: 4, booking_id: booking2.id, content:"Jamie was really amazing, she helped me relax, I appreciated so much her calming hands")
+review1 = Review.create!(rating: 1, booking_id: booking1.id, content:"I went to Oliver's place to get a massage because I was feeling stressed and had some tension in my back... I specificaly asked him to massage only my back, but he spent the entire hour massaging my feet. I felt very embarassed! Plus, his cat
+  jumped on me a couple of time, so it wasnt relaxing, and I came out more stressed then before I came in.... Not a good experience at all !" )
 
 Lifecoach2.user = Jamie
 Lifecoach2.save!
@@ -115,27 +126,6 @@ Midwife.save!
 
 Lifecoach.user = Morgan
 Lifecoach.save!
-
-
-20.times do
-  user = User.create(first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: '123456',
-    location: ['Montreal', 'Toronto', 'Vancouver'].sample)
-    file = URI.open('https://source.unsplash.com/featured/?people')
-    user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
-  rand(1..10).times do
-    service = Service.new(title: Faker::Job.field ,description: Faker::Hacker.say_something_smart,
-      rate: rand(10..300), years_experience: rand(1..7))
-    file = URI.open('https://source.unsplash.com/featured/?health')
-    service.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-    service.user = user
-    service.save!
-  end
-end
-
 
 puts "Seeding done!"
 
