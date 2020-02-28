@@ -7,12 +7,15 @@ h1 {
 }
 
 #search-header {
-  margin-top: 80px;
-  margin-left: 40px;
+  padding: 100px 0;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1450609283058-0ec52fa7eac4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  // background-color: $d-purple;
+  color: white;
+  text-align: center;
 }
 
 .box-result {
-  margin-top: 20px;
+  margin-top: 40px;
   display: flex;
 }
 
@@ -25,12 +28,13 @@ h1 {
 }
 .card-long {
   background-color: white;
-  border-radius: 5px;
-  box-shadow: 4px 4px 8px $l-purple;
+  border-radius: 8px;
+  // box-shadow: 4px 4px 8px $l-purple;
   padding: 25px;
   margin: 0px 40px 40px 40px;
   display: flex;
   cursor: pointer;
+  border: 1px solid #230444;
 
   img {
     width: 400;
