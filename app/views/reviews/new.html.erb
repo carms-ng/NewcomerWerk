@@ -1,8 +1,27 @@
-<h1>Create a review</h1>
-<div class="form-box">
-  <%= simple_form_for([@booking, @review]) do |f| %>
-  <%= f.input :rating %>
-  <%= f.input :content %>
-  <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <div class="review-box">
+        <h1>Leave a review</h1>
+
+        <div class="review-provider">
+          <%= link_to user_path(@booking.service.user) do %>
+            <% if @booking.service.user.photo.attached? %>
+              <%= cl_image_tag @booking.service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar-large' %>
+            <% else %>
+              <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: 'avatar-large' %>
+            <% end %>
+            <h6><%= @booking.service.user.full_name %></h6>
+          <% end %>
+        </div>
+
+        <%= simple_form_for([@booking, @review]) do |f| %>
+              <%= f.input :rating, placeholder: 'Enter Rating: (1-5) 5 is amazing; 1 is meh.', label: false %>
+              <%= f.input :content, placeholder: 'Enter Feedback: What do you think about their service?', label: false %>
+              <%= f.submit "Add Review", class: 'small-btn' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
