@@ -15,8 +15,11 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { loadModal } from '../components/modal';
 import { receivedReview, writtenReview } from '../plugins/init_tabs';
 
+import { effect } from '../components/buttons_effects';
+
 initMapbox();
 loadModal();
+effect();
 
 window.receivedReview = receivedReview
 window.writtenReview = writtenReview
