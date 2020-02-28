@@ -39,7 +39,6 @@
                 <% if service.average_rating.nil? %>
                   <p>No reviews yet</p>
                 <% else %>
-                  <% raise %>
                   <p><%= service.average_rating %><i class="fas fa-star"></i></p>
                 <% end %>
               </div>
