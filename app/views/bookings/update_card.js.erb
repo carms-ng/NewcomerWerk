@@ -1,2 +1,9 @@
-booking_card = document.querySelector("#booking-<%= @booking.id %>");
-booking_card.innerHTML = "<%= j render 'incoming_card', b: @booking %>";
+outgoingCard = document.querySelector("#outgoing-<%= @booking.id %>");
+incomingCard = document.querySelector("#incoming-<%= @booking.id %>");
+
+if (outgoingCard) {
+  outgoingCard.innerHTML = "<%= j render 'outgoing_card', b: @booking %>";
+} else {
+  incomingCard.innerHTML = "<%= j render 'incoming_card', b: @booking %>";
+}
+

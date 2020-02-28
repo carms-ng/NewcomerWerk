@@ -48,14 +48,11 @@
           <% end %>
         </span>
       </p>
-
     </div>
-
 
     <div class="buttons-links">
       <%= link_to 'Accept', accept_path(b), method: :patch, class: 'small-btn', id: 'accept', remote: true %>
       <%= link_to 'Decline', decline_path(b), method: :patch, class: 'small-btn', remote: true %>
-      <%= link_to 'Completed', complete_path(b), method: :patch, class: 'small-btn', remote: true %>
     </div>
 
   </div>
