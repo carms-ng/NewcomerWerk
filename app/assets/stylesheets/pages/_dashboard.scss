@@ -60,17 +60,15 @@
 }
 
 .buttons-links {
-  margin-top: 6px;
+  margin-top: 20px;
   display: flex;
 }
 
 .provider {
   display: flex;
   flex-grow: 1;
-  a {
-    display: flex;
-    align-items: center;
-  }
+  justify-content: space-between;
+
   .avatar {
     width: 50px;
     height: 50px;

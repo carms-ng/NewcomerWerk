@@ -22,16 +22,16 @@
 
   <div class="details">
 
-    <div class="provider">
-      <%= link_to user_path(b.service.user) do %>
-        <h6><%= b.service.user.first_name %> <%= b.service.user.last_name %></h6>
-        <% if b.service.user.photo.attached? %>
-          <%= cl_image_tag b.service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar' %>
-        <% else %>
-          <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% end %>
-      <% end %>
-    </div>
+    <%= link_to user_path(b.service.user) do %>
+      <div class="provider">
+          <h6><%= b.service.user.first_name %> <%= b.service.user.last_name %></h6>
+          <% if b.service.user.photo.attached? %>
+            <%= cl_image_tag b.service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar' %>
+          <% else %>
+            <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+      </div>
+    <% end %>
     <div class="aligned-title">
       <p>Address: <%= b.service.address %></p>
       <p>Date: <%= b.start.to_date %></p>
@@ -46,8 +46,18 @@
         </span>
       </p>
     </div>
+
+    <div class="buttons-links">
+      <% if b.completed %>
+        <%= link_to 'Leave a Review', new_booking_review_path(b), class: 'small-btn' %>
+      <% else %>
+        <%= link_to 'Completed', complete_path(b), method: :patch, class: 'small-btn', remote: true %>
+      <% end %>
+    </div>
   </div>
 
+</div>
 
+<div class="bg-modal">
 
 </div>
