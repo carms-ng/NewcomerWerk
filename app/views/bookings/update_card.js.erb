@@ -1,0 +1,2 @@
+booking_card = document.querySelector("#booking-<%= @booking.id %>");
+booking_card.innerHTML = "<%= j render 'incoming_card', b: @booking %>";

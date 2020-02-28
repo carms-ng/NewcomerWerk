@@ -1,0 +1,59 @@
+<% if b.status == "Accepted" %>
+  <div class="requests-card" style="box-shadow: 0 0 15px #230444;">
+<% else %>
+  <div class="requests-card">
+<% end %>
+  <% if b.service.photos.empty? %>
+    <div class="backgroun-image" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j)">
+
+
+    </div>
+  <% else %>
+    <div class="backgroun-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path b.service.photos.first.key %>)">
+    <h3><%= b.service.title %></h3>
+
+
+    </div>
+  <% end %>
+
+  <div class="details">
+
+    <div class="provider">
+      <%= link_to user_path(b.user) do %>
+        <h6><%= b.user.first_name %> <%= b.user.last_name %></h6>
+        <% if b.user.photo.attached? %>
+          <%= cl_image_tag b.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar' %>
+        <% else %>
+          <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="aligned-title">
+
+      <p>Address: <%= b.service.address %></p>
+      <p>Date: <%= b.start.to_date %></p>
+      <p>Message: <%= b.message %></p>
+      <p>Status: <%= b.status %></p>
+      <p>Completed
+        <span>
+          <% if b.completed %>
+            <i class="far fa-check-square"></i>
+          <% else %>
+            <i class="far fa-square"></i>
+          <% end %>
+        </span>
+      </p>
+
+    </div>
+
+
+    <div class="buttons-links">
+      <%= link_to 'Accept', accept_path(b), method: :patch, class: 'small-btn', id: 'accept', remote: true %>
+      <%= link_to 'Decline', decline_path(b), method: :patch, class: 'small-btn', remote: true %>
+      <%= link_to 'Completed', complete_path(b), method: :patch, class: 'small-btn', remote: true %>
+    </div>
+
+  </div>
+
+</div>

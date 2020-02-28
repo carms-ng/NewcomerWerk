@@ -43,19 +43,19 @@ class BookingsController < ApplicationController
   def mark_as_accepted
     @booking.accepted!
     @booking.save
-    redirect_to dashboard_path
+    render "update_card"
   end
 
   def mark_as_declined
     @booking.declined!
     @booking.save
-    redirect_to dashboard_path
+    render "update_card"
   end
 
   def mark_as_completed
     @booking.completed!
     @booking.save
-    redirect_to dashboard_path
+    render "update_card"
   end
 
   private
