@@ -5,17 +5,22 @@
   margin-top: 100px;
 }
 .requests-card {
+  border: 1px solid $light-gray;
+  border-radius: 8px;
   display: grid;
   grid-template-columns: 40% 1fr;
   position: relative;
   width: 700px;
   margin: 20px;
-  border-top: 16px;
+  // border-top: 16px;
   background: #f8f9fa;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background-color: white;
-  border-radius: 5px;
-  cursor: pointer;
+
+  a {
+    padding
+  }
+
   .img-grid {
     width: 100%;
     height: 300px;

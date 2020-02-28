@@ -1,19 +1,23 @@
+<!-- Effect to highlighted accepted bookings  -->
 <% if b.status == "Accepted" %>
-  <div class="requests-card" style="box-shadow: 0 0 15px #230444;">
+  <div class="requests-card" style="border: 1px solid #230444 !important;">
 <% else %>
   <div class="requests-card">
 <% end %>
-  <% if b.service.photos.empty? %>
-    <div class="backgroun-image" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j)">
 
+  <!-- rander different image depend on attached -->
+  <%= link_to service_path(b.service) do %>
 
-    </div>
-  <% else %>
-    <div class="backgroun-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path b.service.photos.first.key %>)">
-    <h3><%= b.service.title %></h3>
+    <% if b.service.photos.empty? %>
+      <div class="backgroun-image" style="height: 100%; background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j)">
+      <h3><%= b.service.title %></h3>
+      </div>
+    <% else %>
+      <div class="backgroun-image" style="height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path b.service.photos.first.key %>)">
+      <h3><%= b.service.title %></h3>
+      </div>
+    <% end %>
 
-
-    </div>
   <% end %>
 
   <div class="details">
