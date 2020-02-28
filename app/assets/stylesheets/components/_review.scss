@@ -26,8 +26,6 @@
   margin-top: 80px;
   margin-bottom: 24px;
   margin-left: 8px;
-
-  padding-top: 10px;
   text-align: center;
   width: 600px;
   height: 500px;
@@ -38,7 +36,8 @@
 }
 
 .tab-header {
-  width: 500px;
+  width: 600px;
+  display: flex;
   text-align: center;
   margin-bottom: 32px;
 }
@@ -48,21 +47,32 @@
 }
 
 #tab-review-received {
-  width: 300px;
+  width: 299px;
   background: $d-purple;
   color: $white;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 57px;
   padding-right: 57px;
+  border-radius: 8px 0px 0px 0px;
 }
 
 #tab-review-written {
-  width: 300px;
-  background: $d-purple;
-  color: $white;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  width: 299px;
+  background: $white;
+  color: $d-purple;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 57px;
   padding-right: 57px;
+  border-radius: 0px 8px 0px 0px;
 }
+
+#written-review {
+  padding: 10px;
+}
+
+#received-review {
+  padding: 10px;
+}
+
