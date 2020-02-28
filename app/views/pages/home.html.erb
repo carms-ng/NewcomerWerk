@@ -1,47 +1,28 @@
+<% content_for :navbar do %>
+    <%= render 'shared/navbar_home' %>
+<% end %>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1556484687-30636164638b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);">
+<div class="home-banner">
   <div class="container">
-    <h1>Celebrate result delivered, not the papers!</h1>
-    <h3>Get quality services from our unlicensed talents</h3>
+    <div class="banner-content">
+      <h1>The Unlicensed</h1>
+      <h3>Celebrate results. Not papers.</h3>
+      <h6>Find unlicensed talents from your local migrant community now!</h6>
+<!--       <form class="form-inline" method="get" action="/services">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search" id="search-input">
+        <button class="small-btn my-2 my-sm-0" type="submit">Search</button>
+      </form>
+ -->
 
-    <form class="form-inline" method="get" action="/services">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search" id="search-input">
-      <button class="small-btn my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</div>
+      <form class="input-group mb-3" method="get" action="/services">
+        <input type="text" class="form-control" name="search" placeholder="Life Coach, Traditional Healer, Cannabis Magician, etc">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+        </div>
+      </form>
 
-<div class="bg-quote">
-  <div class="container quote-content">
-    <h2>"We connect you to MILLIONS of professionally trained migrants, who can't access decent work due to their status & industry barriers."</h2>
-    <h3> - Nour Souid, CEO of The Unlicensed </h3>
-    <br>
-    <a href="#" class="button">Find Your Local Migrant Community Talents</a>
-  </div>
-</div>
-
-<div class="body-content">
-
-  <div class="content-cards">
-
-
-    <div class="content-card">
-
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
     </div>
-
-    <div class="content-card">
-
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-
-
   </div>
 </div>
+
 

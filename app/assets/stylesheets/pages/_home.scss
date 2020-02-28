@@ -1,32 +1,46 @@
-// Specific CSS for your home-page
-.banner {
+.home-banner {
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1450609283058-0ec52fa7eac4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
   background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-  height: 70vh;
+  // background-position: center;
+  // padding-top: 20vh;
+  height: 100vh;
   display: flex;
   align-items: center;
+  color: #eee;
+  text-align: center;
 }
+.banner-content {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  // font-size: 32px;
-  font-weight: bold;
-}
+  h1 {
+    font-size: 48px;
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    // font-size: 32px;
+    font-weight: bold;
+  }
 
-.banner h3 {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  font-size: 30px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 32px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  h6 {
+    font-size: 24px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+  }
 }
 
 .bg-quote {
-  background-color: $l-purple;
+  // background-color: $l-purple;
   padding: 70px;
 
 
