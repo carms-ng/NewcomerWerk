@@ -39,7 +39,7 @@
 
 .buttons-links {
   position: absolute;
-
+  padding: 20px;
   right: 10px;
   bottom: 20px;
 }
@@ -52,6 +52,7 @@
   a {
     display: flex;
     align-items: center;
+    padding: 20px;
   }
 
   h6{

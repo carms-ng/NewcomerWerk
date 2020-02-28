@@ -2,7 +2,7 @@
 <div class="my-container">
 
   <div class="requests">
-    <h2>[Incoming] Bookings I've got from people who booked my service</h2>
+    <h2>[Incoming Bookings]</h2>
 
     <% @bookings_for_you.each do |b| %>
 
@@ -19,8 +19,8 @@
           <div class="aligned-title">
 
             <h3><%= b.service.title %></h3>
-            <p><%= b.service.address %></p>
-            <p><%= b.start.to_date %></p>
+            <p>Address: <%= b.service.address %></p>
+            <p>Date: <%= b.start.to_date %></p>
             <p>Message: <%= b.message %></p>
             <p>Status: <%= b.status %></p>
             <p>Completed
@@ -39,7 +39,7 @@
             <%= link_to user_path(b.user) do %>
               <h6><%= b.user.first_name %> <%= b.user.last_name %></h6>
               <% if b.service.user.photo.attached? %>
-                <%= cl_image_tag b.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar' %>
+                <%= cl_image_tag b.service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar' %>
               <% else %>
                 <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% end %>
@@ -59,32 +59,51 @@
 
   </div>
 
+  <div class="requests">
 
-  <div class="bookings">
-    <h2>[Outgoing] Bookings that I created</h2>
-    <% @bookings_by_you.each do |b| %>
-      <h3><%= b.service.title %></h3>
-      <p>Service Provider:
-        <span>
-          <%= link_to user_path(b.service.user) do %>
-            <%= b.service.user.first_name %> <%= b.service.user.last_name %>
-          <% end %>
-        </span>
-      </p>
-      <p>Message: <%= b.message %></p>
-      <p>Status: <%= b.status %></p>
-      <p>Completed
-        <span>
-          <% if b.completed %>
-            <i class="far fa-check-square"></i>
+      <h2>[Outgoing Bookings]</h2>
+      <% @bookings_by_you.each do |b| %>
+        <div class="requests-card">
+
+          <% if b.service.photos.empty? %>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j" alt="unlicensed">
           <% else %>
-            <i class="far fa-square"></i>
+            <%= cl_image_tag b.service.photos.first.key, height: 200, width: 300, crop: :fill %>
           <% end %>
-        </span>
-      </p>
-    <% end %>
+          <div class="details">
 
-  </div>
+            <div class="aligned-title">
+              <h3><%= b.service.title %></h3>
+              <p>Address: <%= b.service.address %></p>
+              <p>Date: <%= b.start.to_date %></p>
+              <p>Status: <%= b.status %></p>
+              <p>Completed
+                <span>
+                  <% if b.completed %>
+                    <i class="far fa-check-square"></i>
+                  <% else %>
+                    <i class="far fa-square"></i>
+                  <% end %>
+                </span>
+              </p>
+            </div>
+          </div>
+
+
+          <div class="provider">
+            <%= link_to user_path(b.user) do %>
+              <h6><%= b.service.user.first_name %> <%= b.service.user.last_name %></h6>
+              <% if b.service.user.photo.attached? %>
+                <%= cl_image_tag b.service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar' %>
+              <% else %>
+                <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% end %>
+            <% end %>
+          </div>
+
+        </div>
+
+    <% end %>
 
 </div>
 
