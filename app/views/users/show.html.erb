@@ -26,13 +26,18 @@
       <div class="written-review">
       <!-- Writtent Reviews -->
         <div id="reviews-written" style="display: block;">
-          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam voluptatibus odio aliquid, amet eius ut architecto, quas magni sunt provident voluptates reprehenderit blanditiis distinctio quam! Nihil, sit voluptatem aliquid minima?</h2>
+          <% @reviews_written.each do |r| %>
+            <p><%= r.rating %></p>
+            <p>written by <%= r.user.first_name %></p>
+          <% end %>
         </div>
-
 
       <!-- Received Reviews -->
       <div id="received-review" style="display: none;">
-        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur corrupti molestiae perspiciatis voluptas sequi eum voluptatibus quibusdam ducimus rerum voluptates recusandae, at, repellendus nostrum cum beatae, necessitatibus corporis provident assumenda.</h2>
+        <% @reviews_received.each do |r| %>
+          <p><%= r.rating %></p>
+          <p>written by <%= r.user.first_name %></p>
+        <% end %>
       </div>
     </div>
 </div>
