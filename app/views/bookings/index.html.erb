@@ -9,8 +9,8 @@
         <div class="col-s-12 ">
           <nav>
             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Incoming Bookings(<%=@bookings_by_you.size%>)</a>
-              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Outgoing Bookings(<%=@bookings_for_you.size%>)</a>
+              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Outgoing Bookings(<%=@bookings_by_you.size%>)</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Incoming Bookings(<%=@bookings_for_you.size%>)</a>
             </div>
           </nav>
           <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
@@ -37,7 +37,7 @@
                   <div class="details">
 
                     <div class="provider">
-                      <%= link_to user_path(b.user) do %>
+                      <%= link_to user_path(b.service.user) do %>
                         <h6><%= b.service.user.first_name %> <%= b.service.user.last_name %></h6>
                         <% if b.service.user.photo.attached? %>
                           <%= cl_image_tag b.service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar' %>
@@ -94,8 +94,8 @@
                     <div class="provider">
                       <%= link_to user_path(b.user) do %>
                         <h6><%= b.user.first_name %> <%= b.user.last_name %></h6>
-                        <% if b.service.user.photo.attached? %>
-                          <%= cl_image_tag b.service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar' %>
+                        <% if b.user.photo.attached? %>
+                          <%= cl_image_tag b.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar' %>
                         <% else %>
                           <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                         <% end %>
