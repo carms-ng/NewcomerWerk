@@ -2,25 +2,28 @@
     <%= render 'shared/navbar_home' %>
 <% end %>
 
-<div class="home-banner">
-  <div class="container">
-    <div class="banner-content">
-      <h1>The Unlicensed</h1>
-      <h3>Celebrate results. Not papers.</h3>
-      <h6>Find unlicensed talents from your local migrant community now!</h6>
-<!--       <form class="form-inline" method="get" action="/services">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search" id="search-input">
-        <button class="small-btn my-2 my-sm-0" type="submit">Search</button>
-      </form>
- -->
+<div class="container-home" id="home">
+  <h1 class="tag-line screen-sm">Celebrate results. Not papers.</h1>
+  <div class="home-img">
+    <%= image_tag("undraw_hire_te5y.png") %>
+  </div>
 
-      <form class="input-group mb-3" method="get" action="/services">
-        <input type="text" class="form-control" name="search" placeholder="Life Coach, Traditional Healer, Cannabis Magician, etc">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
-        </div>
-      </form>
-
+  <div class="home-content">
+    <h1 class="tag-line screen-lg">Celebrate results. Not papers.</h1>
+    <ul class="home-list screen-lg">
+      <li>Integrate newcomers into our community</li>
+      <li>Break down institutional barrier to entry</li>
+      <li>Include people of all stories</li>
+    </ul>
+    <div class="home-search">
+        <form method="get" action="/services">
+          <div class="search-input">
+            <p class="search-label">Find Talents Now</p>
+            <span class="iconify" data-icon="ei:search" data-inline="false"></span>
+            <input type="text" class="form-control" name="search" placeholder="Life Coach, Healer, and more">
+          </div>
+          <button class="btn-lg-blue" type="submit">Search</button>
+        </form>
     </div>
   </div>
 </div>

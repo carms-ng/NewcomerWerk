@@ -1,3 +1,29 @@
+// Home Page Navbar revamp
+
+.navbar-home {
+  justify-content: space-between;
+  background: white;
+  padding: 20px;
+}
+
+.nav-logo {
+  color: black;
+  font-family: 'Lobster Two', cursive;
+  font-size: 24px;
+}
+.blue {
+  color: blue !important;
+}
+.nav-item {
+  font-family: 'Roboto Mono', monospace;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+
+
+// During Bootcamp
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -10,16 +36,7 @@
 }
 
 .navbar-home {
-  display: flex;
-  justify-content: space-between !important;
-  background: transparent;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  // border-bottom: 1px solid $d-purple;
-  z-index: 2;
-  height: 60px;
-  // transition: 0.5s background-color ease;
+  color: black;
 }
 
 .navbar-collapse {
