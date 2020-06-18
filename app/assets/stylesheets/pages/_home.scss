@@ -1,6 +1,6 @@
 .container-home {
   width: 100%;
-  padding: 0 5vw;
+  padding: 5vw;
 }
 
 #home h1 {
@@ -87,6 +87,7 @@
   }
 
   .container-home {
+    padding: 0 5vw;
     display: grid;
     grid-template-rows: repeat(3, 30vw);
   }
