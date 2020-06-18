@@ -126,6 +126,8 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
   }
   .home-img {
     grid-column: 2 / -1;
@@ -134,7 +136,6 @@
   .home-content {
     grid-column: 1 / 4;
     grid-row: 1 / -1;
-    // max-width: 500px;
     margin: auto 0;
   }
 }
