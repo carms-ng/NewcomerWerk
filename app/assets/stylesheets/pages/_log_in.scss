@@ -70,7 +70,7 @@
   background: #0000ff;
   color: white !important;
   border: none;
-  width: 30%;
+  width: 40%;
   font-size: 15px;
   height: 50px;
   transition: 0.5s;
@@ -97,6 +97,28 @@
   a:hover {
     border-bottom: 1px solid #0000ff;
     transition: 0.5s;
+  }
+}
+
+/* For a screen < 540px, this CSS will be read */
+@media (max-width: 540px) {
+  .container-login {
+    display: block;
+  }
+  .login-img {
+    img {
+      width: 100vw;
+    }
+  }
+
+  .login-content {
+      width: 100vw;
+  }
+
+  .login-links {
+    a {
+      right: 6%;
+    }
   }
 }
 
