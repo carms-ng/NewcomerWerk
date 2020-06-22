@@ -19,11 +19,9 @@
       <%= render 'shared/navbar' %>
     <% end %>
 
-    <div class="wrapper">
       <%= yield %>
       <%= render 'shared/flashes' %>
       <div class="push"></div>
-    </div>
     <%#= render 'shared/footer' %>
 
     <%= javascript_include_tag 'application' %>
