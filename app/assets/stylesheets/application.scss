@@ -28,3 +28,31 @@
 #box-blue {
   border: 1px solid blue;
 }
+
+a {
+  text-decoration: none !important;
+}
+
+input {
+  background: transparent;
+  border: none;
+}
+input:focus {
+  background: transparent;
+  outline: none !important;
+}
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
