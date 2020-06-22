@@ -69,3 +69,18 @@
   left: 5%;
 }
 
+/* For a screen < 1094px, this CSS will be read */
+@media (max-width: 1094px) {
+  .container-signup {
+    display: block;
+  }
+  .signup-img {
+    img {
+      width: 100%;
+    }
+  }
+  .signup-content {
+      width: 100%;
+      padding-left: 0;
+  }
+}
