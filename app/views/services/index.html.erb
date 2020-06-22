@@ -1,81 +1,60 @@
-<!-- Small Banner -->
+<% content_for :navbar do %>
+    <%= render 'shared/navbar_home' %>
+<% end %>
 
-<div id="search-header">
-  <% if @keyword.nil? %>
-    <h1>See All Our Unlicensed Talents</h1>
-  <% else %>
-    <h1>Looking for a <strong><%= @keyword.capitalize %></strong>?</h1>
-    <h3><%= @services.length %> Unlicensed Talents found</h3>
+<%# search bar %>
+<form action="">
+  <span class="iconify" data-icon="ei:search" data-inline="false"></span>
+  <input type="text" value="<%= @keyword %>">
+</form>
+<%# results Number %>
+<div class="search-result">
+  <p>Viewing <%= pluralize( @services.count, 'Unlicensed talent' ) %>.</p>
+</div>
+
+<%# result lists %>
+
+<div class="cards-service">
+  <% @services.each do |service| %>
+      
+      <div class="card-service">
+
+        <div class="card-service-img">
+          <% if service.user.photo.attached? %>
+            <%= cl_image_tag service.user.photo.key, height: 300, width: 400, crop: :fill, class: '' %>
+          <% else %>
+            <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: '' %>
+          <% end %>
+
+          <div>
+            <% if service.average_rating.nil? %>
+              <p>No reviews yet</p>
+            <% else %>
+              <p><%= service.average_rating %><i class="fas fa-star"></i></p>
+            <% end %>
+          </div>
+          
+        </div>
+      
+        <div class="card-service-info">
+          <h6><%= service.user.first_name %> <%= service.user.last_name[0] %>.</h6>
+          <h3><%= service.title %></h3>
+          <p>$<%= service.rate %>/hour</p>
+        </div>
+      </div>
+
   <% end %>
 </div>
 
 
-<div class="box-result">
-<!-- cards -->
-  <div class="cards-left">
-    <% @services.each do |service| %>
-      <%= link_to service_path(service) do %>
-        <div class="card-long" data-lat="<%= service.latitude %>" data-lng="<%= service.longitude %>">
-          <% if service.photos.empty? %>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j" alt="unlicensed">
-          <% else %>
-            <%= cl_image_tag service.photos.first.key, height: 200, width: 300, crop: :fill %>
-          <% end %>
-
-          <div class="card-long-info">
-            <%= link_to service_path(service) do %>
-              <h3>
-                <%= service.title %>
-              </h3>
-            <% end %>
-            <h6><i class="fas fa-map-marker-alt"></i> <%= service.address %></h6>
-            <p><%= truncate(service.description, length: 150) %></p>
-            <p><%= service.years_experience %> Years of Experience</p>
-            <div id="price">
-              <p>$<%= service.rate %>/hour</p>
-            </div>
-            <div id="rating">
-              <% if service.average_rating.nil? %>
-                <p>No reviews yet</p>
-              <% else %>
-                <p><%= service.average_rating %><i class="fas fa-star"></i></p>
-              <% end %>
-            </div>
-
-            <div id="provider">
-              <%= link_to user_path(service.user) do %>
-                <div id="provider-info">
-                  <h6><%= service.user.first_name %> <%= service.user.last_name %></h6>
-                  <% if service.user.photo.attached? %>
-                    <%= cl_image_tag service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar' %>
-                  <% else %>
-                    <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-
-<!-- map stick to the right -->
-  <div
+<%# map %>
+<div
   class="map-right"
   id="map"
   style="width: 1000px;
   height: 100vh;
   position: sticky;
-  top: 0;
-  border-radius: 8px;
-  border: 1px solid #230444;"
+  top: 0;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-<!--   <img id="map-placeholder" src="https://cdn.shopify.com/s/files/1/0527/6177/products/Wine-Map-of-California_ca398245-471d-47cf-8f4a-c992073e653a.jpg?v=1564322369" alt="map placeholder">
- -->
-
 </div>
-
