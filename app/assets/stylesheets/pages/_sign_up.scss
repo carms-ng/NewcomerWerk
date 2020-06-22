@@ -83,4 +83,41 @@
       width: 100%;
       padding-left: 0;
   }
+
+  .icon {
+    padding: 3% 8%;
+    font-size: 22px;
+    left: 3%;
+  }
+}
+
+@media (max-width: 773px) {
+  .icon {
+    padding: 5% 7%;
+  }
+}
+
+@media (max-width: 640px) {
+  .icon {
+    padding: 6% 7%;
+    font-size: 18px;
+    left: 5%;
+  }
+}
+/* For a screen < 500px, this CSS will be read */
+@media (max-width: 500px) {
+  .icon {
+    padding: 7%;
+    font-size: 18px;
+    left: 5%;
+  }
+
+  .signup-form {
+    font-size: 12px;
+  }
+}
+@media (max-width: 375px) {
+  .icon {
+    padding: 6% 8%;
+  }
 }
