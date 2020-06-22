@@ -1,0 +1,28 @@
+.container-signup {
+  display: flex;
+  width: 100%;
+  padding: 5vw;
+}
+
+#signup h1 {
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.signup-img {
+  margin: 30px 0;
+  img {
+    width: 40vw;
+    object-fit: cover;
+  }
+}
+
+.signup-content {
+  width: 60vw;
+  padding: 0 5vw;
+}
+
+.signup-form {
+  margin-top: 28px;
+  font-size: 14px;
+}
