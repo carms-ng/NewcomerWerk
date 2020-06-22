@@ -10,19 +10,62 @@
 }
 
 .signup-img {
-  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 70px;
   img {
-    width: 40vw;
+    width: 50vw;
     object-fit: cover;
   }
 }
 
 .signup-content {
-  width: 60vw;
-  padding: 0 5vw;
+  width: 50vw;
+  padding-left: 5vw;
 }
 
 .signup-form {
   margin-top: 28px;
   font-size: 14px;
 }
+
+.hidden {
+  display: none !important;
+}
+
+.photo-label {
+  border: 1px solid #d3d3d3;
+  cursor: pointer;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #AFAFAF !important;
+  border-radius: 5px;
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  font-family: 'Roboto Mono', monospace;
+  color: #0000ff;
+}
+
+.photo-input {
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.icon {
+  position: absolute;
+  width: 19%;
+  height: 56%;
+  border-radius: 5px 0 0 5px;
+  padding: 6% 7%;
+  background: #0000ff;
+  font-size: 18px;
+  color: white;
+  top: 22%;
+  left: 5%;
+}
+
