@@ -1,0 +1,123 @@
+.container-signup {
+  display: flex;
+  width: 100%;
+  padding: 5vw;
+}
+
+#signup h1 {
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.signup-img {
+  display: flex;
+  align-items: center;
+  margin-bottom: 70px;
+  img {
+    width: 50vw;
+    object-fit: cover;
+  }
+}
+
+.signup-content {
+  width: 50vw;
+  padding-left: 5vw;
+}
+
+.signup-form {
+  margin-top: 28px;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.photo-label {
+  border: 1px solid #d3d3d3;
+  cursor: pointer;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #AFAFAF !important;
+  border-radius: 5px;
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  font-family: 'Roboto Mono', monospace;
+  color: #0000ff;
+}
+
+.photo-input {
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.icon {
+  position: absolute;
+  width: 19%;
+  height: 56%;
+  border-radius: 5px 0 0 5px;
+  padding: 6% 7%;
+  background: #0000ff;
+  font-size: 18px;
+  color: white;
+  top: 22%;
+  left: 5%;
+}
+
+/* For a screen < 1094px, this CSS will be read */
+@media (max-width: 1094px) {
+  .container-signup {
+    display: block;
+  }
+  .signup-img {
+    img {
+      width: 100%;
+    }
+  }
+  .signup-content {
+      width: 100%;
+      padding-left: 0;
+  }
+
+  .icon {
+    padding: 3% 8%;
+    font-size: 22px;
+    left: 3%;
+  }
+}
+
+@media (max-width: 773px) {
+  .icon {
+    padding: 5% 7%;
+  }
+}
+
+@media (max-width: 640px) {
+  .icon {
+    padding: 6% 7%;
+    font-size: 18px;
+    left: 5%;
+  }
+}
+/* For a screen < 500px, this CSS will be read */
+@media (max-width: 500px) {
+  .icon {
+    padding: 7%;
+    font-size: 18px;
+    left: 5%;
+  }
+
+  .signup-form {
+    font-size: 12px;
+  }
+}
+@media (max-width: 375px) {
+  .icon {
+    padding: 6% 8%;
+  }
+}

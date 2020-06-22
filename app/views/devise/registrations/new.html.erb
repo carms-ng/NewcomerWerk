@@ -1,43 +1,81 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <h2>Sign up</h2>
+<% content_for :navbar do %>
+    <%= render 'shared/navbar_home' %>
+<% end %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-<div class="formboxcenter">
-    <div class="formbox">
-      <div class="form-inputs">
-        <%= f.input :photo, as: :file %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :location %>
-        <%= f.input :description %>
+<div class="container-signup" id="signup">
+  <div class="signup-img">
+    <%= image_tag 'sign-up' %>
+  </div>
+  <div class="signup-content">
+    <h1>Join us!</h1>
+    <div class="signup-form">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="row">
+          <div class="col">
+            <%= f.input :first_name,
+                        wrapper_html: { class: 'login-form-input' },
+                        label_html: { class: 'login-label'},
+                        label: 'First Name',
+                        input_html: { class: 'login-input'}%>
+
+          </div>
+          <div class="col">
+            <%= f.input :last_name,
+                        wrapper_html: { class: 'login-form-input' },
+                        label_html: { class: 'login-label'},
+                        label: 'Last Name',
+                        input_html: { class: 'login-input'}%>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <%= f.input :location,
+                        wrapper_html: { class: 'login-form-input' },
+                        label_html: { class: 'login-label'},
+                        input_html: { class: 'login-input'}%>
+          </div>
+          <div class="col">
+            <%= f.input :photo,
+                        as: :file,
+                        input_html: { class: 'photo-input hidden'},
+                        label_html: { class: 'photo-label'},
+                        label: 'Your Picture'%>
+            <i class="fas fa-plus icon"></i>
+          </div>
+        </div>
+        <%= f.input :description,
+                     wrapper_html: { class: 'login-form-input' },
+                     label_html: { class: 'login-label'},
+                     input_html: { class: 'login-input'}%>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
-      </div>
-      <div class="button-center">
-        <div class="form-actions">
-          <%= f.button :submit, "Sign up" , class: 'small-btn' %>
+                    wrapper_html: { class: 'login-form-input' },
+                    label_html: { class: 'login-label'},
+                    input_html: { class: 'login-input', autocomplete: "email" }%>
+        <div class="row">
+          <div class="col">
+            <%= f.input :password,
+                        required: true,
+                        wrapper_html: { class: 'login-form-input' },
+                        label_html: { class: 'login-label'},
+                        input_html: { class: 'login-input', autocomplete: "new-password" } %>
+          </div>
+          <div class="col">
+            <%= f.input :password_confirmation,
+                        required: true,
+                        wrapper_html: { class: 'login-form-input' },
+                        label_html: { class: 'login-label'},
+                        label: 'Confirm Password',
+                        input_html: { class: 'login-input', autocomplete: "new-password" } %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+        <%= f.button :submit, "Sign Up" , class: 'btn-sm-blue' %>
 
-
-
-      <%= render "devise/shared/links" %>
+          <% end %>
     </div>
-
   </div>
+
 </div>
+
