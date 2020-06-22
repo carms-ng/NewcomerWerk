@@ -1,7 +1,7 @@
 .container-login {
   display: flex;
   width: 100%;
-  padding: 5vw 5vw 5vw 0;
+  padding: 5vw;
 }
 
 #login h1 {
@@ -107,12 +107,12 @@
   }
   .login-img {
     img {
-      width: 100vw;
+      width: 100%;
     }
   }
 
   .login-content {
-      width: 100vw;
+      width: 100%;
   }
 
   .login-links {
