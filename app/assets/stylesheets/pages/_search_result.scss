@@ -1,5 +1,4 @@
 // index page ie. search result
-
 .search-bar__fullwidth {
     width: 100%;
     border-top: 1px solid lightgray;
@@ -19,13 +18,12 @@
     }
 }
 .search-bar__container {
-    width: 1320px;
+    width: calc(1320px - 32px);
     margin: 0 auto;
 }
 
 .result-container {
     width: 100%;
-    margin: 0 16px;
 } 
 
 .result-text {
@@ -43,7 +41,6 @@
     border: 1px solid #e3e3e3;
     border-radius: 3px;
     margin-bottom: 16px;
-    
 }
 
 .card-service-img {
@@ -61,7 +58,6 @@
         text-transform: uppercase;
         font-family: 'Roboto Mono', monospace;
     }
-
     img {
         width: 100%;
         height: 100%;
@@ -79,7 +75,6 @@
         color: blue;
         margin-bottom: 12px;
     }
-
     h4 {
         font-size: 16px;
         color: #666;

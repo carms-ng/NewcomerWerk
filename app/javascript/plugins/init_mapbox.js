@@ -20,8 +20,7 @@ const addMarkersToMap = (map, markers) => {
     element.style.backgroundSize = 'contain';
     element.style.width = '25px';
     element.style.height = '25px';
-    console.log(element.style);
-
+    // console.log(element.style);
 
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
@@ -36,7 +35,6 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
 };
 
-
 const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
@@ -44,17 +42,16 @@ const initMapbox = () => {
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
 
-    const cards = document.querySelectorAll(".card-long")
-    cards.forEach((card) => {
-      card.addEventListener("mouseenter", (event) => {
-        map.panTo([card.dataset.lng, card.dataset.lat])
+    map.addControl(new mapboxgl.NavigationControl());
 
+    const cards = document.querySelectorAll(".card-service")
+    cards.forEach((card) => {
+      card.addEventListener("mouseenter", (e) => {
+        map.panTo([card.dataset.lng, card.dataset.lat])
       })
     });
   }
 };
-
-
 
 
 export { initMapbox };
