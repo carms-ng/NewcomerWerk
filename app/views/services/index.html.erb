@@ -1,7 +1,3 @@
-<% content_for :navbar do %>
-    <%= render 'shared/navbar_home' %>
-<% end %>
-
 <%# search bar %>
 <form method="get" action="/services" class="search-bar__fullwidth">
   <div class="search-bar__container">
@@ -10,7 +6,7 @@
   </div>
 </form>
 
-
+<%# Search Result %>
 <div class="result-container">
   <div class="cards-service">
     <p class="result-text">Viewing <%= pluralize( @services.count, 'Unlicensed talent' ) %>.</p>

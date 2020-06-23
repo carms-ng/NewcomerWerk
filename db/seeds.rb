@@ -98,11 +98,11 @@ Midwife3 = Service.new(title: 'Best Midwife', description: 'As a practicing midw
 Midwife3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 file = URI.open('https://cliniqueremixsante.com/wp-content/uploads/2015/03/massotherapie.jpg')
-MassageTherapist = Service.create!(user: Oliver, title: 'Best Massage Therapist',rate: 100, years_experience: 20, address: "9 Fairmount Ave E",description: 'In traditional therapeutic massage the muscles or muscle groups when too tight are stimulated in conjunction with acupressure points using directional movements; either trenching , cross hatching or pressing and running motions.', rate: 100)
+MassageTherapist = Service.create!(user: Oliver, title: 'Best Massage Therapist',rate: 100, years_experience: 20, address: "9 Fairmount Ave E, Montreal",description: 'In traditional therapeutic massage the muscles or muscle groups when too tight are stimulated in conjunction with acupressure points using directional movements; either trenching , cross hatching or pressing and running motions.', rate: 100)
 MassageTherapist.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 file = URI.open('https://cliniqueremixsante.com/wp-content/uploads/2015/03/massotherapie.jpg')
-MassageTherapist2 = Service.create!(user: Jamie, title: 'Experienced Massage Therapist',rate: 100, years_experience: 20, address: "50 Fairmount Ave E",description: 'In traditional therapeutic massage the muscles or muscle groups when too tight are stimulated in conjunction with acupressure points using directional movements; either trenching , cross hatching or pressing and running motions.', rate: 100)
+MassageTherapist2 = Service.create!(user: Jamie, title: 'Experienced Massage Therapist',rate: 100, years_experience: 20, address: "50 Fairmount Ave E, Montreal",description: 'In traditional therapeutic massage the muscles or muscle groups when too tight are stimulated in conjunction with acupressure points using directional movements; either trenching , cross hatching or pressing and running motions.', rate: 100)
 MassageTherapist2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 booking1 = Booking.create!(service: MassageTherapist, user: Marion, start: Time.now, end: Time.now, message: "In traditional therapeutic massage the muscles or muscle groups when too tight are stimulated in conjunction with acupressure points using directional movements; either trenching , cross hatching or pressing and running motions.")

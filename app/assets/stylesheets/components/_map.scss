@@ -5,5 +5,42 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'roboto mono', sans-serif;
+
+  h3 {
+    color: #0000ff;
+  }
 }
+.mapboxgl-popup-content h3:hover{
+  color: #0000cc;
+}
+
+.marker {
+  color: #eee;
+  background: black;
+  display: grid;
+  place-content: center center;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 16px;
+}
+.marker::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.marker:hover {
+  cursor: pointer;
+  color: white;
+}
+
+    // element.style.backgroundImage = `url('${marker.image_url}')`;
+    // element.style.backgroundSize = 'contain';
+    // element.style.width = '25px';
+    // element.style.height = '25px';
