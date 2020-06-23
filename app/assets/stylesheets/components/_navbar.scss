@@ -12,7 +12,10 @@
   font-size: 24px;
 }
 .blue {
-  color: blue !important;
+  color: #0000ff !important;
+}
+.blue:hover {
+  color: #0000cc !important;
 }
 .nav-item {
   font-family: 'Roboto Mono', monospace;

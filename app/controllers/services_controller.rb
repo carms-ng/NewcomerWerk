@@ -11,6 +11,7 @@ class ServicesController < ApplicationController
 
     @markers = @services.map do |s|
       {
+        rate: s.rate,
         lat: s.latitude,
         lng: s.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { service: s }),
