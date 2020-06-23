@@ -3,7 +3,11 @@ class ServicesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def geocode
-    @services = Service.geocoded
+    if params[:search].nil?
+      @services = Service.geocoded
+    else
+      search
+    end
 
     @markers = @services.map do |s|
       {

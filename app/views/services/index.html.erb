@@ -16,7 +16,7 @@
     <p class="result-text">Viewing <%= pluralize( @services.count, 'Unlicensed talent' ) %>.</p>
     <% @services.each do |service| %>
         
-        <div class="card-service">
+        <div class="card-service" data-lat="<%= service.latitude %>" data-lng="<%= service.longitude %>">
 
           <div class="card-service-img">
             <% if service.user.photo.attached? %>

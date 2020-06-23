@@ -72,7 +72,7 @@ Lifecoach2 = Service.new(title: 'Life Coach expert', description: 'I AM Life Coa
 Corporate and Personal Life Coaching
 Empowering holistic healing and corporate wellness.
 They say that Leaders are born, not made. But with the right Life Coach true leaders are awakened to walk their journey!',
-rate: 90, years_experience: 2, address: "88 Rue Bernard O" )
+rate: 90, years_experience: 2, address: "88 Rue Bernard O, Montreal" )
 Lifecoach2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 file = URI.open('https://www.rhodescollege.ca/wp-content/uploads/2017/02/Define-Your-Niche-After-Life-Coaching-School.jpg')
