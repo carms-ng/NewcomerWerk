@@ -5,16 +5,16 @@
         font-size: 24px;
         margin-bottom: 10px;
     }
-
     hr {
-        margin: 30px 0;
+        margin: 40px 0;
     }
 }
 .profile-info {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-
+}
+.profile-text {
     h1 {
         font-size: 30px;
     }
@@ -40,6 +40,7 @@
     width: 10px;
     margin: auto 10px;
 }
+
 .presentation {
     margin: 20px 0;
     svg {
@@ -58,10 +59,12 @@
     }
 }
 
+// services
 .profile-services-container {
     margin: 30px 0;
 }
 
+//reviews
 .profile-review-container {
     margin: 30px 0;
     width: 100%;
@@ -89,7 +92,6 @@
 }
 
 .profile-reviews .profile-review-panel {
-    // border: 1px solid #eee;
     box-sizing: border-box;
     display: none;
     width: 100%;
@@ -114,4 +116,30 @@
 }
 .review-section > * {
     margin: 8px 0;
+}
+
+@media (min-width: 900px) {
+
+    .container-profile {
+        display: grid;
+        grid-template-columns: 3fr 7fr;
+        grid-auto-rows: auto;
+        grid-gap: 50px;
+    }
+    .profile-info {
+        grid-column: 1 / span 1;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border: 2px solid #eee;
+        padding: 24px;
+    }
+    .profile-info > * {
+        margin: 8px 0;
+    }
+    .profile-main {
+        grid-column: 2 / span 1;
+        grid-row: 1 / -1;
+    }
+
 }

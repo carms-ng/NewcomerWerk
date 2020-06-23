@@ -1,98 +1,100 @@
 <div class="container-profile container-page">
+  <div>
   <div class="profile-info">
-
-    <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill, class: "avatar-large" %>
-    <% end %>
-    <div class="profile-text">
-      <h1>Hi, I'm <%= @user.first_name %></h1>
-      <p>Joined in <%= @user.created_at.year %></p>
-      <% if (@user == current_user) %>
-        <%= link_to 'Edit Profile', edit_user_registration_path, class: 'blue' %>
+      <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill, class: "avatar-large" %>
       <% end %>
-    </div>
-  </div>
 
-    <ul class="profile-list">
-      <li>
-        <%= pluralize(@user.services.count, 'service') %>
-      </li>
-      <li>
-        <%= pluralize(@reviews_received.count, 'review') %>
-      </li>
-    </ul>
-
-  <hr>
-
-  <div class="profile-about">
-    <h2>About</h2>
-    <p class="presentation"><span class="iconify" data-icon="bx:bxs-quote-left" data-inline="false"></span></p>
-    <p><%= @user.description %></p>
-    <p class="presentation"><span class="iconify" data-icon="ant-design:line-outlined" data-inline="false"></span></p>
-    <p class="item-svg"><span class="iconify" data-icon="bx:bx-home-heart" data-inline="false"></span> Based in <%= @user.location %></p>
-
-
-  </div>
-
-  <hr>
-
-  <div class="profile-services">
-    <h2><%= pluralize(@user.services.count, 'service') %></h2>
-    <% if (@user == current_user) %>
-      <%= link_to 'Add Service', new_service_path, class: 'blue' %>
-    <% end %>
-    <div class="profile-services-container">
-      <% @user.services.each do |service| %>
-              <%= render partial:'shared/service_card', locals: { service: service } %>
-      <% end %>
+      <div>
+        <div class="profile-text">
+          <h1>Hi, I'm <%= @user.first_name %></h1>
+          <p>Joined in <%= @user.created_at.year %></p>
+          <% if (@user == current_user) %>
+            <%= link_to 'Edit Profile', edit_user_registration_path, class: 'blue' %>
+          <% end %>
+        </div>
+        <ul class="profile-list">
+          <li>
+            <%= pluralize(@user.services.count, 'service') %>
+          </li>
+          <li>
+            <%= pluralize(@reviews_received.count, 'review') %>
+          </li>
+        </ul>
+      </div>
     
     </div>
   </div>
 
   <hr>
 
-  <div class="profile-reviews">
-    <h2><%= pluralize(@reviews_received.count, 'review') %></h2>
+  <div class="profile-main">
+    <div class="profile-about">
+      <h2>About</h2>
+      <p class="presentation"><span class="iconify" data-icon="bx:bxs-quote-left" data-inline="false"></span></p>
+      <p><%= @user.description %></p>
+      <p class="presentation"><span class="iconify" data-icon="ant-design:line-outlined" data-inline="false"></span></p>
+      <p class="item-svg"><span class="iconify" data-icon="bx:bx-home-heart" data-inline="false"></span> Based in <%= @user.location %></p>
+    </div>
 
-    <div class="profile-review-container">
-      <div class="profile-review-tabs">
-        <button class="active">Reviews about you</button>
-        <button>Reviews by you</button>
-      </div>
+    <hr>
 
-      <div class="profile-review-panel active">
-        <% @reviews_received.each do |r| %>
-          <div class="review-section ">
-            <h6><%= r.user.first_name %> <%= r.user.last_name %></h6>
-            <p class="review-date"><%= r.created_at.strftime("%B") %> <%= r.created_at.year %></p>
-            <p class="review-rating">
-              <% r.rating.times do %>
-              <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span>
-              <% end %>
-              </p>
-            <p><%= r.content %></p>
-          </div>
-          
-        <% end %>
-      </div>
-
-      <div class="profile-review-panel">
-        <% @reviews_written.each do |r| %>
-
-          <div class="review-section">
-            <h6><%= r.booking.service.user.first_name %> <%= r.booking.service.user.last_name %></h6>
-            <p class="review-date"><%= r.created_at.strftime("%B") %> <%= r.created_at.year %></p>
-            <p class="review-rating">
-              <% r.rating.times do %>
-              <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span>
-              <% end %>
-              </p>
-            <p><%= r.content %></p>
-          </div>
+    <div class="profile-services">
+      <h2><%= pluralize(@user.services.count, 'service') %></h2>
+      <% if (@user == current_user) %>
+        <%= link_to 'Add Service', new_service_path, class: 'blue' %>
+      <% end %>
+      <div class="profile-services-container">
+        <% @user.services.each do |service| %>
+                <%= render partial:'shared/service_card', locals: { service: service } %>
         <% end %>
       </div>
     </div>
 
-  </div>
+    <hr>
 
+    <div class="profile-reviews">
+      <h2><%= pluralize(@reviews_received.count, 'review') %></h2>
+
+      <div class="profile-review-container">
+        <div class="profile-review-tabs">
+          <button class="active">Reviews about you</button>
+          <button>Reviews by you</button>
+        </div>
+
+        <div class="profile-review-panel active">
+          <% @reviews_received.each do |r| %>
+            <div class="review-section ">
+              <h6><%= r.user.first_name %> <%= r.user.last_name %></h6>
+              <p class="review-date"><%= r.created_at.strftime("%B") %> <%= r.created_at.year %></p>
+              <p class="review-rating">
+                <% r.rating.times do %>
+                <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span>
+                <% end %>
+                </p>
+              <p><%= r.content %></p>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="profile-review-panel">
+          <% @reviews_written.each do |r| %>
+
+            <div class="review-section">
+              <h6><%= r.booking.service.user.first_name %> <%= r.booking.service.user.last_name %></h6>
+              <p class="review-date"><%= r.created_at.strftime("%B") %> <%= r.created_at.year %></p>
+              <p class="review-rating">
+                <% r.rating.times do %>
+                <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span>
+                <% end %>
+                </p>
+              <p><%= r.content %></p>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 </div>
