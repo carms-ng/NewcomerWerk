@@ -1,0 +1,117 @@
+.container-profile {
+    padding: 16px;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    hr {
+        margin: 30px 0;
+    }
+}
+.profile-info {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    h1 {
+        font-size: 30px;
+    }
+    p {
+        font-size: 14px;
+        font-family: 'roboto mono', sans-serif;
+        margin: 8px 0;
+    }
+}
+
+.profile-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    line-height: 30px;
+}
+.profile-list li::before {
+    content: "✓";
+    color: blue;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    width: 10px;
+    margin: auto 10px;
+}
+.presentation {
+    margin: 20px 0;
+    svg {
+        font-size: 36px;
+        color: #eee;
+    }
+}
+
+.item-svg {
+    font-size: 16px;
+
+    svg {
+        font-size: 20px;
+        color: blue;
+        margin: 0 5px;
+    }
+}
+
+.profile-services-container {
+    margin: 30px 0;
+}
+
+.profile-review-container {
+    margin: 30px 0;
+    width: 100%;
+}
+.profile-review-tabs {
+    border-bottom: 1px solid #eee;
+
+    button {
+        background: none;
+        border: none;
+        margin-right: 10px;
+        padding: 10px 0;
+        color: #767676;
+        outline: none;
+    }
+    
+    button:hover {
+        cursor: pointer;
+    }
+    
+    .active {
+        color: #0000cc;
+        border-bottom: 4px solid #0000ff;
+    }
+}
+
+.profile-reviews .profile-review-panel {
+    // border: 1px solid #eee;
+    box-sizing: border-box;
+    display: none;
+    width: 100%;
+
+}
+
+.profile-reviews .active {
+    display: inline-block !important;
+}
+
+.review-section {
+    width: 100%;
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+
+    h6 {
+        font-weight: 600;
+    }
+    .review-date {
+        color: #808080;
+    }
+}
+.review-section > * {
+    margin: 8px 0;
+}

@@ -1,62 +1,23 @@
+const tabBtns = Array.from(document.querySelectorAll('.profile-review-tabs button'));
+const tabPanels = Array.from(document.querySelectorAll('.profile-review-panel'));
 
-// received.addEventListener("click", (event) => {
-//   console.log(event);
-// });
+const openPanel = (e) => {
+  const i = tabBtns.indexOf(e.target);
 
-// Reviews Tabs
-const tabReviewReceived = document.getElementById('tab-review-received');
-const tabReviewWritten = document.getElementById('tab-review-written');
+  tabBtns.forEach(btn => btn.classList.remove('active'))
+  tabPanels.forEach(panel => panel.classList.remove('active'))
 
-// Reviews view
-const received = document.getElementById('received-review');
-const written = document.getElementById('reviews-written');
+  tabBtns[i].classList.add('active');
+  tabPanels[i].classList.add('active');
 
+}
 
-// Reviews View & tabs functions
-export const receivedReview = () => {
-  // To display received review
-  if (received.style.display === "none") {
-    received.style.display = "block"
-    written.style.display = "none"
-    // highlight this tab
-    tabReviewReceived.style.backgroundColor = "#230444"
-    tabReviewReceived.style.color = "#FFFFFF"
-    // unhighlight the other tab
-    tabReviewWritten.style.backgroundColor = "#FFFFFF"
-    tabReviewWritten.style.color = "#230444"
+const initTabs = () => {
+  if (tabBtns) {
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', openPanel)
+    });
   }
-  // To hide received reviews and show written reviews
-  else {
-    received.style.display = "none"
-    written.style.display = "block"
-    // unhighlight this tab
-    tabReviewReceived.style.backgroundColor = "#FFFFFF"
-    tabReviewReceived.style.color = "#230444"
-    // highlight the other tab
-    tabReviewWritten.style.backgroundColor = "#FFFFFF"
-    tabReviewWritten.style.color = "#230444"
-  };
-};
+}
 
-export const writtenReview = () => {
-  if (written.style.display === "none") {
-    written.style.display = "block"
-    received.style.display = "none"
-    // highlight this tab
-    tabReviewWritten.style.backgroundColor = "#230444"
-    tabReviewWritten.style.color = "#FFFFFF"
-    // unhighlight the other tab
-    tabReviewReceived.style.backgroundColor = "#FFFFFF"
-    tabReviewReceived.style.color = "#230444"
-  } else {
-    written.style.display = "none"
-    received.style.display = "block"
-    // unhighlight this tab
-    tabReviewWritten.style.backgroundColor = "#FFFFFF"
-    tabReviewWritten.style.color = "#230444"
-    // highlight the other tab
-    tabReviewReceived.style.backgroundColor = "#230444"
-    tabReviewReceived.style.color = "#FFFFFF"
-  };
-};
-
+export { initTabs };
