@@ -11,7 +11,6 @@
     </p>
 
     <div class="booking-user">
-    
       <%= link_to user_path(b.service.user) do %>
         <% if b.service.user.photo.attached? %>
           <%= cl_image_tag b.service.user.photo.key, height: 50, width: 50, crop: :fill, class: 'avatar' %>

@@ -4,9 +4,7 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:edit, :update, :mark_as_accepted, :mark_as_declined, :mark_as_canceled, :mark_as_completed]
 
   def index
-    # we have to seperate both though
     @bookings_by_you = Booking.where(user: current_user)
-
     @bookings_for_you = Booking.joins(:service).where(services: { user: current_user })
   end
 
@@ -32,7 +30,6 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(secure_params)
-      # Changes
       # maybe change it to redirect to the dashbord
       redirect_to service_path(@booking.service)
     else
