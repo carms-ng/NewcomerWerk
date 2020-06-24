@@ -1,5 +1,5 @@
-const tabBtns = Array.from(document.querySelectorAll('.profile-review-tabs button'));
-const tabPanels = Array.from(document.querySelectorAll('.profile-review-panel'));
+const tabBtns = Array.from(document.querySelectorAll('.tabs button'));
+const tabPanels = Array.from(document.querySelectorAll('.tab-panel'));
 
 const openPanel = (e) => {
   const i = tabBtns.indexOf(e.target);

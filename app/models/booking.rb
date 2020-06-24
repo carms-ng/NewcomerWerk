@@ -16,7 +16,12 @@ class Booking < ApplicationRecord
     self.status = 'Declined'
   end
 
+  def canceled!
+    self.status = 'Canceled'
+  end
+
   def completed!
     self.completed = true
+    self.status = "Completed"
   end
 end
