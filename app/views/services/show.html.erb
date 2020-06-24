@@ -1,13 +1,20 @@
 <div class="container-service" >
-  <p class="search-link"><i class="fas fa-chevron-left"></i><%= link_to 'SEARCH', services_path %></p>
-  <div class="service-title">
-    <h1><%= @service.title %></h1>
-    <pre><%= @service.user.location %></pre>
-  </div>
-  <div class="rate-service">
-    <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span> <%= @service.average_rating %>
-    <span class="rating-line">|</span>
-    <span><%= @service.reviews.length %> reviews</span>
+  <p class="search-link"><i class="fas fa-chevron-left"></i><%= link_to 'SEARCH', services_path%></p>
+  <div class="service-header">
+    <div class="service-title">
+      <h1><%= @service.title %></h1>
+      <pre><%= @service.user.location %></pre>
+    </div>
+    <div class="rate-service">
+      <span class="iconify"
+            data-icon="ant-design:star-filled"
+            data-inline="false"
+            style="color: #ffc600;font-size: 18px;margin-bottom: 3px;margin-right: 8px;">
+
+      </span> 4.0<%= @service.average_rating %>
+      <span class="rating-line">|</span>
+      <u><%= @service.reviews.length %> reviews</u>
+    </div>
   </div>
 
   <!-- edit and delete only for provider -->
