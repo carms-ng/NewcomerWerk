@@ -11,7 +11,7 @@
             <% if service.average_rating.nil? %>
                 new
             <% else %>
-                <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span> <%= service.average_rating %>
+                <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span> <%= service.average_rating.round(1) %>
             <% end %>
         </p>
     </div>

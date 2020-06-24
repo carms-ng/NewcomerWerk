@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :find_service, only: [:show, :edit, :update, :destroy, :average_ratings]
+  before_action :find_service, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :index
 
   def geocode
@@ -45,7 +45,6 @@ class ServicesController < ApplicationController
   end
 
   def show
-    # bookings should go to dashboard
     @booking = Booking.new
     @bookings = @service.bookings
     @mybooking = @service.bookings.find_by(user: current_user)
@@ -68,7 +67,6 @@ class ServicesController < ApplicationController
 
     redirect_to services_path
   end
-
 
   private
 
