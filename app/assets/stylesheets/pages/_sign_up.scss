@@ -90,13 +90,13 @@
     left: 3%;
   }
 }
-
+/* For a screen < 773px, this CSS will be read */
 @media (max-width: 773px) {
   .icon {
     padding: 5% 7%;
   }
 }
-
+/* For a screen < 640px, this CSS will be read */
 @media (max-width: 640px) {
   .icon {
     padding: 6% 7%;
@@ -116,6 +116,7 @@
     font-size: 12px;
   }
 }
+/* For a screen < 375px, this CSS will be read */
 @media (max-width: 375px) {
   .icon {
     padding: 6% 8%;

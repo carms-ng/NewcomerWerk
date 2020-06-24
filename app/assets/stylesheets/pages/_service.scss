@@ -1,109 +1,14 @@
-.service-page-container {
-  margin-top: 20px;
-  display: flex;
-
-  .box-left {
-    margin-top: 20px;
-  }
-
-  .box-right {
-    margin: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-    width: 800px;
-    border: 1px solid #230444;
-    border-radius: 8px;
-
-  }
+.container-service {
+  width: 100%;
+  padding: 0 60px;
 }
 
-.service-info p {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 18px;
-}
-
-#service-first-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#service-link {
-  display: flex;
-  a {
-    margin-right: 10px;
-  }
-}
-
-.provider-info {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-
-  img {
-    margin-right: 20px;
-  }
-
-}
-
-.provider-content {
-  color: $d-purple;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  h6 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  p {
-    margin: 0;
-
-  }
-}
-
-.formboxcenter {
-  margin-top: 70px;
-  margin-bottom: 25px;
-}
-
-.carousel-container {
-  padding-left: 200px;
-  padding-right: 200px;
-  margin-top: 40px;
-  padding-top: 50px;
-}
-
-.carousel-item-picture {
-  height: 400px;
-  object-fit: cover;
-}
-
-.button-format {
-  height: 15px;
-  width: 15px;
-}
-
-.button-service {
-  background-color: white;
-  height: 30px;
-  width: 30px;
-  border-radius: 3px;
-  border: 1px solid #150A17;
-  padding-left: 5px;
-  padding-top: 1px;
-  color:black;
-
-  .fa-edit {
-    text-decoration: none;
-    color: black;
-  }
-
-  .fa-trash-alt {
-    text-decoration: none;
-    color: black;
+.search-link {
+  color: #666666;
+  font-size: 12px;
+  font-weight: 600;
+  i {
+    padding: 5px;
+    font-weight: 600;
   }
 }
