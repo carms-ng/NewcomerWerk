@@ -52,6 +52,12 @@ class BookingsController < ApplicationController
     render "update_card"
   end
 
+  def mark_as_canceled
+    @booking.canceled!
+    @booking.save
+    render "update_card"
+  end
+
   def mark_as_completed
     @booking.completed!
     @booking.save

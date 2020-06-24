@@ -1,44 +1,29 @@
+<div class="container-page">
 
-<div class="my-container">
+  <div class="container-booking">
+    <h1>Bookings</h1>
+    
+    <div class="tabs">
+      <button class="active">Sent</button>
+      <button>Received</button>
+    </div>
 
-  <div class="requests">
-
-    <section id="tabs">
-    <div class="container">
-      <div class="row">
-        <div class="col-s-12 ">
-          <nav>
-            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Outgoing Bookings(<%=@bookings_by_you.size%>)</a>
-              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Incoming Bookings(<%=@bookings_for_you.size%>)</a>
-            </div>
-          </nav>
-          <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-              <% @bookings_by_you.each do |b| %>
-                <div id="outgoing-<%= b.id %>">
-                  <%= render 'outgoing_card', b: b %>
-                </div>
-              <% end %>
-            </div>
-            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-              <% @bookings_for_you.each do |b| %>
-                <div id="incoming-<%= b.id %>">
-                  <%= render 'incoming_card', b: b %>
-                </div>
-              <% end %>
-            </div>
-
-            </div>
-
-          </div>
-
-        </div>
+    <div class="tab-panel active">
+      <div class="cards-booking">
+        <% @bookings_by_you.each do |b| %>
+          <%= render 'outgoing_card', b: b %>
+        <% end %>
       </div>
     </div>
-  </section>
+
+    <div class="tab-panel">
+      <div class="cards-booking">
+        <% @bookings_for_you.each do |b| %>
+          <%= render 'incoming_card', b: b %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
 
 </div>
-
-</div>
-

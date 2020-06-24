@@ -94,7 +94,7 @@ file = URI.open('https://asiapacific.unfpa.org/sites/default/files/styles/news_d
 Midwife3 = Service.new(title: 'Best Midwife', description: 'As a practicing midwife and technical
   advisor on global health programs, I have met midwives throughout Africa, Southeast Asia, and beyond in very
   low-resource settings and challenging circumstances, working hard every day to ensure women and newborns receive
-  the high-quality care they deserve.', rate: 140, years_experience: 20, address: "9 Fairmount Ave E")
+  the high-quality care they deserve.', rate: 140, years_experience: 20, address: "9 Fairmount Ave E Montreal")
 Midwife3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 file = URI.open('https://cliniqueremixsante.com/wp-content/uploads/2015/03/massotherapie.jpg')
