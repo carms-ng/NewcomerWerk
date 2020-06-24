@@ -9,6 +9,9 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
+      # update booking status to "reviewed"
+      @booking.reviewed!
+      @booking.save
       redirect_to service_path(@booking.service)
     else
       render :new

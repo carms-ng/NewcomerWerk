@@ -45,7 +45,6 @@ class ServicesController < ApplicationController
   end
 
   def show
-    # bookings should go to dashboard
     @booking = Booking.new
     @bookings = @service.bookings
     @mybooking = @service.bookings.find_by(user: current_user)

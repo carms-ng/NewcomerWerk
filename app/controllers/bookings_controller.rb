@@ -1,7 +1,7 @@
 require 'date'
 
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:edit, :update, :mark_as_accepted, :mark_as_declined, :mark_as_completed]
+  before_action :find_booking, only: [:edit, :update, :mark_as_accepted, :mark_as_declined, :mark_as_canceled, :mark_as_completed]
 
   def index
     # we have to seperate both though

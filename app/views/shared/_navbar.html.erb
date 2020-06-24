@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-home container-page">
-  <a class="nav-logo" href="/"><span class="blue">Un</span>Licensed</a>
+  <a class="nav-logo" href="/">Newcomer<span>Works!</span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,7 +9,7 @@
 
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Dashboard", dashboard_path, class: "nav-link blue" %>
+          <%= link_to "Bookings", bookings_path, class: "nav-link blue" %>
         </li>
         <li class="nav-item">
           <%= link_to "Services", services_path, class: "nav-link" %>

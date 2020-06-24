@@ -10,7 +10,7 @@
 
     <div class="tab-panel active">
       <div class="cards-booking">
-        <% @bookings_by_you.each do |b| %>
+        <% @bookings_by_you.reverse.each do |b| %>
           <%= render 'outgoing_card', b: b %>
         <% end %>
       </div>
@@ -18,7 +18,7 @@
 
     <div class="tab-panel">
       <div class="cards-booking">
-        <% @bookings_for_you.each do |b| %>
+        <% @bookings_for_you.reverse.each do |b| %>
           <%= render 'incoming_card', b: b %>
         <% end %>
       </div>

@@ -19,7 +19,6 @@
           <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: '' %>
         <% end %>
       <% end %>
-
       
       <%= link_to user_path(b.service.user) do %>
         <p><%= b.service.user.first_name %> <%= b.service.user.last_name %></p>
@@ -39,18 +38,25 @@
       <%= b.service.address %>
     </p>
   </div>
+  
+  <hr>
 
-  <% if b.status == 'Accepted' && !b.completed %>
-    <hr>
-    <div class="booking-btns">
-      <%= link_to 'Completed', complete_path(b), method: :patch, class: 'e', remote: true %>
-    </div>
-  <% elsif b.completed %>
-    <hr>
-    <div class="booking-btns">
+  <div class="booking-btns">
+    <% case b.status %>
+    <% when 'pending' %>
+      <p>Request sent!</p>
+    <% when 'accepted' %>
+        <%= link_to 'Completed', complete_path(b), method: :patch, class: '', remote: true %>
+    <% when 'declined' %>
+      <%= link_to 'Find other providers', services_path, class: '' %>
+    <% when 'canceled' %>
+      <%= link_to 'Try again', service_path(b.service), class: '' %>
+    <% when 'completed' %>
       <%= link_to 'Leave a Review', new_booking_review_path(b), class: '' %>
-    </div>
-  <% end %>
+    <% when 'reviewed' %>
+      <%= link_to 'Book again', service_path(b.service), class: '' %>
+    <% end %>
+  </div>
 
 </div>
 
