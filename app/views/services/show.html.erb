@@ -26,7 +26,7 @@
   <%# end %>
 
   <div class="service-content">
-    <div class="service-image">
+    <div class="service-img">
       <% if @service.photos.empty? %>
         <img class="d-block w-75 d-flex justify-content-center" alt="First slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j">
       <% else %>
@@ -46,14 +46,13 @@
   </div>
 
   <div class="service-info">
+    <h2>Service Description</h2>
     <%= link_to user_path(@service.user) do %>
       <% if @service.user.photo.attached? %>
         <%= cl_image_tag @service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar-large' %>
       <% end %>
     <% end %>
     <h6><%= @service.user.first_name %> <%= @service.user.last_name %></h6>
-    <p><i class="fas fa-map-marker-alt"></i> <%= @service.user.location %></p>
-
     <h3>$<%= @service.rate %>/hour</h3>
     <h3><%= @service.years_experience %> Years of Experience</h3>
     <p><%= @service.description %></p>
