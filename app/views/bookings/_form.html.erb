@@ -3,6 +3,6 @@
   <p>Pick a time and leave a message to the provider and they'll reach out to you.</p>
   <%= f.input :start, as: :string, required: false, input_html: {class: "datepicker"}, label: '' %>
   <%= f.input :end, as: :string, required: false, input_html: {class: "datepicker"}, label: '' %>
-  <%= f.input :message %>
+  <%#= f.input :message %>
   <%= f.button :submit, "Book Now", class: "btn-lg-blue", id: 'book-now' %>
 <% end %>

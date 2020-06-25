@@ -11,9 +11,11 @@
             data-inline="false"
             style="color: #ffc600;font-size: 18px;margin-bottom: 3px;margin-right: 8px;">
 
-      </span> 4.0<%= @service.average_rating %>
+      </span><%= @service.average_rating %>
       <span class="rating-line">|</span>
-      <u><%= @service.reviews.length %> reviews</u>
+      <a href="#service-rev">
+        <u><%= @service.reviews.length %> reviews</u>
+      </a>
     </div>
   </div>
 
@@ -55,7 +57,7 @@
       <div class="provider-img">
         <%= link_to user_path(@service.user) do %>
           <% if @service.user.photo.attached? %>
-            <%= cl_image_tag @service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar-service' %>
+            <%= cl_image_tag @service.user.photo.key %>
           <% end %>
         <% end %>
       </div>
@@ -73,27 +75,35 @@
   <!-- review section -->
 
   <!-- <h2 id="average_rating"><i class="fas fa-star" id="rating-star"></i> <%#= @service.average_rating %> (<%#= @service.reviews.length %> reviews)</h2> -->
-  <div class="service-review">
+  <div class="service-review" id="service-rev">
     <h2>What people are saying</h2>
-    <div>
+    <div class="sum-rating">
+      <span class="iconify"
+            data-icon="ant-design:star-filled"
+            data-inline="false"
+            style="color: #ffc600;font-size: 18px;margin-bottom: 3px;margin-right: 8px;">
+      </span>
+      <%= @service.average_rating %>
 
+      <span class="rating-line">|</span>
+      <span><%= @service.reviews.length %> reviews</span>
     </div>
-
+    <% @service.reviews.reverse.each do |r| %>
+      <div class="review-section">
+        <%= link_to user_path(r.user) do %>
+          <h6 style="color: black;"><%= r.user.full_name %></h6>
+        <% end %>
+        <p class="review-date"><%= r.created_at.strftime("%B") %> <%= r.created_at.year %></p>
+        <p class="review-rating">
+          <% r.rating.times do %>
+            <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span>
+          <% end %>
+        </p>
+        <p><%= r.content %></p>
+      </div>
+    <% end %>
   </div>
 
-  <% @service.reviews.reverse.each do |r| %>
-
-    <%= link_to user_path(r.user) do %>
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, class: "avatar"%>
-      <% else %>
-        <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar"%>
-      <% end %>
-        <h6><%= r.user.full_name %></h6>
-      <% end %>
-        <h3><%= r.rating %> <i class="fas fa-star" id="review-rating"></i></h3>
-        <p><%= r.content %></p>
-  <% end %>
 
   <!-- booking confirmation modal -->
 
