@@ -1,6 +1,5 @@
 .container-home {
   width: 100%;
-  padding: 5vw;
 }
 
 #home h1 {
@@ -19,6 +18,7 @@
 
 .home-search {
   width: 100%;
+  padding-bottom: 20px;
 }
 
 .search-input {
@@ -108,7 +108,7 @@
   }
 
   .container-home {
-    padding: 0 5vw;
+    padding: 0 10vw;
     display: grid;
     grid-template-rows: repeat(3, 25vw);
   }
