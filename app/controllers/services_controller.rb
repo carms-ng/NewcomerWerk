@@ -46,8 +46,8 @@ class ServicesController < ApplicationController
 
   def show
     # bookings should go to dashboard
-    # @service.geocoded
-    @markers = {
+    # s = @service.geocode
+    @marker = {
       rate: @service.rate,
       lat: @service.latitude,
       lng: @service.longitude,
