@@ -3,32 +3,24 @@
   flex-direction: column;
   
   width: 100%;
-  padding: 16px;
   max-width: 450px;
   margin: 0 auto;
 }
 
 .form-img {
-  margin: 30px auto;
+  display: none;
   img {
     width: 100%;
     object-fit: cover;
   }
 }
 
-#sign-up .form-img {
-  max-height: calc(100vh - 730px);
-}
-
-.form-content {
-  background: rgba(255, 255, 255, 0.9);
-  h1 {
-    font-size: 30px;
-  }
+.form-content h1 {
+  font-size: 30px;
 }
 
 .form-inputs {
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 14px;
 }
 
@@ -88,7 +80,7 @@
 }
 
 .btn-sm-blue {
-  margin-top: 15px;
+  margin: 15px 0;
   border-radius: 5px;
   background: #0000ff;
   color: white !important;
@@ -136,6 +128,9 @@
 }
 
 @media (min-width: 875px) {
+  .form-img {
+    display: block !important;
+  }
   .container-form {
     flex-direction: row;
     max-width: 1320px;
