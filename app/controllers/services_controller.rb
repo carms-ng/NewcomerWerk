@@ -46,6 +46,14 @@ class ServicesController < ApplicationController
 
   def show
     # bookings should go to dashboard
+    # @service.geocoded
+    @markers = {
+      rate: @service.rate,
+      lat: @service.latitude,
+      lng: @service.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { service: @service }),
+      image_url: 'https://image.flaticon.com/icons/svg/447/447031.svg'
+    }
     @booking = Booking.new
     @bookings = @service.bookings
     @mybooking = @service.bookings.find_by(user: current_user)

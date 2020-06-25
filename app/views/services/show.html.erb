@@ -80,9 +80,26 @@
       </div>
     </div>
   </div>
+
+  <!-- location map -->
+  <div class="service-location">
+    <h2>Location</h2>
+    <pre><%= @service.user.location %></pre>
+    <div
+      class="result-map"
+      id="map"
+      style="
+        width: 100%;
+        height: 50vh;
+        border-radius: .25rem;
+        "
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
   <!-- review section -->
 
-  <!-- <h2 id="average_rating"><i class="fas fa-star" id="rating-star"></i> <%#= @service.average_rating %> (<%#= @service.reviews.length %> reviews)</h2> -->
   <div class="service-review" id="service-rev">
     <h2>What people are saying</h2>
     <div class="sum-rating">

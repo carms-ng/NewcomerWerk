@@ -94,6 +94,12 @@
   }
 }
 
+.booking-fixed {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
 #book-now {
   color: white;
 }
@@ -165,4 +171,12 @@
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 24px;
   margin-top: 24px;
+}
+
+.service-location {
+  width: 66%;
+  margin: 3rem 12px;
+  h2 {
+    margin-bottom: 26px;
+  }
 }
