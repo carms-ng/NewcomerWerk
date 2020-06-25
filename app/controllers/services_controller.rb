@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   before_action :find_service, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def geocode
     if params[:search].nil?
