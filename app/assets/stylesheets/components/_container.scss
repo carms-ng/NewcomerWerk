@@ -19,5 +19,13 @@
 @media (min-width: 1200px) {
   .container-page {
     padding: 5vw;
+    padding-bottom: calc(5vw + 62px);
+  }
+}
+@media (min-width: 1320px) {
+  .container-page {
+    padding: 0;
+    padding-top: 5vw;
+    padding-bottom: calc(5vw + 62px);
   }
 }
