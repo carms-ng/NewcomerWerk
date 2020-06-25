@@ -85,6 +85,9 @@
 }
 
 @media (min-width: 900px) {
+    #profile-seperator {
+        display: none;
+    }
 
     .container-profile {
         display: grid;

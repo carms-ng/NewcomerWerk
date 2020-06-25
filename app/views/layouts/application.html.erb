@@ -13,12 +13,12 @@
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
   </head>
   <body>
-      <%= render 'shared/navbar' %>
-
-      <%= yield %>
-      <%= render 'shared/flashes' %>
-      <div class="push"></div>
-    <%#= render 'shared/footer' %>
+    <%= render 'shared/navbar' %>
+    <%= yield %>
+    <%= render 'shared/flashes' %>
+    <div class="push"></div>
+    
+    <%= render 'shared/footer' %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

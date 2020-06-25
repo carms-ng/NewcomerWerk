@@ -12,16 +12,6 @@
 @import "components/index";
 @import "pages/index";
 
-
-
-#box-red {
-  border: 1px solid red;
-}
-
-#box-blue {
-  border: 1px solid blue;
-}
-
 a {
   text-decoration: none !important;
 }
@@ -48,4 +38,9 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
 }
