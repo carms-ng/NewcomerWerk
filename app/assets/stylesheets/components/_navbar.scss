@@ -1,7 +1,9 @@
 .navbar-home {
   justify-content: space-between;
   background: white;
-  padding: 20px;
+  padding: 20px 16px;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .nav-logo {
@@ -25,4 +27,8 @@
 
 .navbar-collapse {
   flex-grow: 0 !important;
+}
+
+.navbar-toggler {
+  border: 0;
 }

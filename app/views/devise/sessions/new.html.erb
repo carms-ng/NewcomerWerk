@@ -1,10 +1,10 @@
-<div class="container-login" id="login">
-  <div class="login-img">
+<div class="container-form">
+  <div class="form-img">
     <%= image_tag("log-in.svg") %>
   </div>
-  <div class="login-content">
+  <div class="form-content">
     <h1>Welcome Back!</h1>
-      <div class="login-form">
+      <div class="form-inputs">
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <%= f.input :email,
                         required: false,
@@ -17,9 +17,9 @@
                         label_html: { class: 'login-label'},
                         wrapper_html: { class: 'login-form-input' },
                         input_html: { class: 'login-input', autocomplete: "current-password" } %>
-            <div class="login-links">
+            <div class="form-links">
               <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-              <%= render "devise/shared/links" %>
+              <%= link_to "Forgot your password?", new_password_path(resource_name), class: 'blue' %>
             </div>
             <%= f.button :submit, "Log In", class: 'btn-sm-blue' %>
           <% end %>
