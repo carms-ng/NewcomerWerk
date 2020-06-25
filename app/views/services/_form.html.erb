@@ -1,14 +1,47 @@
-<div class="formboxcenter">
-  <div class="formbox">
-    <%= simple_form_for(@service) do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :rate %>
-      <%= f.input :years_experience %>
-      <%= f.input :address %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit 'Add service', class: "button-center button"%>
-    <% end %>
+<div class="container-form container-page">
+  <div class="form-img">
+    <%= image_tag("add_service.svg") %>
   </div>
-</div>
+  <div class="form-content">
+    <h1>Add a service</h1>
+    <div class="form-inputs">
+      <%= simple_form_for(@service) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-grid">
+          <%= f.input :title,
+                      wrapper_html: { class: 'login-form-input input-long' },
+                      label_html: { class: 'login-label'},
+                      input_html: { class: 'login-input'}%>
+          <%= f.input :description,
+                      as: :text,
+                      wrapper_html: { class: 'login-form-input input-long input-tall' },
+                      label_html: { class: 'login-label'},
+                      input_html: { class: 'login-input'}%>
+          <%= f.input :rate,
+                      wrapper_html: { class: 'login-form-input' },
+                      label_html: { class: 'login-label'},
+                      label: 'Hourly Rate',
+                      input_html: { class: 'login-input'}%>
+          <%= f.input :years_experience,
+                      as: :numeric,
+                      wrapper_html: { class: 'login-form-input' },
+                      label_html: { class: 'login-label'},
+                      label: 'Years of Experience',
+                      input_html: { class: 'login-input'}%>
+          <%= f.input :address,
+                      wrapper_html: { class: 'login-form-input input-long' },
+                      label_html: { class: 'login-label'},
+                      input_html: { class: 'login-input'}%>
+          <%= f.input :photos,
+                      as: :file,
+                      input_html: { class: 'photo-input', multiple: true },
+                      label_html: { class: 'photo-label'},
+                      label: '📷 Upload photos' %>
+        </div>
+        <%= f.button :submit, "Post" , class: 'btn-sm-blue' %>
 
+      <% end %>
+    </div>
+  </div>
+
+</div>

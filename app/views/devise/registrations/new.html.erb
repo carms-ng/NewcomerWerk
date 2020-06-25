@@ -1,4 +1,4 @@
-<div class="container-form container-page" id="sign-up">
+<div class="container-form container-page">
   <div class="form-img">
     <%= image_tag("sign-up.svg") %>
   </div>
@@ -27,9 +27,9 @@
                       input_html: { class: 'photo-input'},
                       label_html: { class: 'photo-label'},
                       label: '📷 Upload Picture' %>
-
           <%= f.input :description,
-                      wrapper_html: { class: 'login-form-input input-long' },
+                      as: :text,
+                      wrapper_html: { class: 'login-form-input input-long input-tall' },
                       label_html: { class: 'login-label'},
                       input_html: { class: 'login-input'}%>
           <%= f.input :email,
