@@ -1,5 +1,6 @@
 <%= simple_form_for [@service, @booking] do |f| %>
   <h1>Book Service</h1>
+  <h6>$<%= @service.rate %>/hour</h6>
   <p>Pick a time and leave a message to the provider and they'll reach out to you.</p>
   <%= f.input :start, as: :string, required: false, input_html: {class: "datepicker"}, label: '' %>
   <%= f.input :end, as: :string, required: false, input_html: {class: "datepicker"}, label: '' %>

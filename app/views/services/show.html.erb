@@ -11,10 +11,19 @@
             data-inline="false"
             style="color: #ffc600;font-size: 18px;margin-bottom: 3px;margin-right: 8px;">
 
-      </span><%= @service.average_rating %>
+      </span>
+      <% if @service.average_rating.nil? %>
+        0
+      <% else %>
+        <%= @service.average_rating %>
+      <% end %>
       <span class="rating-line">|</span>
       <a href="#service-rev">
-        <u><%= @service.reviews.length %> reviews</u>
+        <% if @service.reviews.length == 1 %>
+          <u><%= @service.reviews.length %> review</u>
+        <% else %>
+          <u><%= @service.reviews.length %> reviews</u>
+        <% end %>
       </a>
     </div>
   </div>
@@ -51,7 +60,6 @@
     <h2>Service Description</h2>
     <div class="service-description">
       <p><%= @service.description %></p>
-      <h3>$<%= @service.rate %>/hour</h3>
     </div>
     <div class="provider-description">
       <div class="provider-img">
@@ -83,10 +91,17 @@
             data-inline="false"
             style="color: #ffc600;font-size: 18px;margin-bottom: 3px;margin-right: 8px;">
       </span>
-      <%= @service.average_rating %>
-
+      <% if @service.average_rating.nil? %>
+        0
+      <% else %>
+        <%= @service.average_rating %>
+      <% end %>
       <span class="rating-line">|</span>
-      <span><%= @service.reviews.length %> reviews</span>
+      <% if @service.reviews.length == 1 %>
+        <span><%= @service.reviews.length %> review</span>
+      <% else %>
+        <span><%= @service.reviews.length %> reviews</span>
+      <% end %>
     </div>
     <% @service.reviews.reverse.each do |r| %>
       <div class="review-section">
