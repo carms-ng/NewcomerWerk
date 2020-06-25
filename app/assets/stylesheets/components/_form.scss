@@ -17,7 +17,7 @@
 }
 
 #sign-up .form-img {
-  max-height: calc(100vh - 720px);
+  max-height: calc(100vh - 730px);
 }
 
 .form-content {
@@ -48,7 +48,6 @@
     margin: 0;
   }
 }
-
 
 .login-form-input {
   position: relative;
@@ -112,10 +111,6 @@
 }
 
 // sign up devise page
-.hidden {
-  display: none !important;
-}
-
 .photo-label {
   background: #eee;
   cursor: pointer;
@@ -133,23 +128,11 @@
 }
 
 .photo-input {
+  display: none !important;
   width: 100%;
   padding: 10px;
   position: relative;
   text-align: center;
-}
-
-.icon {
-  position: absolute;
-  width: 19%;
-  height: 56%;
-  border-radius: 5px 0 0 5px;
-  padding: 6% 7%;
-  background: #0000ff;
-  font-size: 18px;
-  color: white;
-  top: 22%;
-  left: 5%;
 }
 
 @media (min-width: 875px) {
