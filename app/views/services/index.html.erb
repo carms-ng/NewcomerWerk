@@ -9,7 +9,7 @@
 <%# Search Result %>
 <div class="result-container">
   <div class="cards-service">
-    <p class="result-text">Viewing <%= pluralize( @services.count, 'Unlicensed talent' ) %>.</p>
+    <p class="result-text">Viewing <%= pluralize( @services.count, 'talented newcomer' ) %>.</p>
     <% @services.each do |service| %>
       <%= render partial:'shared/service_card', locals: { service: service } %>
     <% end %>

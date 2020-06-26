@@ -4,7 +4,7 @@ class ServicesController < ApplicationController
 
   def geocode
     if params[:search].nil?
-      @services = Service.geocoded
+      @services = Service.geocoded.shuffle
     else
       search
     end
@@ -23,7 +23,7 @@ class ServicesController < ApplicationController
   def index
     geocode
     if params[:search].nil?
-      @services = Service.geocoded
+      @services = Service.geocoded.shuffle
     else
       search
     end
