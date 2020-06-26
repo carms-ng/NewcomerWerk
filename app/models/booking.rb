@@ -20,7 +20,6 @@ class Booking < ApplicationRecord
   end
   
   def completed!
-    self.completed = true
     self.status = "completed"
   end
 

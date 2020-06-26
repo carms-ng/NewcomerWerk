@@ -21,12 +21,11 @@
           <%= f.input :location,
                       wrapper_html: { class: 'login-form-input' },
                       label_html: { class: 'login-label'},
-                      input_html: { class: 'login-input'}%>
-          <%= f.input :photo,
-                      as: :file,
-                      input_html: { class: 'photo-input'},
-                      label_html: { class: 'photo-label'},
-                      label: '📷 Upload Picture' %>
+                      input_html: { class: 'login-input'} %>
+          <%= f.input :origin,
+                      wrapper_html: { class: 'login-form-input' },
+                      label_html: { class: 'login-label'},
+                      input_html: { class: 'login-input'} %>
           <%= f.input :description,
                       as: :text,
                       wrapper_html: { class: 'login-form-input input-long input-tall' },
@@ -49,6 +48,11 @@
                       label_html: { class: 'login-label'},
                       label: 'Confirm Password',
                       input_html: { class: 'login-input', autocomplete: "new-password" } %>
+          <%= f.input :photo,
+                      as: :file,
+                      input_html: { class: 'photo-input'},
+                      label_html: { class: 'photo-label'},
+                      label: '📷 Upload Picture' %>
         
         </div>
         <%= f.button :submit, "Sign Up" , class: 'btn-sm-blue' %>

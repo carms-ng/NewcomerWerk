@@ -22,12 +22,10 @@
                       wrapper_html: { class: 'login-form-input' },
                       label_html: { class: 'login-label'},
                       input_html: { class: 'login-input'}%>
-          <%= f.input :photo,
-                      as: :file,
-                      input_html: { class: 'photo-input'},
-                      label_html: { class: 'photo-label'},
-                      label: '📷 Upload Picture' %>
-
+          <%= f.input :origin,
+                      wrapper_html: { class: 'login-form-input' },
+                      label_html: { class: 'login-label'},
+                      input_html: { class: 'login-input'}%>
           <%= f.input :description,
                       as: :text,
                       wrapper_html: { class: 'login-form-input input-long input-tall' },
@@ -51,15 +49,20 @@
           
           <%= f.input :password,
                       required: false,
-                      wrapper_html: { class: 'login-form-input input-long' },
+                      wrapper_html: { class: 'login-form-input' },
                       label_html: { class: 'login-label'},
                       input_html: { class: 'login-input', autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
                       required: false,
                       label: 'Confirm Password',
-                      wrapper_html: { class: 'login-form-input input-long' },
+                      wrapper_html: { class: 'login-form-input' },
                       label_html: { class: 'login-label'},
                       input_html: { class: 'login-input', autocomplete: "new-password" } %>
+          <%= f.input :photo,
+                      as: :file,
+                      input_html: { class: 'photo-input'},
+                      label_html: { class: 'photo-label'},
+                      label: '📷 Upload Picture' %>
         </div>
         <%= f.button :submit, "Update" , class: 'btn-sm-blue' %>
 
