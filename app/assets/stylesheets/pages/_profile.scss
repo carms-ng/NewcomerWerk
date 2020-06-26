@@ -67,6 +67,41 @@
     margin: 30px 0;
     width: 100%;
 }
+<<<<<<< HEAD
+.profile-review-tabs {
+    border-bottom: 1px solid #eee;
+
+    button {
+        background: none;
+        border: none;
+        margin-right: 10px;
+        padding: 10px 0;
+        color: #767676;
+        outline: none;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    .active {
+        color: #0000cc;
+        border-bottom: 4px solid #0000ff;
+    }
+}
+
+.profile-reviews .profile-review-panel {
+    box-sizing: border-box;
+    display: none;
+    width: 100%;
+
+}
+
+.profile-reviews .active {
+    display: inline-block !important;
+}
+=======
+>>>>>>> b145211ee85162e7dd40b9491aec124d3779693a
 
 .review-section {
     width: 100%;
