@@ -1,0 +1,32 @@
+.tabs {
+    border-bottom: 1px solid #eee;
+
+    button {
+        background: none;
+        border: none;
+        margin-right: 10px;
+        padding: 10px 0;
+        color: #767676;
+        outline: none;
+    }
+    
+    button:hover {
+        cursor: pointer;
+    }
+    
+    .active {
+        color: #0000cc;
+        border-bottom: 4px solid #0000ff;
+    }
+}
+
+.tab-panel {
+    box-sizing: border-box;
+    display: none;
+    width: 100%;
+
+}
+
+.tab-panel.active {
+    display: inline-block !important;
+}

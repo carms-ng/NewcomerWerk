@@ -1,6 +1,4 @@
 .container-profile {
-    padding: 16px;
-
     h2 {
         font-size: 24px;
         margin-bottom: 10px;
@@ -69,6 +67,7 @@
     margin: 30px 0;
     width: 100%;
 }
+<<<<<<< HEAD
 .profile-review-tabs {
     border-bottom: 1px solid #eee;
 
@@ -101,6 +100,8 @@
 .profile-reviews .active {
     display: inline-block !important;
 }
+=======
+>>>>>>> b145211ee85162e7dd40b9491aec124d3779693a
 
 .review-section {
     width: 100%;
@@ -119,12 +120,16 @@
 }
 
 @media (min-width: 900px) {
+    #profile-seperator {
+        display: none;
+    }
 
     .container-profile {
         display: grid;
         grid-template-columns: 3fr 7fr;
         grid-auto-rows: auto;
         grid-gap: 50px;
+        padding: 0 20px;
     }
     .profile-info {
         grid-column: 1 / span 1;

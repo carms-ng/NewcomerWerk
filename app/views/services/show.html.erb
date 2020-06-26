@@ -136,11 +136,9 @@
     <% end %>
   </div>
 
-
-  <!-- booking confirmation modal -->
+<!-- booking confirmation modal -->
 
 <div class="bg-modal">
-
   <div id="modal-confirm">
     <h2>Booking Request Sent!</h2>
     <p>Let's wait for <%= @service.user.full_name %>'s response!</p>
@@ -149,7 +147,7 @@
     <% else %>
       <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "smallsize-avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     <% end %>
-    <%= link_to 'Go to Dashboard', dashboard_path, class: 'button' %>
+    <%= link_to 'Go to Bookings', bookings_path, class: 'button' %>
 
     <div id="closed">+</div>
   </div>

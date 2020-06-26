@@ -12,24 +12,6 @@
 @import "components/index";
 @import "pages/index";
 
-// home and one service
-@import "pages/home";
-@import "pages/show";
-@import "pages/dashboard";
-
-//login
-@import "pages/log_in";
-@import "pages/sign_up";
-
-
-#box-red {
-  border: 1px solid red;
-}
-
-#box-blue {
-  border: 1px solid blue;
-}
-
 a {
   text-decoration: none !important;
 }
@@ -56,4 +38,17 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+// remove the blue background
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }

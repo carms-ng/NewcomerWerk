@@ -1,11 +1,31 @@
-.my-container {
-  margin-top: 60px;
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 100%;
-}
-
 .container-page {
   max-width: 1320px;
   margin: 0 auto;
+  padding: 0px 16px 130px 16px;
+}
+
+@media (min-width: 600px) {
+  .container-page {
+    padding-bottom: 106px;
+  }
+}
+
+@media (min-width: 800px) {
+  .container-page {
+    padding-bottom: 62px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-page {
+    padding: 5vw;
+    padding-bottom: calc(5vw + 62px);
+  }
+}
+@media (min-width: 1320px) {
+  .container-page {
+    padding: 0;
+    padding-top: 5vw;
+    padding-bottom: calc(5vw + 62px);
+  }
 }
