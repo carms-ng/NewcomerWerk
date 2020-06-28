@@ -1,6 +1,6 @@
 .container-service {
   width: 100%;
-  padding: 0 60px;
+  padding: 0 5vw;
 }
 
 .search-link {
@@ -105,7 +105,7 @@
 }
 
 .service-info {
-  width: 66%;
+  width: 70%;
   margin: 0 12px;
   h2 {
     margin-bottom: 1rem;
@@ -127,8 +127,8 @@
 
 .provider-img {
   position: absolute;
-  width: 28%;
-  height: 56%;
+  width: 26%;
+  height: 70%;
   img {
     width: 100%;
     height: 100%;
@@ -163,8 +163,8 @@
 }
 
 .service-review {
-  width: 66%;
-  margin: 4rem 0;
+  width: 70%;
+  margin-top: 4rem;
 }
 
 .sum-rating {
@@ -174,8 +174,8 @@
 }
 
 .service-location {
-  width: 66%;
-  margin: 3rem 12px;
+  width: 70%;
+  margin-top: 4rem;
   h2 {
     margin-bottom: 26px;
   }
