@@ -22,7 +22,7 @@
           </li>
         </ul>
       </div>
-    
+
     </div>
   </div>
 
@@ -63,8 +63,13 @@
 
       <div class="profile-review-container">
         <div class="tabs">
-          <button class="active">Reviews about you</button>
-          <button>Reviews by you</button>
+          <% if @user == current_user %>
+            <button class="active">Reviews about you</button>
+            <button>Reviews by you</button>
+          <% else %>
+            <button class="active">Reviews about <%= @user.first_name %></button>
+            <button>Reviews by <%= @user.first_name %></button>
+          <% end %>
         </div>
 
         <div class="tab-panel active">
