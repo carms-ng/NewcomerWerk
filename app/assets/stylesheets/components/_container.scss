@@ -4,31 +4,39 @@
   padding: 0px 16px 130px 16px;
 }
 
+#home.container-page {
+  width: 100%;
+}
+
 @media (min-width: 600px) {
   .container-page {
     padding-bottom: 106px;
+  }
+  #home.container-page {
+    display: grid;
+    grid-template-rows: repeat(3, 25vw);
   }
 }
 
 @media (min-width: 800px) {
   .container-page {
-    padding-top: 0;
-    padding-left: 5vw;
-    padding-right: 5vw;
     padding-bottom: 62px;
+  }
+
+  #home.container-page {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
   }
 }
 
 @media (min-width: 1200px) {
   .container-page {
-    padding: 5vw;
-    padding-bottom: calc(5vw + 62px);
+  }
+
+  #home.container-page {
   }
 }
 @media (min-width: 1320px) {
   .container-page {
-    padding: 0;
-    padding-top: 5vw;
-    padding-bottom: calc(5vw + 62px);
   }
 }
