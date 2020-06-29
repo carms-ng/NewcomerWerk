@@ -9,15 +9,7 @@ class ServicesController < ApplicationController
       search
     end
 
-    @markers = @services.map do |s|
-      {
-        rate: s.rate,
-        lat: s.latitude,
-        lng: s.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { service: s }),
-        image_url: 'https://image.flaticon.com/icons/svg/447/447031.svg'
-      }
-    end
+    @markers = map_markers(@services)
   end
 
   def index
@@ -46,14 +38,8 @@ class ServicesController < ApplicationController
 
   def show
     # bookings should go to dashboard
-    # s = @service.geocode
-    @marker = {
-      rate: @service.rate,
-      lat: @service.latitude,
-      lng: @service.longitude,
-      infoWindow: render_to_string(partial: "info_window", locals: { service: @service }),
-      image_url: 'https://image.flaticon.com/icons/svg/447/447031.svg'
-    }
+    @services = Service.geocoded.shuffle
+    @markers = map_markers(@services)
     @booking = Booking.new
     @bookings = @service.bookings
     @mybooking = @service.bookings.find_by(user: current_user)
@@ -90,5 +76,17 @@ class ServicesController < ApplicationController
 
   def service_params
     params.require(:service).permit(:title, :description, :rate, :years_experience, :address, photos: [])
+  end
+
+  def map_markers(services)
+    services.map do |s|
+      {
+        rate: s.rate,
+        lat: s.latitude,
+        lng: s.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { service: s }),
+        image_url: 'https://image.flaticon.com/icons/svg/447/447031.svg'
+      }
+    end
   end
 end
