@@ -61,15 +61,18 @@
     width: fill-available;
     border: 0;
     padding: 6px 12px;
-
-    // arrow dropdown
     -webkit-appearance: none;
     -moz-appearance: none;
-    padding-right: 25px;
-    background: url(data:image/gif;base64,R0lGODlhCwALAJEAAAAAAP///xUVFf///yH5BAEAAAMALAAAAAALAAsAAAIPnI+py+0/hJzz0IruwjsVADs=);
-    background-repeat: no-repeat;
-    background-position: 100% 42%;
+    background: transparent;
 
+    // counter disabled attribute
+    opacity: 1; 
+    color: black
+    // arrow dropdown
+    // padding-right: 25px;
+    // background: url(data:image/gif;base64,R0lGODlhCwALAJEAAAAAAP///xUVFf///yH5BAEAAAMALAAAAAALAAsAAAIPnI+py+0/hJzz0IruwjsVADs=);
+    // background-repeat: no-repeat;
+    // background-position: 100% 42%;
   }
   select:focus {
     background: transparent;
