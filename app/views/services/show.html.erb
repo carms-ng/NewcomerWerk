@@ -3,7 +3,7 @@
   <div class="service-header">
     <div class="service-title">
       <h1><%= @service.title %></h1>
-      <pre><%= @service.user.location %></pre>
+      <pre><%= @service.address %></pre>
     </div>
     <div class="rate-service">
       <span class="iconify"
@@ -15,7 +15,7 @@
       <% if @service.average_rating.nil? %>
         0
       <% else %>
-        <%= @service.average_rating %>
+        <%= @service.average_rating.round(1) %>
       <% end %>
       <span class="rating-line">|</span>
       <a href="#service-rev">
@@ -79,7 +79,7 @@
       <!-- location map -->
       <div class="service-location">
         <h2>Location</h2>
-        <pre><%= @service.user.location %></pre>
+        <pre><%= @service.address %></pre>
         <div
           class="result-map"
           id="map"
@@ -105,7 +105,7 @@
           <% if @service.average_rating.nil? %>
             0
           <% else %>
-            <%= @service.average_rating %>
+            <%= @service.average_rating.round(1) %>
           <% end %>
           <span class="rating-line">|</span>
           <% if @service.reviews.length == 1 %>
