@@ -137,9 +137,12 @@
   .service-header {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     .service-address {
       text-align: right;
+    }
+    h1 {
+      margin-bottom: 0;
     }
   }
   .service-provider {
@@ -148,6 +151,7 @@
     grid-template-rows: 100px 20vw 100px;
   }
   .provider-image {
+    align-self: center;
     grid-column: 1 / span 3;
     grid-row: 2 / span 1;
     z-index: 1;
@@ -181,5 +185,14 @@
   .service-provider-info {
     padding-left: 9vw;
   }
+}
+@media (min-width: 1320px) {
+  .service-provider {
 
+    grid-template-rows: 100px 250px 100px;
+  }
+  .service-provider-info {
+    padding-left: 120px;
+    padding-right: 80px;
+  }
 }

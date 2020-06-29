@@ -37,12 +37,11 @@ class ServicesController < ApplicationController
   end
 
   def show
-    # bookings should go to dashboard
-    @services = Service.geocoded.shuffle
-    @markers = map_markers(@services)
+    # 1 marker
+    @markers = map_markers([@service])
+    # booking form params
     @booking = Booking.new
-    @bookings = @service.bookings
-    @mybooking = @service.bookings.find_by(user: current_user)
+    # review
     @reviews = Review.joins(:booking).where(bookings: { service: @service })
   end
 
