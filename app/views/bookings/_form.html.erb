@@ -1,9 +1,26 @@
 <%= simple_form_for [@service, @booking] do |f| %>
-  <h1>Book Service</h1>
-  <h6>$<%= @service.rate %>/hour</h6>
-  <p>Pick a time and leave a message to the provider and they'll reach out to you.</p>
-  <%= f.input :start, as: :string, required: false, input_html: {class: "datepicker"}, label: '' %>
-  <%= f.input :end, as: :string, required: false, input_html: {class: "datepicker"}, label: '' %>
+
+  <div class="booking-form-header">
+    <h6>Send <span class="blue"><%= @service.user.first_name %></span> a request now</h6>
+    <p class="tag">$<%= @service.rate %>/hour</p>
+  </div>
+  <%# <p>Pick a time and leave a message to the provider and they'll reach out to you.</p> %>
+  <div class="booking-inputs">
+    <%= f.input :start, 
+                as: :string, 
+                required: true, 
+                wrapper_html: { class: 'login-form-input' },
+                label_html: { class: 'login-label'},
+                input_html: { class: "datepicker login-input", value: (Time.now + 60*60).strftime('%Y-%m-%d %H')}, 
+                label: 'Start' %>
+    <%= f.input :end, 
+                as: :string, 
+                required: true, 
+                wrapper_html: { class: 'login-form-input' },
+                label_html: { class: 'login-label'},
+                input_html: { class: "datepicker login-input", value: (Time.now + 60*60*2).strftime('%Y-%m-%d %H')}, 
+                label: 'End' %>
+  </div>
   <%#= f.input :message %>
-  <%= f.button :submit, "Book Now", class: "btn-lg-blue", id: 'book-now' %>
+  <%= f.button :submit, "Submit", class: "btn-lg-blue", id: 'book-now'%>
 <% end %>

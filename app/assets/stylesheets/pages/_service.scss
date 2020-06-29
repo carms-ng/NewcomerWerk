@@ -1,157 +1,116 @@
+#service.container-page > * {
+  padding: 0.5rem 0;
+}
+
 .search-link {
-  color: #666666;
   font-size: 12px;
-  font-weight: 400;
-  a {
-    color: #666666;
-  }
-  a:hover {
+  text-transform: uppercase;
+  color: #666666;
 
-  }
-  i {
-    padding: 5px;
-    font-weight: 600;
+  svg {
+    margin: 0 3px 2px 0;
   }
 }
+.search-link:hover {
+  color: #333333;
+}
 
-.service-title{
+.service-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+  flex-direction: column;
   h1 {
-    font-size: 3rem;
     font-weight: 600;
-    line-height: 5rem;
-  }
-  pre {
-    margin: 0;
-    font-style: normal;
-    font-size: 16px;
-    margin-left: 12px;
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem
   }
 }
+.service-address {
+  font-family: 'Roboto Mono', monospace;
+}
 
-.rate-service {
+.service-rating {
   margin-bottom: 2rem;
-  font-size: 16px;
+
   a {
     color: black;
+    text-decoration: underline !important;
   }
   a:hover {
     color: #0000ff;
   }
-}
-
-.rating-line {
-  height: 12px;
-  width: 1px;
-  margin: 8px;
-  color: #e6e6e6;
-}
-
-.service-content {
-  display: flex;
-  width: 100%;
-}
-
-.service-details {
-  width: 70%;
-  margin-right: 3vw;
-}
-
-.service-img {
-  width: 100%;
-  height: 65vh;
-  margin: 0 12px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: .25rem;
-    object-fit: cover;
+  svg {
+    color: #ffc600;
+    font-size: 18px;
+    margin: 0 8px 3px 0;
+  }
+  .rating-line {
+    height: 12px;
+    width: 1px;
+    margin: 8px;
+    color: #e6e6e6;
   }
 }
 
-.service-info {
+.wrap-image {
   width: 100%;
-  margin: 4rem 12px 0 12px;
-  
-  h2 {
-    margin-bottom: 1rem;
-  }
-  p {
-    font-weight: 400;
-    line-height: 1.75rem;
-    margin-bottom: 1rem;
-  }
-}
-
-.provider-description {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  margin-top: 4rem;
-}
-
-.provider-img {
-  position: absolute;
-  width: 26%;
-  height: 70%;
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: .25rem;
-    object-fit: cover;
-  }
-}
-
-.provider-info {
-  width: 100%;
-  background-color: #f7f7f7;
   border-radius: .25rem;
-  padding: 4rem 2rem;
-  margin-left: 15%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.service-images {
+  max-height: 60vw;
 }
 
-.provider-details {
-  margin-left: 6rem;
+#service section {
+  padding: 3rem 0 !important;
+
   h2 {
-    font-size: 24px;
-    color: blue;
-    cursor: pointer;
-  }
-  h3 {
-    font-size: 20px;
-    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 1rem;
   }
-  p {
-    font-size: 14px;
-  }
 }
 
-.service-review {
+.provider-image {
+  max-height: 300px;
+}
+
+.service-provider-info > * {
+  margin: 1rem 0;
+}
+
+.tag {
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: 1px solid #eee;
+  margin-right: 5px
+}
+
+.service-map {
+  margin-top: 1.5rem;
+}
+
+.service-booking-mobile {
+  position: sticky;
   width: 100%;
-  margin-top: 4rem;
-}
-
-.sum-rating {
-  border-bottom: 1px solid #e6e6e6;
-  padding-bottom: 24px;
-  margin-top: 24px;
-}
-
-.service-location {
-  width: 100%;
-  margin-top: 4rem;
-  h2 {
-    margin-bottom: 26px;
-  }
+  padding: 0;
+  bottom: 0;
+  border-top: 1px solid #b3b3b3;
+  background: #fff;
+  z-index: 2;
+  padding: 1rem;
 }
 
 .service-booking {
+  display: none;
   width: 30%;
   margin: 0 12px;
   position: sticky;
@@ -170,10 +129,57 @@
     border: 1px solid #e3e3e3;
     background-color: #f7f7f7;
     position: sticky;
-    top: 0;
+    top: 10px;
   }
 }
 
-#book-now {
-  color: white;
+@media (min-width: 600px) {
+  .service-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .service-address {
+      text-align: right;
+    }
+  }
+  .service-provider {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 100px 20vw 100px;
+  }
+  .provider-image {
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 1;
+    z-index: 1;
+    
+  }
+  .service-provider-info {
+    grid-column: 3 / -1;
+    grid-row: 1 / -1;
+    background: #f7f7f7;
+    display: grid;
+    align-content: center;
+    padding-left: 13vw;
+    padding-right: 5vw;
+  }
+}
+
+@media (min-width: 1000px) {
+  .service-booking-mobile {
+    display: none;
+  }
+  .service-body {
+    display: flex;
+    justify-content: space-between;
+  }
+  .service-booking {
+    display: block;
+  }
+  .service-content {
+    width: 65%;
+  }
+  .service-provider-info {
+    padding-left: 9vw;
+  }
+
 }

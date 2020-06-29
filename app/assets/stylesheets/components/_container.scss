@@ -8,8 +8,13 @@
   width: 100%;
 }
 
+#service.container-page {
+  width: 100%;
+}
+
 @media (min-width: 600px) {
   .container-page {
+    padding: 48px;
     padding-bottom: 106px;
   }
   #home.container-page {
