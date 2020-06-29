@@ -1,13 +1,11 @@
-.container-service {
-  width: 100%;
-  padding: 0 60px;
+#service section {
+  padding: 48px 0;
 }
 
 .search-link {
   color: #666666;
   font-size: 12px;
   font-weight: 400;
-  margin: 0 12px;
   a {
     color: #666666;
   }
@@ -18,10 +16,6 @@
     padding: 5px;
     font-weight: 600;
   }
-}
-
-.service-header {
-  margin: 0 12px;
 }
 
 .service-title{
@@ -66,10 +60,11 @@
 
 .service-img {
   width: 70%;
-  margin: 0 12px;
+  max-height: 450px;
+  margin-right: 20px;
   img {
     width: 100%;
-    height: 90%;
+    height: 100%;
     border-radius: .25rem;
     object-fit: cover;
   }
@@ -77,7 +72,6 @@
 
 .service-booking {
   width: 30%;
-  margin: 0 12px;
   h1, p, h6 {
     margin-bottom: 1rem;
   }
@@ -106,7 +100,6 @@
 
 .service-info {
   width: 66%;
-  margin: 0 12px;
   h2 {
     margin-bottom: 1rem;
   }
@@ -164,7 +157,6 @@
 
 .service-review {
   width: 66%;
-  margin: 4rem 0;
 }
 
 .sum-rating {
