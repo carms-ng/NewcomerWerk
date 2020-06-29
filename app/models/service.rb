@@ -15,4 +15,14 @@ class Service < ApplicationRecord
   def average_rating
     self.reviews.average(:rating)
   end
+
+  def address_lines
+    pattern = /^([^,]+), (.+)$/
+    match_data = self.address.match(pattern)
+    return [match_data[1], match_data[2]]
+  end
+
+  def num_completed_booking
+    self.bookings.where(status: "completed").count
+  end
 end
