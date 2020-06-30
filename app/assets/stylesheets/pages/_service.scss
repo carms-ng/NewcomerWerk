@@ -57,14 +57,14 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   img {
     width: 100%;
     object-fit: cover;
   }
 }
 .service-images {
-  height: 600px;
+  max-height: 600px;
 }
 
 #service section {
