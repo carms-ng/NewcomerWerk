@@ -49,13 +49,14 @@
 }
 
 .item-svg {
-    font-size: 16px;
-    line-height: 30px;
-
+    display: flex;
+    align-items: flex-start;
+    
     svg {
-        font-size: 20px;
+        min-width: 20px;
         color: blue;
-        margin: 0 5px;
+        margin-top: 3px;
+        margin-right: 5px;
     }
 }
 
