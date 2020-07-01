@@ -1,4 +1,4 @@
-.container-profile {
+#profile.container-page {
     h2 {
         font-size: 24px;
         margin-bottom: 10px;
@@ -124,14 +124,6 @@
     #profile-seperator {
         display: none;
     }
-
-    .container-profile {
-        display: grid;
-        grid-template-columns: 3fr 7fr;
-        grid-auto-rows: auto;
-        grid-gap: 50px;
-        padding: 0 20px;
-    }
     .profile-info {
         grid-column: 1 / span 1;
         flex-direction: column;
@@ -147,5 +139,4 @@
         grid-column: 2 / span 1;
         grid-row: 1 / -1;
     }
-
 }
