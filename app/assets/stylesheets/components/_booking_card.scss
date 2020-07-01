@@ -1,11 +1,11 @@
 .card-booking {
+    width: 100%;
     max-width: 500px;
-    // margin: 0 auto;
     border: 1px solid #eee;
     border-radius: 3px;
 
     hr {
-        margin: 0 10px;
+        margin: 0;
     }
 }
 
@@ -39,10 +39,8 @@
 
 .booking-info {
     display: grid;
-    grid-gap: 20px;
-    grid-template-rows: 62px 40px 45px;
-    overflow: hidden;
-    padding: 16px 8px;
+    grid-template-rows: minmax(80px, 140px) 50px;
+    padding: 8px 16px;
     
     .booking-time {
         color: #808080;
@@ -50,6 +48,7 @@
     }
     h2 {
         font-size: 24px;
+        margin-bottom: 12px;
     }
 }
 

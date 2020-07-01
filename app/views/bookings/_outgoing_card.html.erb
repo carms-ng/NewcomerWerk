@@ -29,16 +29,17 @@
   <div class="booking-info">
     <div>
       <p class="booking-time"><%= b.start.strftime("%b. %d @%H:00") %></p>
+      
       <%= link_to service_path(b.service) do %>
         <h2 class="blue"><%= b.service.title %></h2>
       <% end %>
-    </div>
 
-    <p class="item-svg">
-      <span class="iconify" data-icon="eva:pin-outline" data-inline="false"></span>
-      <%# <span class="iconify" data-icon="si-glyph:pin-location-map" data-inline="false"></span>  %>
-      <%= b.service.address %>
-    </p>
+      <p class="item-svg">
+        <span class="iconify" data-icon="eva:pin-outline" data-inline="false"></span>
+        <%= b.service.address %>
+      </p>
+    </div>
+    
 
     <div>
       <hr>

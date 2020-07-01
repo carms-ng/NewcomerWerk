@@ -27,35 +27,39 @@
   </div>
 
   <div class="booking-info">
-    <p class="booking-time"><%= b.start.strftime("%b. %d @%H:00") %></p>
-    <%= link_to service_path(b.service) do %>
-      <h2 class="blue"><%= b.service.title %></h2>
-    <% end %>
+    <div>
+      <p class="booking-time"><%= b.start.strftime("%b. %d @%H:00") %></p>
+      <%= link_to service_path(b.service) do %>
+        <h2 class="blue"><%= b.service.title %></h2>
+      <% end %>
 
-    <p class="item-svg">
-      <span class="iconify" data-icon="si-glyph:pin-location-map" data-inline="false"></span> 
-      <%= b.service.address %>
-    </p>
-  </div>
+      <p class="item-svg">
+        <span class="iconify" data-icon="si-glyph:pin-location-map" data-inline="false"></span> 
+        <%= b.service.address %>
+      </p>
+    </div>
 
-  <hr>
+    <div>
+      <hr>
 
-  <div class="booking-btns">
-    <% case b.status %>
-    <% when 'pending' %>
-      <%= link_to 'Accept', accept_path(b), method: :patch, class: '', remote: true %>
-      <%= link_to 'Decline', decline_path(b), method: :patch, class: '', remote: true %>
-    <% when 'accepted' %>
-      <%= link_to 'Cancel booking', cancel_path(b), method: :patch, class: '', remote: true %>
-    <% when 'declined' %>
-      <p>Booking closed</p>
-    <% when 'canceled' %>
-      <p>Booking closed</p>
-    <% when 'completed' %>
-      <p>Pending Review</p>
-    <% when 'reviewed' %>
-      <%= link_to 'View Review', service_path(b.service), class: '' %>
-    <% end %>
+      <div class="booking-btns">
+        <% case b.status %>
+        <% when 'pending' %>
+          <%= link_to 'Accept', accept_path(b), method: :patch, class: '', remote: true %>
+          <%= link_to 'Decline', decline_path(b), method: :patch, class: '', remote: true %>
+        <% when 'accepted' %>
+          <%= link_to 'Cancel booking', cancel_path(b), method: :patch, class: '', remote: true %>
+        <% when 'declined' %>
+          <p>Booking closed</p>
+        <% when 'canceled' %>
+          <p>Booking closed</p>
+        <% when 'completed' %>
+          <p>Pending Review</p>
+        <% when 'reviewed' %>
+          <%= link_to 'View Review', service_path(b.service), class: '' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
 </div>
