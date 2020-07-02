@@ -147,19 +147,18 @@
 </div>
 
 <!-- booking confirmation modal -->
-
-<div class="bg-modal">
-  <div id="modal-confirm">
+<div class="modal_bg">
+  <div id="modal__inner">
     <h2>Booking Request Sent!</h2>
-    <p>Let's wait for <%= @service.user.full_name %>'s response!</p>
+    <p>Let's wait for <%= @service.user.first_name %>'s response!</p>
     <% if @service.user.photo.attached? %>
       <%= cl_image_tag @service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'smallsize-avatar' %>
     <% else %>
       <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "smallsize-avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     <% end %>
-    <%= link_to 'Go to Bookings', bookings_path, class: 'button' %>
+    <%= link_to 'Go to Bookings', bookings_path, class: 'btn-sm-blue' %>
 
-    <div id="closed">+</div>
+    <div id="closed"><span class="iconify" data-icon="ei:close" data-inline="false"></span></div>
   </div>
 </div>
 

@@ -35,10 +35,14 @@
       <p><%= @user.description %></p>
       <p class="presentation"><span class="iconify" data-icon="ant-design:line-outlined" data-inline="false"></span></p>
       <p class="item-svg" style="padding-bottom: 6px;">
-        <span class="iconify" data-icon="ic:round-location-city" data-inline="false"></span> Living in <%= @user.location %>
+        <span class="iconify" data-icon="ic:round-location-city" data-inline="false"></span>
+        Living in
+        <%= @user.location %>
       </p>
       <p class="item-svg">
-        <span class="iconify" data-icon="bx:bx-home-circle" data-inline="false"></span> Came from <%= @user.origin %></p>
+        <span class="iconify" data-icon="bx:bx-home-circle" data-inline="false"></span>
+        Originally from 
+        <%= @user.origin %>
       </p>
     </div>
 

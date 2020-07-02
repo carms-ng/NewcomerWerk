@@ -1,26 +1,27 @@
 .bg-modal {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
   display: none;
   justify-content: center;
-  align-items: center;
+  text-align: center;
   position: fixed;
   top: 0;
+  z-index: 2;
+  background-color: #F7F7F7;
 }
 
-#modal-confirm {
-  background-color: white;
-  width: 600px;
+.modal__inner {
+  width: 100%;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   position: relative;
-  border-radius: 5px;
-  border: 4px solid $l-purple;
-
+  
+  h2 {
+    margin-top: 20px;
+  }
   p {
     font-size: 18px;
   }
@@ -28,9 +29,23 @@
 
 #closed {
   position: absolute;
-  font-size: 48px;
-  top: 0;
-  right: 18px;
-  transform: rotate(45deg);
+  font-size: 24px;
+  top: 2px;
+  right: 8px;
   cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .bg-modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+  }
+  
+  .modal__inner {
+    background-color: white;
+    width: 600px;
+    max-width: 90vw;
+    border-radius: 0.25rem;
+    border: 4px solid rgba(0, 0, 255, 0.4);
+  }
 }

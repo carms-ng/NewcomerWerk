@@ -48,15 +48,15 @@
         <% when 'pending' %>
           <p>Request sent!</p>
         <% when 'accepted' %>
-            <%= link_to 'Completed', complete_path(b), method: :patch, class: '', remote: true %>
+            <%= link_to 'Completed', complete_path(b), method: :patch, class: 'blue', remote: true %>
         <% when 'declined' %>
-          <%= link_to 'Find other providers', services_path, class: '' %>
+          <%= link_to 'Find other providers', services_path, class: 'blue' %>
         <% when 'canceled' %>
-          <%= link_to 'Try again', service_path(b.service), class: '' %>
+          <%= link_to 'Try again', service_path(b.service), class: 'blue' %>
         <% when 'completed' %>
-          <%= link_to 'Leave a Review', new_booking_review_path(b), class: '' %>
+          <%= link_to 'Leave a Review', new_booking_review_path(b), class: 'blue' %>
         <% when 'reviewed' %>
-          <%= link_to 'Book again', service_path(b.service), class: '' %>
+          <%= link_to 'Book again', service_path(b.service), class: 'blue' %>
         <% end %>
       </div>
     </div>
