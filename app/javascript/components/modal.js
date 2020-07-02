@@ -1,10 +1,10 @@
 const loadModal = () => {
 
-  const bookBtns = document.querySelectorAll('#book-now');
+  const bookBtns = document.querySelectorAll('.btn-open-modal');
 
   const handleClick = () => {
     setTimeout(() => {
-      const modal = document.querySelector('.bg-modal')
+      const modal = document.querySelector('.modal__bg')
       modal.style.display = 'flex';
     }, 1000); 
 

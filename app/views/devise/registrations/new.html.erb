@@ -9,6 +9,7 @@
         <%= f.error_notification %>
         <div class="form-grid">
           <%= f.input :first_name,
+                      autofocus: true,
                       wrapper_html: { class: 'login-form-input' },
                       label_html: { class: 'login-label'},
                       label: 'First Name',
@@ -33,7 +34,6 @@
                       input_html: { class: 'login-input'}%>
           <%= f.input :email,
                       required: true,
-                      autofocus: true,
                       wrapper_html: { class: 'login-form-input input-long' },
                       label_html: { class: 'login-label'},
                       input_html: { class: 'login-input', autocomplete: "email" }%>

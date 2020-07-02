@@ -45,10 +45,10 @@
       <div class="booking-btns">
         <% case b.status %>
         <% when 'pending' %>
-          <%= link_to 'Accept', accept_path(b), method: :patch, class: '', remote: true %>
-          <%= link_to 'Decline', decline_path(b), method: :patch, class: '', remote: true %>
+          <%= link_to 'Accept', accept_path(b), method: :patch, class: 'blue', remote: true %>
+          <%= link_to 'Decline', decline_path(b), method: :patch, class: 'blue', remote: true %>
         <% when 'accepted' %>
-          <%= link_to 'Cancel booking', cancel_path(b), method: :patch, class: '', remote: true %>
+          <%= link_to 'Cancel booking', cancel_path(b), method: :patch, class: 'blue', remote: true %>
         <% when 'declined' %>
           <p>Booking closed</p>
         <% when 'canceled' %>
@@ -56,7 +56,7 @@
         <% when 'completed' %>
           <p>Pending Review</p>
         <% when 'reviewed' %>
-          <%= link_to 'View Review', service_path(b.service), class: '' %>
+          <%= link_to 'View Review', service_path(b.service), class: 'blue' %>
         <% end %>
       </div>
     </div>

@@ -6,11 +6,7 @@ class BookingsController < ApplicationController
   def index
     @bookings_by_you = Booking.where(user: current_user)
     @bookings_for_you = Booking.joins(:service).where(services: { user: current_user })
-  end
-
-  def new
-    @service = Service.find(params[:service_id])
-    @booking = Booking.new
+    # @review = Review.new
   end
 
   def create

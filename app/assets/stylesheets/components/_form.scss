@@ -29,20 +29,6 @@
   align-items: flex-start;
 }
 
-@media (min-width: 600px) {
-  .service-booking-mobile {
-    .login-form-input {
-      width: calc((100% - 24px) / 2);
-      display: inline-block;
-    }
-    .login-form-input:first-child {
-      margin-right: 20px;
-    }
-  }
-
-}
-
-
 // devise form
 .container-form {
   display: flex;
@@ -61,8 +47,15 @@
   }
 }
 
-.form-content h1 {
-  font-size: 30px;
+.form-content {
+  h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  p {
+    margin-bottom: 16px;
+  }
 }
 
 .form-inputs {
@@ -185,6 +178,23 @@
   text-align: center;
 }
 
+@media (min-width: 600px) {
+  .container-form {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .service-booking-mobile {
+    .login-form-input {
+      width: calc((100% - 24px) / 2);
+      display: inline-block;
+    }
+    .login-form-input:first-child {
+      margin-right: 20px;
+    }
+  }
+
+}
+
 @media (min-width: 875px) {
   .form-img {
     display: block !important;
@@ -199,10 +209,4 @@
     flex: 1;
     margin: 0 60px;
   }
-  
-  .form-content {
-  h1 {
-    margin-bottom: 50px;
-  }
-}
 }
