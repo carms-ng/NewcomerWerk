@@ -151,7 +151,7 @@
 <div class="bg-modal">
   <div id="modal-confirm">
     <h2>Booking Request Sent!</h2>
-    <p>Let's wait for <%= @service.user.full_name %>'s response!</p>
+    <p>Let's wait for <%= @service.user.first_name %>'s response!</p>
     <% if @service.user.photo.attached? %>
       <%= cl_image_tag @service.user.photo.key, height: 300, width: 400, crop: :fill, class: 'smallsize-avatar' %>
     <% else %>
@@ -159,7 +159,7 @@
     <% end %>
     <%= link_to 'Go to Bookings', bookings_path, class: 'btn-sm-blue' %>
 
-    <div id="closed">+</div>
+    <div id="closed"><span class="iconify" data-icon="ei:close" data-inline="false"></span></div>
   </div>
 </div>
 

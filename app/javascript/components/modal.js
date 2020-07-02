@@ -1,20 +1,22 @@
 const loadModal = () => {
 
-  const bookBtn = document.getElementById('book-now')
+  const bookBtns = document.querySelectorAll('#book-now');
 
-  if (bookBtn) {
-    bookBtn.addEventListener("click", (event) => {
-      setTimeout(() => {
-        document.querySelector('.bg-modal').style.display = 'flex';
-      }
-      , 1000); 
-    });
+  const handleClick = () => {
+    setTimeout(() => {
+      const modal = document.querySelector('.bg-modal')
+      modal.style.display = 'flex';
+    }, 1000); 
 
-    document.getElementById('closed').addEventListener('click', (event) => {
-      // event.preventDefault();
-      document.querySelector('.bg-modal').style.display = 'none';
-    });
-  };
-}
+    const closeBtn = modal.getElementById('closed');
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    })
+  }
 
-export { loadModal }
+  if (bookBtns) {
+    bookBtns.forEach(btn => btn.addEventListener('click', handleClick));
+  }
+}    
+      
+export { loadModal };
