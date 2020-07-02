@@ -34,8 +34,25 @@
       <div class="wrap-image service-images">
         <% if @service.photos.empty? %>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j" alt="placeholder">
-        <% else %>
+        <% elsif @service.photos.count == 1 %>
           <%= cl_image_tag @service.photos.first.key, class: "" %>
+        <% else %>
+          <%# carousel %>
+          <div class="carousel__container">
+            <button class="carousel__btn carousel__btn--back"><span class="iconify" data-icon="ic:round-arrow-back-ios" data-inline="false"></span></button>
+            
+            <ul class="carousel__slides">
+              <% i = 0 %>
+              <% while i < @service.photos.count %>
+                <li class="carousel__slide <%= 'active' if i == 0%>">
+                  <%= cl_image_tag @service.photos[i].key, class: "carousel", data: { index: i } %>
+                </li>
+                <% i += 1 %>
+              <% end %>
+            </ul>
+
+            <button class="carousel__btn carousel__btn--next"><span class="iconify" data-icon="ic:round-arrow-forward-ios" data-inline="false"></span></button>
+          </div>
         <% end %>
       </div>
       <section class="service-description">
