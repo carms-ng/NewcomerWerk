@@ -1,20 +1,21 @@
 <div class="card-service" data-lat="<%= service.latitude %>" data-lng="<%= service.longitude %>">
-
-    <div class="card-service-img">
-        <% if service.photos.empty? %>
-            <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j" %>
-        <% else %>
-            <%= cl_image_tag service.photos.first.key, height: 250, width: 400, crop: :fill %>
-        <% end %>
-
-        <p class="image-tag">
-            <% if service.average_rating.nil? %>
-                new
+    <%= link_to service_path(service) do %>
+        <div class="card-service-img">
+            <% if service.photos.empty? %>
+                <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j", height: '250', width: '400' %>
             <% else %>
-                <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span> <%= service.average_rating.round(1) %>
+                <%= cl_image_tag service.photos.first.key, height: 250, width: 400, crop: :fill %>
             <% end %>
-        </p>
-    </div>
+
+            <p class="image-tag">
+                <% if service.average_rating.nil? %>
+                    new
+                <% else %>
+                    <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span> <%= service.average_rating.round(1) %>
+                <% end %>
+            </p>
+        </div>
+    <% end %>
 
     <div class="card-service-info">
         <% if service.user.photo.attached? %>

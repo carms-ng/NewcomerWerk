@@ -5,6 +5,7 @@ class Service < ApplicationRecord
   has_many :reviews, through: :bookings
 
   validates :title, presence: true
+  validates :photos, presence: true
   validates :description, length: { minimum: 20 }
   validates :rate, presence: true, numericality: { only_integer: true }
   validates :years_experience, numericality: { only_integer: true }
