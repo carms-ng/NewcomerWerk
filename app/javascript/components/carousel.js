@@ -31,7 +31,7 @@ const loadCarousel = () => {
     
         prevBtn.addEventListener('click', () => {
             const currentSlide = slider.querySelector('.active');
-            const prevSlide = currentSlide.previousElementSibling;
+            let prevSlide = currentSlide.previousElementSibling;
             if (!prevSlide) { prevSlide = slides[slides.length - 1] }
     
             moveSlides(slider, currentSlide, prevSlide);
