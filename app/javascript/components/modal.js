@@ -4,8 +4,10 @@ const loadModal = () => {
 
   if (bookBtn) {
     bookBtn.addEventListener("click", (event) => {
-      // event.preventDefault();
-      document.querySelector('.bg-modal').style.display = 'flex';
+      setTimeout(() => {
+        document.querySelector('.bg-modal').style.display = 'flex';
+      }
+      , 1000); 
     });
 
     document.getElementById('closed').addEventListener('click', (event) => {

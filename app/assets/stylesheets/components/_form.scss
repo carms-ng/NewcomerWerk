@@ -135,6 +135,9 @@
 }
 
 .btn-sm-blue {
+  display: grid;
+  place-content: center center;
+  font-size: 24px;
   margin: 20px 0;
   border-radius: 5px;
   background: #0000ff;
