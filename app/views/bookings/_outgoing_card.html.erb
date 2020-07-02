@@ -27,35 +27,42 @@
   </div>
 
   <div class="booking-info">
-    <p class="booking-time"><%= b.start.strftime("%b. %d @%H:00") %></p>
-    <%= link_to service_path(b.service) do %>
-      <h2 class="blue"><%= b.service.title %></h2>
-    <% end %>
+    <div>
+      <p class="booking-time"><%= b.start.strftime("%b. %d @%H:00") %></p>
+      
+      <%= link_to service_path(b.service) do %>
+        <h2 class="blue"><%= b.service.title %></h2>
+      <% end %>
 
-    <p class="item-svg">
-      <span class="iconify" data-icon="si-glyph:pin-location-map" data-inline="false"></span> 
-      <%= b.service.address %>
-    </p>
+      <p class="item-svg">
+        <span class="iconify" data-icon="eva:pin-outline" data-inline="false"></span>
+        <%= b.service.address %>
+      </p>
+    </div>
+    
+
+    <div>
+      <hr>
+      <div class="booking-btns">
+        <% case b.status %>
+        <% when 'pending' %>
+          <p>Request sent!</p>
+        <% when 'accepted' %>
+            <%= link_to 'Completed', complete_path(b), method: :patch, class: '', remote: true %>
+        <% when 'declined' %>
+          <%= link_to 'Find other providers', services_path, class: '' %>
+        <% when 'canceled' %>
+          <%= link_to 'Try again', service_path(b.service), class: '' %>
+        <% when 'completed' %>
+          <%= link_to 'Leave a Review', new_booking_review_path(b), class: '' %>
+        <% when 'reviewed' %>
+          <%= link_to 'Book again', service_path(b.service), class: '' %>
+        <% end %>
+      </div>
+    </div>
   </div>
   
-  <hr>
 
-  <div class="booking-btns">
-    <% case b.status %>
-    <% when 'pending' %>
-      <p>Request sent!</p>
-    <% when 'accepted' %>
-        <%= link_to 'Completed', complete_path(b), method: :patch, class: '', remote: true %>
-    <% when 'declined' %>
-      <%= link_to 'Find other providers', services_path, class: '' %>
-    <% when 'canceled' %>
-      <%= link_to 'Try again', service_path(b.service), class: '' %>
-    <% when 'completed' %>
-      <%= link_to 'Leave a Review', new_booking_review_path(b), class: '' %>
-    <% when 'reviewed' %>
-      <%= link_to 'Book again', service_path(b.service), class: '' %>
-    <% end %>
-  </div>
 
 </div>
 
