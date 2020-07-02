@@ -47,3 +47,15 @@
 .carousel__btn--next {
     right: -35px;
 }
+
+@media (min-width: 600px) {
+    .carousel__container {
+        min-height: 320px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .carousel__container {
+        min-height: 420px;
+    }
+}

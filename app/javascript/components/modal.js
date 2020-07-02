@@ -12,6 +12,7 @@ const loadModal = () => {
     const closeBtn = modal.querySelector('#closed');
     closeBtn.addEventListener('click', () => {
       modal.style.display = 'none';
+      location.reload();
     })
   }
 
