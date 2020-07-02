@@ -11,6 +11,11 @@ const loadCarousel = () => {
     
         const positionSlides = (slide, index) => {
             slide.style.left = (slideWidth + 20) * index + 'px';
+            prevBtn.style.display = 'none';
+        }
+
+        const updatePrevBtn = (targetSlide) => {
+            prevBtn.style.display = targetSlide === slides[0] ? 'none' : 'block';
         }
     
         slides.forEach(positionSlides);
@@ -19,6 +24,7 @@ const loadCarousel = () => {
             slider.style.transform = `translateX(-${targetSlide.style.left})`;
             currentSlide.classList.remove('active');
             targetSlide.classList.add('active');
+            updatePrevBtn(targetSlide);
         }
     
         nextBtn.addEventListener('click', () => {
