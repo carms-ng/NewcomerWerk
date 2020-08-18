@@ -1,7 +1,9 @@
+// This npm package is used to display map on services#index & services#show
 import mapboxgl from 'mapbox-gl';
 
 const mapElement = document.getElementById('map');
 
+// This method hooks up to mapbox, create map with custom map style
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
@@ -10,6 +12,7 @@ const buildMap = () => {
   });
 };
 
+// This function adds the marker to the map
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
@@ -25,12 +28,14 @@ const addMarkersToMap = (map, markers) => {
   });
 };
 
+// This function controlls the zoom (in)
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
 };
 
+// This function is exported to application.js
 const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
@@ -38,8 +43,10 @@ const initMapbox = () => {
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
 
+    // adds the navigation buttons
     map.addControl(new mapboxgl.NavigationControl());
 
+    // hover on services card => the map will re-center on the corresponding marker.
     const cards = document.querySelectorAll(".card-service")
     cards.forEach((card) => {
       card.addEventListener("mouseenter", (e) => {
@@ -48,6 +55,5 @@ const initMapbox = () => {
     });
   }
 };
-
 
 export { initMapbox };
