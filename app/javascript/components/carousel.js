@@ -1,5 +1,5 @@
+// This method initiates the carousel on the services#show page
 const loadCarousel = () => {
-
     const carousel = document.querySelector('.carousel__container');
     
     if (carousel) {

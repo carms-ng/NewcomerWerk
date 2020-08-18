@@ -1,14 +1,14 @@
 class Booking < ApplicationRecord
+  # associations
   belongs_to :service
   belongs_to :user
   has_many :reviews, dependent: :destroy
 
+  # validations
   validates :start, presence: true
   validates :end, presence: true
-  # validates :completed, inclusion: { in: [true, false] }
-  # validates :message, presence: true
 
-
+  # the methods below updates the status of that booking instance
   def accepted!
     self.status = 'accepted'
   end

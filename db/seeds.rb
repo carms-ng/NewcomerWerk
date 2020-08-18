@@ -174,12 +174,6 @@ profession = {
   ],
 }
 
-# 'Herbalist',
-# 'Personal Shopper',
-# 'Graphic Designer',
-# 'Math Tutor',
-# 'Translator'
-
 adjectives = [
   'Amazing',
   'Wonderful',
@@ -193,6 +187,7 @@ adjectives = [
   'Expert'
 ]
 
+# create users with profile pic
 profile_images.each_with_index do |url, i|
   user = User.new(
     first_name: Faker::Name.unique.first_name, 
@@ -208,7 +203,7 @@ profile_images.each_with_index do |url, i|
   user.save
 end
 
-# create Services
+# create services
 profession.each do |k, v|
   3.times do
     service = Service.new(
@@ -227,8 +222,9 @@ profession.each do |k, v|
   end
 end
 
-# Create Bookings & Reviews
+# Method to create reviews for a booking
 def create_review(booking)
+  # guarding clause, only create review if it's completed. 
   return unless booking.status == 'completed'
 
   review = Review.create(
@@ -239,6 +235,7 @@ def create_review(booking)
   review.update!(created_at: booking.start + rand(1..7).days)
 end
 
+# create bookings for each users
 User.all.each do |user|
   rand(1..20).times do
     service = Service.all.sample
@@ -253,6 +250,7 @@ User.all.each do |user|
       booking.status = ['completed', 'declined', 'canceled'].sample
       booking.save
 
+      # call the method to create reviews for that service.
       create_review(booking)
     end
   end
