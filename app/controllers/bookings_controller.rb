@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     @booking.service = @service
     # assign current_user to booking's user
     @booking.user = current_user
+    
     if !@booking.save
       render "services/show"
     end

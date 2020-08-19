@@ -4,11 +4,13 @@ class ServicesController < ApplicationController
 
   def geocode
     if params[:search].nil?
+      # return all
       @services = Service.geocoded.shuffle
     else
+      # return search results
       search
     end
-
+    # 
     @markers = map_markers(@services)
   end
 

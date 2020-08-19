@@ -19,7 +19,7 @@ const loadCarousel = () => {
         
         slides.forEach(positionSlides);
         
-        // if it's the first slide, don't desplay the prev button.
+        // This function checks for first slide, where the prev button should not displayed.
         const updatePrevBtn = (targetSlide) => {
             prevBtn.style.display = targetSlide === slides[0] ? 'none' : 'block';
         }
