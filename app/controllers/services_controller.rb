@@ -15,6 +15,15 @@ class ServicesController < ApplicationController
     @markers = map_markers(@services)
   end
 
+  def show
+    # includes only 1 marker
+    @markers = map_markers([@service])
+    # booking form params
+    @booking = Booking.new
+    # find reviews for the services through bookings
+    @reviews = Review.joins(:bookings).where(bookings: { service: @service })
+  end
+
   def new
     @service = Service.new
   end
@@ -30,23 +39,14 @@ class ServicesController < ApplicationController
     end
   end
 
-  def show
-    # includes only 1 marker
-    @markers = map_markers([@service])
-    # booking form params
-    @booking = Booking.new
-    # find reviews for the services through bookings
-    @reviews = Review.joins(:bookings).where(bookings: { service: @service })
-  end
-
   def edit
   end
 
   def update
+    # check if @service is valid
     if @service.update(service_params)
       redirect_to service_path(@service)
     else
-      # re render the edit page (including the form)
       render :edit
     end
   end

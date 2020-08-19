@@ -8,10 +8,12 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
     @review.booking = @booking
+    # check if @review is valid
     if @review.save
       # update booking status to "reviewed"
       @booking.reviewed!
       @booking.save
+
       redirect_to service_path(@booking.service)
     else
       render :new

@@ -1,5 +1,6 @@
 // This npm package is used to display map on services#index & services#show
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 
 const mapElement = document.getElementById('map');
 
@@ -43,8 +44,17 @@ const initMapbox = () => {
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
 
+    // adds the search box
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+      })
+    );
+    
     // adds the navigation buttons
     map.addControl(new mapboxgl.NavigationControl());
+
 
     // hover on services card => the map will re-center on the corresponding marker.
     const cards = document.querySelectorAll(".card-service")
