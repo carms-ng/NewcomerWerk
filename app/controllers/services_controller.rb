@@ -2,25 +2,17 @@ class ServicesController < ApplicationController
   before_action :find_service, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def geocode
+  def index
+    # check for search input
     if params[:search].nil?
       # return all
       @services = Service.geocoded.shuffle
     else
-      # return search results
+      # return services with name matching search input
       search
     end
-    # 
+    # create markers
     @markers = map_markers(@services)
-  end
-
-  def index
-    geocode
-    if params[:search].nil?
-      @services = Service.geocoded.shuffle
-    else
-      search
-    end
   end
 
   def new
@@ -39,12 +31,12 @@ class ServicesController < ApplicationController
   end
 
   def show
-    # 1 marker
+    # includes only 1 marker
     @markers = map_markers([@service])
     # booking form params
     @booking = Booking.new
-    # review
-    @reviews = Review.joins(:booking).where(bookings: { service: @service })
+    # find reviews for the services through bookings
+    @reviews = Review.joins(:bookings).where(bookings: { service: @service })
   end
 
   def edit
@@ -54,13 +46,13 @@ class ServicesController < ApplicationController
     if @service.update(service_params)
       redirect_to service_path(@service)
     else
+      # re render the edit page (including the form)
       render :edit
     end
   end
 
   def destroy
     @service.destroy
-
     redirect_to services_path
   end
 
@@ -69,6 +61,7 @@ class ServicesController < ApplicationController
   def search
     @keyword = params[:search]
     @services = Service.where("lower(#{:title}) LIKE ?", "%#{@keyword.downcase}%")
+                       .geocoded.shuffle
   end
 
   def find_service
