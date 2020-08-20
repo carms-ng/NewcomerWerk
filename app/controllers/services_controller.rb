@@ -60,16 +60,20 @@ class ServicesController < ApplicationController
 
   def search
     @keyword = params[:search]
-    sql_query = " \
-      users.first_name @@ :query \
-      OR users.last_name @@ :query \
-      OR services.title @@ :query \
-      OR services.description @@ :query \
-      OR services.address @@ :query \
-    "
-    @services = Service.joins(:user)
-                       .where(sql_query, query: "%#{@keyword}%")
-                       .geocoded.shuffle
+    # Using pg search
+    @services = Service.global_search_by_user_service(@keyword)
+
+    # Using activerecord
+    # sql_query = " \
+    #   users.first_name @@ :query \
+    #   OR users.last_name @@ :query \
+    #   OR services.title @@ :query \
+    #   OR services.description @@ :query \
+    #   OR services.address @@ :query \
+    # "
+    # @services = Service.joins(:user)
+    #                    .where(sql_query, query: "%#{@keyword}%")
+    #                    .geocoded.shuffle
   end
 
   def find_service
