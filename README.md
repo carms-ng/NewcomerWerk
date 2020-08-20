@@ -1,8 +1,8 @@
 # NewcomerWerk!
 NewcomerWerk! is a marketplace that puts newcomers to work!  Folks can access quality mainstream and alterative services, while supporting their local migrant community.
 
-# Backgroound
-Migration are intensifying globally due to climate change and political conflicts. Just because you crossed a man-made border, the years of experience and accumulated knowledge don’t magically disappear. Just because you are on a different land, your traditional knowledge that were passed down from generations stop being powerful. Just because your field is not yet formalized and professionalized, doesn’t mean it’s not valuable. There is a gap here to be filled.
+# Background
+Migration are intensifying globally due to climate change and political conflicts. Just because you crossed a man-made border, the years of experience and accumulated knowledge don’t magically disappear. Just because you are on a different land, your traditional knowledge that were passed down from generations doesn't stop being powerful. Just because your field is not yet formalized and professionalized, doesn’t mean it’s not valuable. There is a gap here to be filled.
 
 # Vision
 Fully responsive marketplace app for user to search and book services of interest and explore what the newcomer community has to offer!
