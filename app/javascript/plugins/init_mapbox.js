@@ -49,6 +49,8 @@ const initMapbox = () => {
       new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
+        placeholder: "Search in Montreal",
+        marker: false,
       })
     );
     
