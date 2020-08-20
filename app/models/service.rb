@@ -1,10 +1,11 @@
 class Service < ApplicationRecord
-  # cloudinary
-  has_many_attached :photos
   # associations
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
+  
+  # cloudinary
+  has_many_attached :photos
 
   # validations
   validates :title, presence: true
@@ -16,6 +17,17 @@ class Service < ApplicationRecord
   # mapbox
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  # pg search
+  include PgSearch::Model
+  pg_search_scope :global_search_by_user_service,
+    against: [:title, :description, :address],
+    associated_against: {
+      user: [ :first_name, :last_name ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 
   # This method returns the average rating
   def average_rating

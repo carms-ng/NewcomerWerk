@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
-  # routes for bookings, 
+  # routes for bookings
   # bookings#index shows all bookings of 1 user (not nested in services)
   resources :bookings, only: [:index, :edit, :update] do
     # nested routes to create reviews for one bookings. 
