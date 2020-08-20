@@ -4,12 +4,12 @@ class ServicesController < ApplicationController
 
   def index
     # check for search input
-    if params[:search].nil?
-      # return all
-      @services = Service.geocoded.shuffle
-    else
+    if params[:search].present?
       # return services with name matching search input
       search
+    else
+      # return all
+      @services = Service.geocoded.shuffle
     end
     # create markers
     @markers = map_markers(@services)
@@ -60,7 +60,15 @@ class ServicesController < ApplicationController
 
   def search
     @keyword = params[:search]
-    @services = Service.where("lower(#{:title}) LIKE ?", "%#{@keyword.downcase}%")
+    sql_query = " \
+      users.first_name @@ :query \
+      OR users.last_name @@ :query \
+      OR services.title @@ :query \
+      OR services.description @@ :query \
+      OR services.address @@ :query \
+    "
+    @services = Service.joins(:user)
+                       .where(sql_query, query: "%#{@keyword}%")
                        .geocoded.shuffle
   end
 
