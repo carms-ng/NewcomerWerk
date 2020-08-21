@@ -16,12 +16,21 @@ const buildMap = () => {
 // This function adds the marker to the map
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
-
+    // Create Info Window
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+    
+    // Create Marker
     const element = document.createElement('div');
     element.className = 'marker';
-    element.innerHTML = `<p>C$ ${marker.rate}</p>`;
+    element.innerHTML = `<p>$${marker.rate} CAD</p>`;
 
+    popup.on('open', () => {
+      element.classList.add('active');
+    });
+    popup.on('close', () => {
+      element.classList.remove('active');
+    });
+      
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
@@ -54,7 +63,6 @@ const initMapbox = () => {
     
     // adds the navigation buttons
     map.addControl(new mapboxgl.NavigationControl());
-
 
     // hover on services card => the map will re-center on the corresponding marker.
     const cards = document.querySelectorAll(".card-service")

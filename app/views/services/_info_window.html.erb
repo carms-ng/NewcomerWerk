@@ -1,4 +1,17 @@
 <%= link_to service_path(service) do %>
-    <h3><%= service.user.first_name %> <%= service.user.last_name[0] %>.</h3>
+    <% if service.photos.attached? %>
+        <%= cl_image_tag service.photos.first.key %>
+        <p class="image-tag left">
+            <% if service.average_rating.nil? %>
+                new
+            <% else %>
+                <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span> <%= service.average_rating.round(1) %>
+            <% end %>
+        </p>
+    <% end %>
+    <div class="info-window-info">
+    
+        <h3><%= service.user.first_name + ' ' +service.user.last_name[0] + '.'%></h3>
+        <p><%= service.address %></p>
+    </div>
 <% end %>
-<p><%= service.address %></p>
