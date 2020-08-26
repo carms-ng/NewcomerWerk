@@ -2,7 +2,7 @@
     <%= link_to service_path(service) do %>
         <div class="card-service-img">
             <% if service.photos.empty? %>
-                <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j", height: '250', width: '400' %>
+                <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtPtBW4Rw0SPkwgxokYqQW4jRJjuEgDDbTM8ULc4zzoHCT4g1j", height: 250, width: 400 %>
             <% else %>
                 <%= cl_image_tag service.photos.first.key, height: 250, width: 400, crop: :fill %>
             <% end %>

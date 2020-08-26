@@ -62,9 +62,11 @@
 
     <hr>
 
+    <%# review section %>
     <div class="profile-reviews">
       <h2><%= pluralize(@reviews_received.count, 'review') %></h2>
 
+      <%# tabs %>
       <div class="profile-review-container">
         <div class="tabs">
           <% if @user == current_user %>
@@ -78,32 +80,13 @@
 
         <div class="tab-panel active">
           <% @reviews_received.each do |r| %>
-            <div class="review-section ">
-              <h6><%= r.user.first_name %> <%= r.user.last_name %></h6>
-              <p class="review-date"><%= r.created_at.strftime("%B") %> <%= r.created_at.year %></p>
-              <p class="review-rating">
-                <% r.rating.times do %>
-                <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span>
-                <% end %>
-                </p>
-              <p><%= r.content %></p>
-            </div>
+            <%= render 'reviews/review_card', review: r, user: r.user %>
           <% end %>
         </div>
 
         <div class="tab-panel">
           <% @reviews_written.each do |r| %>
-
-            <div class="review-section">
-              <h6><%= r.booking.service.user.first_name %> <%= r.booking.service.user.last_name %></h6>
-              <p class="review-date"><%= r.created_at.strftime("%B") %> <%= r.created_at.year %></p>
-              <p class="review-rating">
-                <% r.rating.times do %>
-                <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span>
-                <% end %>
-                </p>
-              <p><%= r.content %></p>
-            </div>
+            <%= render 'reviews/review_card', review: r, user: r.booking.service.user %>
           <% end %>
         </div>
 

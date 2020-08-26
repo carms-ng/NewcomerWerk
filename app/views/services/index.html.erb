@@ -6,15 +6,17 @@
   </div>
 </form>
 
-<%# Search Result %>
+<%# search Result %>
 <div class="result-container">
+  <%# Service Cards on the left %>
   <div class="cards-service">
     <p class="result-text">Viewing <%= pluralize( @services.count, 'talented newcomer' ) %>.</p>
     <% @services.each do |service| %>
-      <%= render partial:'shared/service_card', locals: { service: service } %>
+      <%= render 'shared/service_card', service: service %>
     <% end %>
   </div>
 
+  <%# Map on the right %>
   <div
     class="result-map"
     id="map"
@@ -23,10 +25,9 @@
       height: 100vh;
       position: sticky;
       top: 0;
-          "
+      "
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
 
 </div>

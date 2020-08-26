@@ -1,0 +1,19 @@
+<div class="review-section">
+    <%= link_to user_path(user) do %>
+        <h6 style="color: black;">
+            <%= user.full_name %>
+        </h6>
+    <% end %>
+
+    <p class="review-date">
+        <%= review.created_at.strftime("%B") %> <%= review.created_at.year %>
+    </p>
+
+    <p class="review-rating">
+        <% review.rating.times do %>
+            <span class="iconify" data-icon="ant-design:star-filled" data-inline="false" style="color: #ffc600"></span>
+        <% end %>
+    </p>
+    
+    <p><%= review.content %></p>
+</div>

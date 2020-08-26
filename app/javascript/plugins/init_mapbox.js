@@ -27,6 +27,7 @@ const addMarkersToMap = (map, markers) => {
     popup.on('open', () => {
       element.classList.add('active');
     });
+
     popup.on('close', () => {
       element.classList.remove('active');
     });
