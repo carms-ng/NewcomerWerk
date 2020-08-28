@@ -9,7 +9,7 @@ class ServicesController < ApplicationController
       search
     else
       # return all
-      @services = Service.geocoded.shuffle
+      @services = Service.includes(user: [photo_attachment: [:blob]], photos_attachments: [:blob]).geocoded.shuffle
     end
     # create markers
     @markers = map_markers(@services)
