@@ -14,6 +14,7 @@ Fully responsive marketplace app for user to search and book services of interes
 * Mapbox for location
 * Place.js for address autocomplete
 * Flatpickr for date-time picker
+* Heroku
 
 # What was completed?
 * The MVP of this web app is created: [NewcomerWerk!](https://newcomerwerk.herokuapp.com/)
